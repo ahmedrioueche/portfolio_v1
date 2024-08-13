@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { animateScroll } from "react-scroll";
 import { Spotlight } from "./ui/spotlight";
+import Image from 'next/image'; // Import the Image component
 
 const MyNavBar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
@@ -26,7 +27,7 @@ const MyNavBar: React.FC = () => {
         window.scrollTo({
           top: element.offsetTop - offset,
           behavior: "smooth",
-        }); 
+        });
       }
     }, 0);
     setIsOpen(false); // Close the dropdown on selection
@@ -38,9 +39,7 @@ const MyNavBar: React.FC = () => {
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-gray-900 shadow-md py-4" : "bg-transparent py-6"
-      }`}
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900 shadow-md py-4" : "bg-transparent py-6"}`}
     >
       <Spotlight className="absolute top-[20%] right-[-5%] w-[1200px] h-[1300px]" fill="white" />
       <div className="container mx-auto flex items-center justify-between px-4">
@@ -58,18 +57,12 @@ const MyNavBar: React.FC = () => {
             onClick={() => handleNavClick("home")}
           >
             <span
-              className={`relative transition-colors duration-300 ${
-                activeLink === "home"
-                  ? "text-red-500"
-                  : "text-white group-hover:text-red-500"
-              }`}
+              className={`relative transition-colors duration-300 ${activeLink === "home" ? "text-red-500" : "text-white group-hover:text-red-500"}`}
             >
               Home
             </span>
             <span
-              className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${
-                activeLink === "home" ? "w-full" : "group-hover:w-full"
-              }`}
+              className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${activeLink === "home" ? "w-full" : "group-hover:w-full"}`}
             ></span>
           </a>
 
@@ -79,18 +72,12 @@ const MyNavBar: React.FC = () => {
             onClick={() => handleNavClick("projects")}
           >
             <span
-              className={`relative transition-colors duration-300 ${
-                activeLink === "projects"
-                  ? "text-red-500"
-                  : "text-white group-hover:text-red-500"
-              }`}
+              className={`relative transition-colors duration-300 ${activeLink === "projects" ? "text-red-500" : "text-white group-hover:text-red-500"}`}
             >
               Projects
             </span>
             <span
-              className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${
-                activeLink === "projects" ? "w-full" : "group-hover:w-full"
-              }`}
+              className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${activeLink === "projects" ? "w-full" : "group-hover:w-full"}`}
             ></span>
           </a>
 
@@ -100,42 +87,42 @@ const MyNavBar: React.FC = () => {
             onClick={() => handleNavClick("skills")}
           >
             <span
-              className={`relative transition-colors duration-300 ${
-                activeLink === "skills"
-                  ? "text-red-500"
-                  : "text-white group-hover:text-red-500"
-              }`}
+              className={`relative transition-colors duration-300 ${activeLink === "skills" ? "text-red-500" : "text-white group-hover:text-red-500"}`}
             >
               Skills
             </span>
             <span
-              className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${
-                activeLink === "skills" ? "w-full" : "group-hover:w-full"
-              }`}
+              className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${activeLink === "skills" ? "w-full" : "group-hover:w-full"}`}
             ></span>
           </a>
         </div>
         {/* Large Screens: Social Icons and Contact Button */}
         <div className="hidden md:flex items-center space-x-4">
-          <a href="#">
-            <img
+          <a href="https://linkedin.com/in/ahmed-drioueche-aa02732b7">
+            <Image
               src="/nav-icon1.svg"
               alt="icon1"
-              className="w-6 h-6 transition-transform duration-300 ease-in-out transform hover:scale-110"
+              width={24}
+              height={24}
+              className="transition-transform duration-300 ease-in-out transform hover:scale-110"
             />
           </a>
-          <a href="#">
-            <img
+          <a href="https://www.facebook.com/ahmed.69.420">
+            <Image
               src="/nav-icon2.svg"
               alt="icon2"
-              className="w-6 h-6 transition-transform duration-300 ease-in-out transform hover:scale-110"
+              width={24}
+              height={24}
+              className="transition-transform duration-300 ease-in-out transform hover:scale-110"
             />
           </a>
-          <a href="#">
-            <img
+          <a href="https://github.com/ahmedrioueche">
+            <Image
               src="/nav-icon3.svg"
               alt="icon3"
-              className="w-6 h-6 transition-transform duration-300 ease-in-out transform hover:scale-110"
+              width={24}
+              height={24}
+              className="transition-transform duration-300 ease-in-out transform hover:scale-110"
             />
           </a>
           <a
@@ -148,9 +135,16 @@ const MyNavBar: React.FC = () => {
         </div>
         {/* Small Screens: Toggle Button and Dropdown Menu */}
         <div className="md:hidden flex items-center">
+          <a
+            href="#"
+            className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
+            onClick={() => handleNavClick("contact")}
+          >
+            Let&apos;s connect
+          </a>
           <button
             onClick={toggleMenu}
-            className="text-white focus:outline-none ml-2 relative"
+            className="text-white focus:outline-none ml-2"
           >
             <svg
               className="w-6 h-6"
@@ -166,14 +160,10 @@ const MyNavBar: React.FC = () => {
                 d="M4 6h16M4 12h16m-7 6h7"
               ></path>
             </svg>
-            {/* Adjust position of the dropdown menu button */}
-            <div className={`absolute top-0 left-0 transform -translate-x-1/2`} />
           </button>
         </div>
         <div
-          className={`md:hidden w-full ${
-            isOpen ? "block" : "hidden"
-          } absolute top-full left-0 bg-gray-900 py-4 z-50`}
+          className={`md:hidden w-full ${isOpen ? "block" : "hidden"} absolute top-full left-0 bg-gray-900 py-4 z-50`}
         >
           <div className="flex flex-col items-start space-y-4 px-4">
             <a
@@ -182,18 +172,12 @@ const MyNavBar: React.FC = () => {
               onClick={() => handleNavClick("home")}
             >
               <span
-                className={`relative transition-colors duration-300 ${
-                  activeLink === "home"
-                    ? "text-red-500"
-                    : "text-white group-hover:text-red-500"
-                }`}
+                className={`relative transition-colors duration-300 ${activeLink === "home" ? "text-red-500" : "text-white group-hover:text-red-500"}`}
               >
                 Home
               </span>
               <span
-                className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${
-                  activeLink === "home" ? "w-full" : "group-hover:w-full"
-                }`}
+                className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${activeLink === "home" ? "w-full" : "group-hover:w-full"}`}
               ></span>
             </a>
 
@@ -203,18 +187,12 @@ const MyNavBar: React.FC = () => {
               onClick={() => handleNavClick("projects")}
             >
               <span
-                className={`relative transition-colors duration-300 ${
-                  activeLink === "projects"
-                    ? "text-red-500"
-                    : "text-white group-hover:text-red-500"
-                }`}
+                className={`relative transition-colors duration-300 ${activeLink === "projects" ? "text-red-500" : "text-white group-hover:text-red-500"}`}
               >
                 Projects
               </span>
               <span
-                className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${
-                  activeLink === "projects" ? "w-full" : "group-hover:w-full"
-                }`}
+                className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${activeLink === "projects" ? "w-full" : "group-hover:w-full"}`}
               ></span>
             </a>
 
@@ -224,28 +202,43 @@ const MyNavBar: React.FC = () => {
               onClick={() => handleNavClick("skills")}
             >
               <span
-                className={`relative transition-colors duration-300 ${
-                  activeLink === "skills"
-                    ? "text-red-500"
-                    : "text-white group-hover:text-red-500"
-                }`}
+                className={`relative transition-colors duration-300 ${activeLink === "skills" ? "text-red-500" : "text-white group-hover:text-red-500"}`}
               >
                 Skills
               </span>
               <span
-                className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${
-                  activeLink === "skills" ? "w-full" : "group-hover:w-full"
-                }`}
+                className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${activeLink === "skills" ? "w-full" : "group-hover:w-full"}`}
               ></span>
             </a>
-
-            <a
-              href="#"
-              className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
-              onClick={() => handleNavClick("contact")}
-            >
-              Let&apos;s connect
+            <div className="flex space-x-4">
+              <a href="https://linkedin.com/in/ahmed-drioueche-aa02732b7">
+              <Image
+                src="/nav-icon1.svg"
+                alt="icon1"
+                width={24}
+                height={24}
+                className="transition-transform duration-300 ease-in-out transform hover:scale-110"
+              />
             </a>
+            <a href="https://www.facebook.com/ahmed.69.420">
+              <Image
+                src="/nav-icon2.svg"
+                alt="icon2"
+                width={24}
+                height={24}
+                className="transition-transform duration-300 ease-in-out transform hover:scale-110"
+              />
+            </a>
+            <a href="https://github.com/ahmedrioueche">
+              <Image
+                src="/nav-icon3.svg"
+                alt="icon3"
+                width={24}
+                height={24}
+                className="transition-transform duration-300 ease-in-out transform hover:scale-110"
+              />
+            </a>
+            </div>
           </div>
         </div>
       </div>
