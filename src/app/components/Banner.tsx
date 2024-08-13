@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState, useCallback } from 'react';
 import TrackVisibility from 'react-on-screen';
-import { Button } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
