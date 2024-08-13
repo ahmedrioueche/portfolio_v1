@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState, useCallback } from 'react';
 import TrackVisibility from 'react-on-screen';
 import { ArrowRightCircle } from "react-bootstrap-icons";
@@ -17,6 +17,7 @@ const Banner: React.FC = () => {
     const deleteSpeed = 80;
     const writeSpeed = 150;
     const [activeLink, setActiveLink] = useState<string>('home');
+    const isClient = typeof window !== 'undefined';
 
     // Function to change the title
     const changeTitle = () => {
@@ -71,23 +72,24 @@ const Banner: React.FC = () => {
 
     // Function to handle navigation click
     const handleNavClick = (section: string) => {
-        setActiveLink(section);
-        const offset = 50; // Adjust this value based on your navbar height
-        setTimeout(() => {
-            const element = document.getElementById(section);
-            if (element) {
-                window.scrollTo({
-                    top: element.offsetTop - offset,
-                    behavior: 'smooth'
-                });
-            }
-        }, 0);
+        if (isClient) {
+            const offset = 50; // Adjust this value based on your navbar height
+            setTimeout(() => {
+                const element = document.getElementById(section);
+                if (element) {
+                    window.scrollTo({
+                        top: element.offsetTop - offset,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 0);
+        }
     };
 
     // Component to load and display the 3D model
     const Model: React.FC = () => {
         const { scene } = useGLTF('/moon.glb');
-        const scale = window.innerWidth < 768 ? 0.08 : 0.1;
+        const scale = isClient && window.innerWidth < 768 ? 0.08 : 0.1;
 
         useFrame(({ clock }) => {
             scene.rotation.y = clock.getElapsedTime() * 0.2; // Rotate around Y-axis
@@ -122,7 +124,7 @@ const Banner: React.FC = () => {
                                     <button
                                         onClick={() => handleNavClick("contact")}
                                         className="relative overflow-hidden flex items-center justify-center bg-red-500 text-white py-2 px-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-x-110 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-                                        >
+                                    >
                                         <span className="mr-2 font-medium transition-opacity duration-300 ease-in-out group-hover:opacity-0">
                                             Let&apos;s connect
                                         </span>
@@ -136,7 +138,7 @@ const Banner: React.FC = () => {
                             )}
                         </TrackVisibility>
                     </div>
-                    {window.innerWidth > 768 && (
+                    {isClient && window.innerWidth > 768 && (
                     <div className="md:w-1/2 xl:w-5/12 flex justify-center">
                         <Canvas style={{ height: '400px', width: '100%' }} camera={{ position: [0, 30, 40], fov: 50 }}>
                             <ambientLight intensity={0.5} />
