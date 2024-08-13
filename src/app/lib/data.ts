@@ -1,10 +1,14 @@
-// src/lib/data.ts
 export const projects = [
   {
     id: "1",
     title: "Project One",
     description: "A brief description of Project One.",
-    images: ["/project1.1.png", "/project1.2.png", "/project1.3.png"], // Array of image URLs
+    imageDescPairs: [
+      { image: "/project1.1.png", description: "Description for image 1 of Project One." },
+      { image: "/project1.2.png", description: "Description for image 2 of Project One." },
+      { image: "/project1.3.png", description: "Description for image 3 of Project One." },
+    ],
+    detailedDescription: [],
     detailsLink: "/projects/1",
     demoLink: "https://demo.projectone.com",
     githubLink: "https://github.com/yourusername/projectone",
@@ -13,7 +17,11 @@ export const projects = [
     id: "2",
     title: "Project Two",
     description: "A brief description of Project Two.",
-    images: ["/project1.1.png", "/project1.2.png", "/project1.3.png"], // Array of image URLs
+    imageDescPairs: [
+      { image: "/project2.1.png", description: "Description for image 1 of Project Two." },
+      { image: "/project2.2.png", description: "Description for image 2 of Project Two." },
+      { image: "/project2.3.png", description: "Description for image 3 of Project Two." },
+    ],
     detailsLink: "/projects/2",
     demoLink: "https://demo.projecttwo.com",
     githubLink: "https://github.com/yourusername/projecttwo",
@@ -22,7 +30,11 @@ export const projects = [
     id: "3",
     title: "Project Three",
     description: "A brief description of Project Three.",
-    images: ["/project1.1.png", "/project1.2.png", "/project1.3.png"], // Array of image URLs
+    imageDescPairs: [
+      { image: "/project3.1.png", description: "Description for image 1 of Project Three." },
+      { image: "/project3.2.png", description: "Description for image 2 of Project Three." },
+      { image: "/project3.3.png", description: "Description for image 3 of Project Three." },
+    ],
     detailsLink: "/projects/3",
     demoLink: "https://demo.projectthree.com",
     githubLink: "https://github.com/yourusername/projectthree",

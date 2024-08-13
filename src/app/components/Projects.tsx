@@ -34,7 +34,7 @@ export default function ProjectsCarousel() {
               <Link href={project.detailsLink} passHref>
                 <div className="block cursor-pointer">
                   <img
-                    src={project.images[0]}
+                    src={project.imageDescPairs[0].image}
                     alt={project.title}
                     className="w-full h-64 object-cover"
                   />
