@@ -1,37 +1,35 @@
-import React, { useEffect, useState, useCallback } from 'react';
+// components/Banner.tsx
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import TrackVisibility from 'react-on-screen';
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
 import "../globals.css";
 
-// Define the titles array
+const ModelCanvas = lazy(() => import('./Model')); 
+
 const titles = ["Computer Engineer", "Software Developer", "Web Developer"];
 
 const Banner: React.FC = () => {
     const [text, setText] = useState(titles[0]);
-    const [displayString, setDisplayString] = useState("");
+    const [displayString, setDisplayString] = useState("Computer Engineer");
     const [index, setIndex] = useState(0);
     const deleteSpeed = 80;
     const writeSpeed = 150;
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [activeLink, setActiveLink] = useState("home");
+    const [activeLink, setActiveLink] = useState<string>('home');
+    const [isModelLoaded, setIsModelLoaded] = useState(false); 
     const [windowWidth, setWindowWidth] = useState<number>(0);
+    const [isDeleting, setIsDeleting] = useState(false);
 
-    // Update window width on client-side
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
 
-        // Set initial window width
         handleResize();
 
-        // Add event listener for window resize
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Function to change the title
-    const changeTitle = () => {
+     // Function to change the title
+     const changeTitle = () => {
         setIndex(prev => (prev + 1) % titles.length);
         setText(titles[(index + 1) % titles.length]);
     };
@@ -57,10 +55,16 @@ const Banner: React.FC = () => {
         return () => clearInterval(intervalId);
     }, [handleTypingEffect, isDeleting]);
 
+    useEffect(() => {
+        // Load the 3D model after the component has mounted
+        const timer = setTimeout(() => setIsModelLoaded(true), 100); // Adjust timeout as needed
+        return () => clearTimeout(timer);
+    }, []);
+
     // Function to handle navigation click
     const handleNavClick = (section: string) => {
         setActiveLink(section);
-        const offset = (section === "contact" && window.innerWidth < 768) ? -280 : 50;
+        const offset = (section === "contact" && windowWidth < 768) ? -280 : 50;
         setTimeout(() => {
             const element = document.getElementById(section);
             if (element) {
@@ -70,21 +74,6 @@ const Banner: React.FC = () => {
                 });
             }
         }, 0);
-    };
-
-    // Component to load and display the 3D model
-    const Model: React.FC = () => {
-        const { scene } = useGLTF('/moon.glb');
-        const scale = windowWidth < 768 ? 0.08 : 0.1;
-
-        useFrame(({ clock }) => {
-            scene.rotation.y = clock.getElapsedTime() * 0.2; // Rotate around Y-axis
-            scene.rotation.x = clock.getElapsedTime() * 0.1; // Optional: rotate around X-axis
-        });
-
-        return (
-            <primitive object={scene} scale={scale} position={[0, -2, 0]} />
-        );
     };
 
     return (
@@ -100,7 +89,7 @@ const Banner: React.FC = () => {
                                     </span>
                                     <h1 className="text-4xl font-bold text-white mb-4">
                                         I&apos;m Ahmed Drioueche <br />
-                                        <span className="text-red-500 text-2xl md:text-l">{`A ${displayString}`}</span>
+                                        <span className="text-red-500 text-2xl">{`A ${displayString}`}</span>
                                     </h1>
                                     <p className="text-gray-300 mb-6">
                                         I graduated with a Computer Engineering degree in 2024. 
@@ -124,15 +113,12 @@ const Banner: React.FC = () => {
                             )}
                         </TrackVisibility>
                     </div>
-                    {windowWidth > 768 && (
-                    <div className="md:w-1/2 xl:w-5/12 flex justify-center">
-                        <Canvas style={{ height: '400px', width: '100%' }} camera={{ position: [0, 30, 40], fov: 50 }}>
-                            <ambientLight intensity={0.5} />
-                            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                            <Model />
-                            <OrbitControls enableZoom={false} /> 
-                        </Canvas>    
-                    </div>
+                    {isModelLoaded && windowWidth > 768 && (
+                        <div className="md:w-1/2 xl:w-5/12 flex justify-center">
+                            <Suspense>
+                                <ModelCanvas />
+                            </Suspense>
+                        </div>
                     )}
                 </div>
             </div>
