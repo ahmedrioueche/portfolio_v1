@@ -20,7 +20,7 @@ const MyNavBar: React.FC = () => {
 
   const handleNavClick = (section: string) => {
     setActiveLink(section);
-    const offset = (section === "contact" && window.innerWidth < 768) ? -400 : 50;
+    const offset = (section === "contact" && window.innerWidth < 768) ? -300 : 50;
     setTimeout(() => {
       const element = document.getElementById(section);
       if (element) {
