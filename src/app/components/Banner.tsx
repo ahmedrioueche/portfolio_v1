@@ -1,12 +1,10 @@
-"use client"
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import TrackVisibility from 'react-on-screen';
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
 import "../globals.css";
 
-// Define the titles array
+const ModelCanvas = lazy(() => import('./Model')); // Lazy load the 3D model component
+
 const titles = ["Computer Engineer", "Software Developer", "Web Developer"];
 
 const Banner: React.FC = () => {
@@ -17,7 +15,7 @@ const Banner: React.FC = () => {
     const deleteSpeed = 80;
     const writeSpeed = 150;
     const [activeLink, setActiveLink] = useState<string>('home');
-    const isClient = typeof window !== 'undefined';
+    const [isModelLoaded, setIsModelLoaded] = useState(false); // State to track if the model is loaded
 
     // Function to change the title
     const changeTitle = () => {
@@ -69,36 +67,24 @@ const Banner: React.FC = () => {
         }
     }, [text, toDelete]);
 
+    useEffect(() => {
+        // Load the 3D model after the component has mounted
+        const timer = setTimeout(() => setIsModelLoaded(true), 1000); // Adjust timeout as needed
+        return () => clearTimeout(timer);
+    }, []);
 
     // Function to handle navigation click
     const handleNavClick = (section: string) => {
-        if (isClient) {
-            const offset = 50; // Adjust this value based on your navbar height
-            setTimeout(() => {
-                const element = document.getElementById(section);
-                if (element) {
-                    window.scrollTo({
-                        top: element.offsetTop - offset,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 0);
-        }
-    };
-
-    // Component to load and display the 3D model
-    const Model: React.FC = () => {
-        const { scene } = useGLTF('/moon.glb');
-        const scale = isClient && window.innerWidth < 768 ? 0.08 : 0.1;
-
-        useFrame(({ clock }) => {
-            scene.rotation.y = clock.getElapsedTime() * 0.2; // Rotate around Y-axis
-            scene.rotation.x = clock.getElapsedTime() * 0.1; // Optional: rotate around X-axis
-        });
-
-        return (
-            <primitive object={scene} scale={scale} position={[0, -2, 0]} />
-        );
+        const offset = 50; // Adjust this value based on your navbar height
+        setTimeout(() => {
+            const element = document.getElementById(section);
+            if (element) {
+                window.scrollTo({
+                    top: element.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+            }
+        }, 0);
     };
 
     return (
@@ -138,15 +124,12 @@ const Banner: React.FC = () => {
                             )}
                         </TrackVisibility>
                     </div>
-                    {isClient && window.innerWidth > 768 && (
-                    <div className="md:w-1/2 xl:w-5/12 flex justify-center">
-                        <Canvas style={{ height: '400px', width: '100%' }} camera={{ position: [0, 30, 40], fov: 50 }}>
-                            <ambientLight intensity={0.5} />
-                            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                            <Model />
-                            <OrbitControls enableZoom={false} /> {/* Disable zoom */}
-                        </Canvas>    
-                    </div>
+                    {isModelLoaded && window.innerWidth > 768 && (
+                        <div className="md:w-1/2 xl:w-5/12 flex justify-center">
+                            <Suspense fallback={<div>Loading 3D model...</div>}>
+                                <ModelCanvas />
+                            </Suspense>
+                        </div>
                     )}
                 </div>
             </div>

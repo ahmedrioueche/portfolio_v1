@@ -116,7 +116,7 @@ const MyNavBar: React.FC = () => {
               className="transition-transform duration-300 ease-in-out transform hover:scale-110"
             />
           </a>
-          <a href="https://github.com/ahmedrioueche">
+          <a href="https://www.instagram.com/ahmed.driouche.420">
             <Image
               src="/nav-icon3.svg"
               alt="icon3"
@@ -229,7 +229,7 @@ const MyNavBar: React.FC = () => {
                 className="transition-transform duration-300 ease-in-out transform hover:scale-110"
               />
             </a>
-            <a href="https://github.com/ahmedrioueche">
+            <a href="https://www.instagram.com/ahmed.driouche.420">
               <Image
                 src="/nav-icon3.svg"
                 alt="icon3"
