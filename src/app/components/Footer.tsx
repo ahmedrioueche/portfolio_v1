@@ -9,7 +9,7 @@ export default function Footer() {
         <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Ahmed Drioueche. All Rights Reserved.</p>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/ahmedrioueche"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -17,7 +17,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faGithub} size="lg" />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/ahmed-drioueche-aa02732b7"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -25,7 +25,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faLinkedin} size="lg" />
           </a>
           <a
-            href="https://facebook.com/yourusername"
+            href="https://www.facebook.com/ahmed.69.420"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors duration-300"

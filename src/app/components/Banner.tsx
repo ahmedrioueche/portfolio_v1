@@ -12,7 +12,7 @@ const titles = ["Computer Engineer", "Software Developer", "Web Developer"];
 const Banner: React.FC = () => {
     const [text, setText] = useState(titles[0]);
     const [toDelete, setToDelete] = useState(false);
-    const [displayString, setDisplayString] = useState("");
+    const [displayString, setDisplayString] = useState("Computer Engineer");
     const [index, setIndex] = useState(0);
     const deleteSpeed = 80;
     const writeSpeed = 150;
