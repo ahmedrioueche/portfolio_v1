@@ -1,81 +1,66 @@
-import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import TrackVisibility from 'react-on-screen';
 import { ArrowRightCircle } from "react-bootstrap-icons";
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
 import "../globals.css";
 
-const ModelCanvas = lazy(() => import('./Model')); // Lazy load the 3D model component
-
+// Define the titles array
 const titles = ["Computer Engineer", "Software Developer", "Web Developer"];
 
 const Banner: React.FC = () => {
     const [text, setText] = useState(titles[0]);
-    const [toDelete, setToDelete] = useState(false);
-    const [displayString, setDisplayString] = useState("Computer Engineer");
+    const [displayString, setDisplayString] = useState("");
     const [index, setIndex] = useState(0);
     const deleteSpeed = 80;
     const writeSpeed = 150;
-    const [activeLink, setActiveLink] = useState<string>('home');
-    const [isModelLoaded, setIsModelLoaded] = useState(false); // State to track if the model is loaded
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [activeLink, setActiveLink] = useState("home");
+    const [windowWidth, setWindowWidth] = useState<number>(0);
+
+    // Update window width on client-side
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+
+        // Set initial window width
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // Function to change the title
     const changeTitle = () => {
-        setText(titles[index]);
         setIndex(prev => (prev + 1) % titles.length);
+        setText(titles[(index + 1) % titles.length]);
     };
 
-    // Function to write the string
-    const writeString = (text: string) => {
-        setDisplayString(prev => {
-            const string = prev + text.slice(prev.length, prev.length + 1);
-            if (string.length === text.length) {
-                setToDelete(true);
-            }
-            return string;
-        });
-    };
-
-    // Function to delete the string
-    const deleteString = useCallback((text: string) => {
-        setDisplayString(prev => {
-            const string = prev.slice(0, prev.length - 1);
-            if (string.length <= 1) {
-                setToDelete(false);
+    // Function to handle the typing effect
+    const handleTypingEffect = useCallback(() => {
+        if (isDeleting) {
+            setDisplayString(prev => prev.slice(0, -1));
+            if (displayString.length <= 0) {
+                setIsDeleting(false);
                 changeTitle();
-                setDisplayString("");
             }
-            return string;
-        });
-    }, []);
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            if (toDelete) {
-                deleteString(text);
+        } else {
+            setDisplayString(prev => text.slice(0, prev.length + 1));
+            if (displayString === text) {
+                setIsDeleting(true);
             }
-        }, deleteSpeed);
-
-        return () => clearInterval(intervalId);
-    }, [toDelete, text, deleteString]);
-
-    useEffect(() => {
-        if (!toDelete) {
-            const intervalId = setInterval(() => {
-                writeString(text);
-            }, writeSpeed);
-
-            return () => clearInterval(intervalId);
         }
-    }, [text, toDelete]);
+    }, [isDeleting, text, displayString, index]);
 
     useEffect(() => {
-        // Load the 3D model after the component has mounted
-        const timer = setTimeout(() => setIsModelLoaded(true), 1000); // Adjust timeout as needed
-        return () => clearTimeout(timer);
-    }, []);
+        const intervalId = setInterval(handleTypingEffect, isDeleting ? deleteSpeed : writeSpeed);
+        return () => clearInterval(intervalId);
+    }, [handleTypingEffect, isDeleting]);
 
     // Function to handle navigation click
     const handleNavClick = (section: string) => {
-        const offset = 50; // Adjust this value based on your navbar height
+        setActiveLink(section);
+        const offset = 50;
         setTimeout(() => {
             const element = document.getElementById(section);
             if (element) {
@@ -85,6 +70,21 @@ const Banner: React.FC = () => {
                 });
             }
         }, 0);
+    };
+
+    // Component to load and display the 3D model
+    const Model: React.FC = () => {
+        const { scene } = useGLTF('/moon.glb');
+        const scale = windowWidth < 768 ? 0.08 : 0.1;
+
+        useFrame(({ clock }) => {
+            scene.rotation.y = clock.getElapsedTime() * 0.2; // Rotate around Y-axis
+            scene.rotation.x = clock.getElapsedTime() * 0.1; // Optional: rotate around X-axis
+        });
+
+        return (
+            <primitive object={scene} scale={scale} position={[0, -2, 0]} />
+        );
     };
 
     return (
@@ -100,7 +100,7 @@ const Banner: React.FC = () => {
                                     </span>
                                     <h1 className="text-4xl font-bold text-white mb-4">
                                         I&apos;m Ahmed Drioueche <br />
-                                        <span className="text-red-500">{`A ${displayString}`}</span>
+                                        <span className="text-red-500 text-2xl md:text-l">{`A ${displayString}`}</span>
                                     </h1>
                                     <p className="text-gray-300 mb-6">
                                         I graduated with a Computer Engineering degree in 2024. 
@@ -124,12 +124,15 @@ const Banner: React.FC = () => {
                             )}
                         </TrackVisibility>
                     </div>
-                    {isModelLoaded && window.innerWidth > 768 && (
-                        <div className="md:w-1/2 xl:w-5/12 flex justify-center">
-                            <Suspense fallback={<div>Loading 3D model...</div>}>
-                                <ModelCanvas />
-                            </Suspense>
-                        </div>
+                    {windowWidth > 768 && (
+                    <div className="md:w-1/2 xl:w-5/12 flex justify-center">
+                        <Canvas style={{ height: '400px', width: '100%' }} camera={{ position: [0, 30, 40], fov: 50 }}>
+                            <ambientLight intensity={0.5} />
+                            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+                            <Model />
+                            <OrbitControls enableZoom={false} /> {/* Disable zoom */}
+                        </Canvas>    
+                    </div>
                     )}
                 </div>
             </div>
