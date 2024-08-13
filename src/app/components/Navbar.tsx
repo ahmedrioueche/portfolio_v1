@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { animateScroll } from "react-scroll";
 import { Spotlight } from "./ui/spotlight";
-import Image from 'next/image'; // Import the Image component
+import Image from 'next/image'; 
 
 const MyNavBar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
