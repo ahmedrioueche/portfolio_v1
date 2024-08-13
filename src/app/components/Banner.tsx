@@ -60,7 +60,7 @@ const Banner: React.FC = () => {
     // Function to handle navigation click
     const handleNavClick = (section: string) => {
         setActiveLink(section);
-        const offset = 50;
+        const offset = (section === "contact" && window.innerWidth < 768) ? -280 : 50;
         setTimeout(() => {
             const element = document.getElementById(section);
             if (element) {
@@ -130,7 +130,7 @@ const Banner: React.FC = () => {
                             <ambientLight intensity={0.5} />
                             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                             <Model />
-                            <OrbitControls enableZoom={false} /> {/* Disable zoom */}
+                            <OrbitControls enableZoom={false} /> 
                         </Canvas>    
                     </div>
                     )}
