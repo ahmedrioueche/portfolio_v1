@@ -1,11 +1,8 @@
 "use client";
 
 import React from "react";
-import Hero from "./components/Hero";
-import About from "./components/About";
 import ProjectsCarousel from "./components/Projects";
 import Skills from "./components/Skills";
-import ContactForm from "./components/ContactForm";
 import Contact from "./components/Contact";
 import Banner from "./components/Banner"
 

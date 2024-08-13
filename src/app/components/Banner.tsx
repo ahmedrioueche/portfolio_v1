@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import TrackVisibility from 'react-on-screen';
 import { Button } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
@@ -37,7 +37,7 @@ const Banner: React.FC = () => {
     };
 
     // Function to delete the string
-    const deleteString = (text: string) => {
+    const deleteString = useCallback((text: string) => {
         setDisplayString(prev => {
             const string = prev.slice(0, prev.length - 1);
             if (string.length <= 1) {
@@ -47,7 +47,7 @@ const Banner: React.FC = () => {
             }
             return string;
         });
-    };
+    }, []);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -57,7 +57,7 @@ const Banner: React.FC = () => {
         }, deleteSpeed);
 
         return () => clearInterval(intervalId);
-    }, [toDelete, text]);
+    }, [toDelete, text, deleteString]);
 
     useEffect(() => {
         if (!toDelete) {
@@ -95,7 +95,7 @@ const Banner: React.FC = () => {
         });
 
         return (
-            <primitive object={scene} scale={0.12} position={[0, -2, 0]} />
+            <primitive object={scene} scale={0.1} position={[0, -2, 0]} />
         );
     };
 
@@ -111,7 +111,7 @@ const Banner: React.FC = () => {
                                         Welcome To My Portfolio
                                     </span>
                                     <h1 className="text-4xl font-bold text-white mb-4">
-                                        I'm Ahmed Drioueche <br />
+                                        I&apos;m Ahmed Drioueche <br />
                                         <span className="text-red-500">{`A ${displayString}`}</span>
                                     </h1>
                                     <p className="text-gray-300 mb-6">
@@ -121,15 +121,17 @@ const Banner: React.FC = () => {
                                     </p>
                                     <button
                                         onClick={() => handleNavClick("contact")}
-                                        className="relative overflow-hidden flex items-center justify-center bg-red-500 text-white py-2 px-4 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-                                    >
+                                        className="relative overflow-hidden flex items-center justify-center bg-red-500 text-white py-2 px-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-x-110 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+                                        >
                                         <span className="mr-2 font-medium transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                            Let's connect
+                                            Let&apos;s connect
                                         </span>
-                                        <ArrowRightCircle size={25} className="text-white transition-transform duration-300 ease-in-out" />
+                                        <ArrowRightCircle
+                                            size={25}
+                                            className="text-white transition-transform duration-300 ease-in-out"
+                                        />
                                         <span className="absolute inset-0 bg-red-600 transition-transform duration-300 ease-in-out scale-x-0 group-hover:scale-x-100 origin-left" />
                                     </button>
-        
                                 </div>
                             )}
                         </TrackVisibility>

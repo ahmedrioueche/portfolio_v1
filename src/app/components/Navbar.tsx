@@ -19,14 +19,14 @@ const MyNavBar: React.FC = () => {
 
   const handleNavClick = (section: string) => {
     setActiveLink(section);
-    const offset = 50;
+    const offset = (section === "contact" && window.innerWidth < 768)? 100 : 50;
     setTimeout(() => {
       const element = document.getElementById(section);
       if (element) {
         window.scrollTo({
           top: element.offsetTop - offset,
           behavior: "smooth",
-        });
+        }); 
       }
     }, 0);
     setIsOpen(false); // Close the dropdown on selection
@@ -143,7 +143,7 @@ const MyNavBar: React.FC = () => {
             className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
             onClick={() => handleNavClick("contact")}
           >
-            Let's connect
+            Let&apos;s connect
           </a>
         </div>
         {/* Small Screens: Toggle Button and Dropdown Menu */}
@@ -153,7 +153,7 @@ const MyNavBar: React.FC = () => {
             className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
             onClick={() => handleNavClick("contact")}
           >
-            Let's connect
+            Let&apos;s connect
           </a>
           <button
             onClick={toggleMenu}
