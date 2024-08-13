@@ -10,7 +10,7 @@ import SimpleBanner from "./components/SimpleBanner"
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <SimpleBanner />
+      <Banner />
       <ProjectsCarousel/>
       <Skills/>
       <Contact/>
