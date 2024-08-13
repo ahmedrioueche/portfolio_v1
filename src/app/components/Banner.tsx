@@ -13,7 +13,7 @@ const Banner: React.FC = () => {
     const [text, setText] = useState(titles[0]);
     const [toDelete, setToDelete] = useState(false);
     const [displayString, setDisplayString] = useState("");
-    const [index, setIndex] = useState(1);
+    const [index, setIndex] = useState(0);
     const deleteSpeed = 80;
     const writeSpeed = 150;
     const [activeLink, setActiveLink] = useState<string>('home');
@@ -87,14 +87,15 @@ const Banner: React.FC = () => {
     // Component to load and display the 3D model
     const Model: React.FC = () => {
         const { scene } = useGLTF('/moon.glb');
-
+        const scale = window.innerWidth < 768 ? 0.08 : 0.1;
+        
         useFrame(({ clock }) => {
             scene.rotation.y = clock.getElapsedTime() * 0.2; // Rotate around Y-axis
             scene.rotation.x = clock.getElapsedTime() * 0.1; // Optional: rotate around X-axis
         });
 
         return (
-            <primitive object={scene} scale={0.1} position={[0, -2, 0]} />
+            <primitive object={scene} scale={scale} position={[0, -2, 0]} />
         );
     };
 
@@ -142,6 +143,7 @@ const Banner: React.FC = () => {
                             <Model />
                             <OrbitControls enableZoom={false} /> {/* Disable zoom */}
                         </Canvas>
+                        
                     </div>
                 </div>
             </div>

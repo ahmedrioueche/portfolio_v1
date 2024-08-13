@@ -19,7 +19,7 @@ const MyNavBar: React.FC = () => {
 
   const handleNavClick = (section: string) => {
     setActiveLink(section);
-    const offset = (section === "contact" && window.innerWidth < 768)? 100 : 50;
+    const offset = (section === "contact" && window.innerWidth < 768) ? -400 : 50;
     setTimeout(() => {
       const element = document.getElementById(section);
       if (element) {
@@ -148,16 +148,9 @@ const MyNavBar: React.FC = () => {
         </div>
         {/* Small Screens: Toggle Button and Dropdown Menu */}
         <div className="md:hidden flex items-center">
-          <a
-            href="#"
-            className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
-            onClick={() => handleNavClick("contact")}
-          >
-            Let&apos;s connect
-          </a>
           <button
             onClick={toggleMenu}
-            className="text-white focus:outline-none ml-2"
+            className="text-white focus:outline-none ml-2 relative"
           >
             <svg
               className="w-6 h-6"
@@ -173,6 +166,8 @@ const MyNavBar: React.FC = () => {
                 d="M4 6h16M4 12h16m-7 6h7"
               ></path>
             </svg>
+            {/* Adjust position of the dropdown menu button */}
+            <div className={`absolute top-0 left-0 transform -translate-x-1/2`} />
           </button>
         </div>
         <div
@@ -244,29 +239,13 @@ const MyNavBar: React.FC = () => {
               ></span>
             </a>
 
-            <div className="flex items-center space-x-4 pt-4">
-              <a href="#">
-                <img
-                  src="/nav-icon1.svg"
-                  alt="icon1"
-                  className="w-6 h-6 transition-transform duration-300 ease-in-out transform hover:scale-110"
-                />
-              </a>
-              <a href="#">
-                <img
-                  src="/nav-icon2.svg"
-                  alt="icon2"
-                  className="w-6 h-6 transition-transform duration-300 ease-in-out transform hover:scale-110"
-                />
-              </a>
-              <a href="#">
-                <img
-                  src="/nav-icon3.svg"
-                  alt="icon3"
-                  className="w-6 h-6 transition-transform duration-300 ease-in-out transform hover:scale-110"
-                />
-              </a>
-            </div>
+            <a
+              href="#"
+              className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
+              onClick={() => handleNavClick("contact")}
+            >
+              Let&apos;s connect
+            </a>
           </div>
         </div>
       </div>
