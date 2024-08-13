@@ -64,7 +64,7 @@ const Banner: React.FC = () => {
     // Function to handle navigation click
     const handleNavClick = (section: string) => {
         setActiveLink(section);
-        const offset = (section === "contact" && windowWidth < 768) ? -280 : 50;
+        const offset = (section === "contact" && windowWidth < 768) ? -290 : 50;
         setTimeout(() => {
             const element = document.getElementById(section);
             if (element) {
