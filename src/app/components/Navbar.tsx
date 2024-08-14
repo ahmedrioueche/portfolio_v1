@@ -130,7 +130,7 @@ const MyNavBar: React.FC = () => {
             className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
             onClick={() => handleNavClick("contact")}
           >
-            Let&apos;s connect
+            Hire Me
           </a>
         </div>
         {/* Small Screens: Toggle Button and Dropdown Menu */}
@@ -140,7 +140,7 @@ const MyNavBar: React.FC = () => {
             className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
             onClick={() => handleNavClick("contact")}
           >
-            Let&apos;s connect
+            Hire Me
           </a>
           <button
             onClick={toggleMenu}
