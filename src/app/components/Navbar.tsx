@@ -8,6 +8,16 @@ const MyNavBar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +51,11 @@ const MyNavBar: React.FC = () => {
     <nav
       className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900 shadow-md py-4" : "bg-transparent py-6"}`}
     >
-      <Spotlight className="absolute top-[20%] right-[-5%] w-[1200px] h-[1300px]" fill="white" />
+      {windowWidth > 768 ?      
+       <Spotlight className="absolute top-[20%] right-[-5%] w-[1200px] h-[1300px]" fill="white" />
+        : 
+       <Spotlight className="absolute top-[20%] right-[-180%] w-[1100px] h-[1000px]" fill="white" />
+      }
       <div className="container mx-auto flex items-center justify-between px-4">
         <div
           className="text-white font-bold text-2xl cursor-pointer"
