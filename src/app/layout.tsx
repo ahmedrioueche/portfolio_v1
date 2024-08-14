@@ -19,30 +19,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en">
-      <body className={`${inter.className} text-white max-w-full overflow-x-hidden`}>
+      <body className={`${inter.className} text-white`}>
         <Navbar />
-        <div className="area">
-          <ul className="circles">
-            
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <main className="w-full py-12">
-            {children}
-          </main>
-          <Footer />
-        </div>  
+        <main className="w-full py-12">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
