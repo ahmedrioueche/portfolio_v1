@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { animateScroll, scroller } from "react-scroll";
+import { animateScroll } from "react-scroll";
 import { Spotlight } from "./ui/spotlight";
 import Image from 'next/image'; 
 
@@ -30,9 +30,8 @@ const MyNavBar: React.FC = () => {
 
   const handleNavClick = (section: string) => {
     setActiveLink(section);
-    
-
-    setIsOpen(false); // Close the dropdown on selection
+   
+    setIsOpen(false); 
   };
 
   const toggleMenu = () => {
@@ -41,12 +40,12 @@ const MyNavBar: React.FC = () => {
 
   return (
     <nav
-        className={`w-full fixed top-0 left-0 bg-gray-900 shadow-md py-4 z-50 transition-all duration-300 `}
+      className={`w-full fixed top-0 left-0 z-50 bg-gray-900 shadow-md py-4 transition-all duration-300`}
     >
       {windowWidth > 768 ?      
        <Spotlight className="absolute top-[20%] right-[-5%] w-[1200px] h-[1300px]" fill="white" />
         : 
-       <Spotlight className="absolute top-[20%] right-[-170%] w-[1100px] h-[1000px]" fill="white" />
+       <Spotlight className="absolute top-[20%] right-[-180%] w-[1100px] h-[1000px]" fill="white" />
       }
       <div className="container mx-auto flex items-center justify-between px-4">
         <div
@@ -58,7 +57,7 @@ const MyNavBar: React.FC = () => {
         {/* Large Screens: Regular Navbar */}
         <div className="hidden md:flex space-x-6">
           <a
-            href="#home"
+            href="/#home"
             className="relative cursor-pointer text-sm sm:text-lg font-medium group"
             onClick={() => handleNavClick("home")}
           >
@@ -73,7 +72,7 @@ const MyNavBar: React.FC = () => {
           </a>
 
           <a
-            href="#projects"
+            href="/#projects"
             className="relative cursor-pointer text-sm sm:text-lg font-medium group"
             onClick={() => handleNavClick("projects")}
           >
@@ -88,7 +87,7 @@ const MyNavBar: React.FC = () => {
           </a>
 
           <a
-            href="#skills"
+            href="/#skills"
             className="relative cursor-pointer text-sm sm:text-lg font-medium group"
             onClick={() => handleNavClick("skills")}
           >
@@ -142,7 +141,7 @@ const MyNavBar: React.FC = () => {
         {/* Small Screens: Toggle Button and Dropdown Menu */}
         <div className="md:hidden flex items-center">
           <a
-            href="#"
+            href="/#contact"
             className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
             onClick={() => handleNavClick("contact")}
           >
@@ -174,7 +173,7 @@ const MyNavBar: React.FC = () => {
         >
           <div className="flex flex-col items-start space-y-4 px-4">
             <a
-              href="#home"
+              href="/#home"
               className="relative cursor-pointer text-lg font-medium group"
               onClick={() => handleNavClick("home")}
             >
@@ -189,7 +188,7 @@ const MyNavBar: React.FC = () => {
             </a>
 
             <a
-              href="#projects"
+              href="/#projects"
               className="relative cursor-pointer text-lg font-medium group"
               onClick={() => handleNavClick("projects")}
             >
@@ -204,7 +203,7 @@ const MyNavBar: React.FC = () => {
             </a>
 
             <a
-              href="#skills"
+              href="/#skills"
               className="relative cursor-pointer text-lg font-medium group"
               onClick={() => handleNavClick("skills")}
             >
@@ -217,14 +216,35 @@ const MyNavBar: React.FC = () => {
                 className={`block h-[2px] w-0 bg-red-500 absolute left-0 bottom-[-2px] transition-all duration-300 ${activeLink === "skills" ? "w-full" : "group-hover:w-full"}`}
               ></span>
             </a>
-
-            <a
-              href="#contact"
-              className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
-              onClick={() => handleNavClick("contact")}
-            >
-              Hire Me
+            <div className="flex space-x-4">
+              <a href="https://linkedin.com/in/ahmed-drioueche-aa02732b7">
+              <Image
+                src="/nav-icon1.svg"
+                alt="icon1"
+                width={24}
+                height={24}
+                className="transition-transform duration-300 ease-in-out transform hover:scale-110"
+              />
             </a>
+            <a href="https://www.facebook.com/ahmed.69.420">
+              <Image
+                src="/nav-icon2.svg"
+                alt="icon2"
+                width={24}
+                height={24}
+                className="transition-transform duration-300 ease-in-out transform hover:scale-110"
+              />
+            </a>
+            <a href="https://www.instagram.com/ahmed.driouche.420">
+              <Image
+                src="/nav-icon3.svg"
+                alt="icon3"
+                width={24}
+                height={24}
+                className="transition-transform duration-300 ease-in-out transform hover:scale-110"
+              />
+            </a>
+            </div>
           </div>
         </div>
       </div>
