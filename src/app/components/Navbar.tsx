@@ -19,16 +19,6 @@ const MyNavBar: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    console.log("scrolled" )
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-      console.log("window.scrollY", window.scrollY)
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleNavClick = (section: string) => {
     setActiveLink(section);
@@ -52,7 +42,7 @@ const MyNavBar: React.FC = () => {
 
   return (
     <nav
-        className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900 shadow-md py-4" : "bg-transparent py-6"}`}
+        className={`nav w-full fixed top-0 left-0 z-50 transition-all duration-300 bg-gray-900 shadow-md py-4`}
     >
       {windowWidth > 768 ?      
        <Spotlight className="absolute top-[20%] right-[-5%] w-[1200px] h-[1300px]" fill="white" />

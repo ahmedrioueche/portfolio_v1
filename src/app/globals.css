@@ -60,6 +60,12 @@ body {
 -- Start BackGround Animation 
 */
 
+.nav {
+  top: 0; /* Sticks the navbar to the top */
+  transition: top 0.3s; /* Smooth transition for hiding */
+  z-index: 999; /* Ensure it's on top of other content */
+}
+
 .area {
 	width: 100%;
 	height: 100%;

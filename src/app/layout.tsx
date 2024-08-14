@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className="overflow-x-hidden">
       <body className={`${inter.className} text-white max-w-full`}>
         <div className="navContainer">
-          <Navbar />
+          <Navbar/>
         </div>
         <div className="area">
           <ul className="circles">
