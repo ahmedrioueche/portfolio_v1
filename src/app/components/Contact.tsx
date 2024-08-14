@@ -1,8 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import Image from 'next/image';
 import "../globals.css";
-
-const URL = "http://localhost:5000";
+import { sendContactForm } from '../lib/api'; // Adjust the import path as necessary
 
 interface FormDetails {
     firstName: string;
@@ -35,18 +34,16 @@ const Contact: React.FC = () => {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setButtonText("Sending..");
-        const response = await fetch(`${URL}/contact`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formDetails),
-        });
-        const result = await response.json();
-        setButtonText("Send");
-        if (result.code === 200) {
-            setStatus({ success: true, message: 'Message sent successfully' });
-        } else {
+        try {
+            const result = await sendContactForm(formDetails);
+            setButtonText("Send");
+            if (result.success) {
+                setStatus({ success: true, message: 'Message sent successfully' });
+            } else {
+                setStatus({ success: false, message: 'Oops.. Something went wrong!' });
+            }
+        } catch (error) {
+            setButtonText("Send");
             setStatus({ success: false, message: 'Oops.. Something went wrong!' });
         }
         setFormDetails(formInitialDetails);
