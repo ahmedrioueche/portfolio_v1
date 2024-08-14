@@ -176,6 +176,7 @@ const MyNavBar: React.FC = () => {
             </svg>
           </button>
         </div>
+
         <div
           className={`md:hidden w-full ${isOpen ? "block" : "hidden"} absolute top-full left-0 bg-gray-900 py-4 z-50`}
         >
