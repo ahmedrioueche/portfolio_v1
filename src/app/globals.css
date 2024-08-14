@@ -35,6 +35,11 @@ html, body {
   -ms-overflow-style: none; /* IE and Edge */
 }
 
+.wrapper {
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+}
 
 /* Start Animations */
 @-webkit-keyframes animatetop {
@@ -86,7 +91,7 @@ html, body {
 .area {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: 0;
   left: 0;
@@ -94,7 +99,7 @@ html, body {
 
 .circles {
   width: 60%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 96%;
