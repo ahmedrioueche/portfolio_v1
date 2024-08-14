@@ -169,8 +169,8 @@ const MyNavBar: React.FC = () => {
         </div>
 
         <div
-          className={`md:hidden w-full ${isOpen ? "block" : "hidden"} absolute top-full left-0 bg-gray-900 py-4 z-50`}
-        >
+          className={`md:hidden w-full ${isOpen ? "block" : "hidden"} absolute top-full left-0 bg-gradient-to-b from-gray-600 to-gray-900 py-4 z-50`}
+  >
           <div className="flex flex-col items-start space-y-4 px-4">
             <a
               href="/#home"
