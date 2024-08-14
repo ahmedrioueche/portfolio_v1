@@ -5,7 +5,6 @@ import ProjectsCarousel from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Banner from "./components/Banner"
-import SimpleBanner from "./components/SimpleBanner"
 
 export default function Home() {
   return (
