@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
     }
 
     return (
-        <section id="contact" className="py-16">
+        <section id="contact" className="py-16 section-offset">
             <div className="container mx-auto flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
                     <Image

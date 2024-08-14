@@ -30,16 +30,7 @@ const MyNavBar: React.FC = () => {
 
   const handleNavClick = (section: string) => {
     setActiveLink(section);
-    const offset = (section === "contact" && window.innerWidth < 768) ? -290 : 50;
-
-    setTimeout(() => {
-      scroller.scrollTo(section, {
-        duration: 500,
-        delay: 0,
-        smooth: 'easeInOutQuad',
-        offset: -offset,
-      });
-    }, 0);
+    
 
     setIsOpen(false); // Close the dropdown on selection
   };
@@ -141,7 +132,7 @@ const MyNavBar: React.FC = () => {
             />
           </a>
           <a
-            href="#"
+            href="/#contact"
             className="border border-red-500 text-red-500 py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300"
             onClick={() => handleNavClick("contact")}
           >

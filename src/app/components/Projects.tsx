@@ -20,7 +20,7 @@ export default function ProjectsCarousel() {
   };
 
   return (
-    <section id="projects" className="w-full py-12 text-white">
+    <section id="projects" className="w-full py-12 text-white section-offset">
       <div className="flex flex-col items-center mb-8">
         <h2 className="text-3xl font-bold relative inline-block group">
           My Best Projects

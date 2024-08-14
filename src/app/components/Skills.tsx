@@ -38,7 +38,7 @@ const skills: Skill[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-12 mx-8">
+    <section id="skills" className="py-12 mx-8 section-offset">
       <div className="flex flex-col items-center mb-8">
         <h2 className="text-3xl font-bold relative inline-block group">
           My Skills

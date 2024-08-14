@@ -63,17 +63,7 @@ const Banner: React.FC = () => {
 
     // Function to handle navigation click
     const handleNavClick = (section: string) => {
-        setActiveLink(section);
-        const offset = (section === "contact" && windowWidth < 768) ? -290 : 50;
-        setTimeout(() => {
-            const element = document.getElementById(section);
-            if (element) {
-                window.scrollTo({
-                    top: element.offsetTop - offset,
-                    behavior: 'smooth'
-                });
-            }
-        }, 0);
+       
     };
 
     return (
@@ -100,9 +90,9 @@ const Banner: React.FC = () => {
                                         onClick={() => handleNavClick("contact")}
                                         className="relative overflow-hidden flex items-center justify-center bg-red-500 text-white py-2 px-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-x-110 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
                                     >
-                                        <span className="mr-2 font-medium transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                        <a href="/#contact" className="mr-2 font-medium transition-opacity duration-300 ease-in-out group-hover:opacity-0">
                                             Let&apos;s connect
-                                        </span>
+                                        </a>
                                         <ArrowRightCircle
                                             size={25}
                                             className="text-white transition-transform duration-300 ease-in-out"
