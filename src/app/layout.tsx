@@ -1,11 +1,11 @@
+// layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Navbar from './components/Navbar'; // Adjust path as necessary
-import Footer from './components/Footer'; // Adjust path as necessary
-import Banner from "./components/Banner";
+import Navbar from './components/Navbar'; 
+import Footer from './components/Footer'; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,21 +22,23 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-      <body className={`${inter.className} text-white max-w-full overflow-x-hidden`}>
-        <Navbar />
-        <div className="area">
-          <ul className="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
+      <body className={`${inter.className} text-white max-w-full`}>
+        <div className="scroll-container">
+          <div className="area">
+            <ul className="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <Navbar />
           <main className="w-full py-12">
             {children}
           </main>
