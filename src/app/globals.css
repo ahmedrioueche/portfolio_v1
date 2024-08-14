@@ -70,11 +70,12 @@ body {
 }
 
 .circles {
-  width: 50%;
+  width: 60%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 96%;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
