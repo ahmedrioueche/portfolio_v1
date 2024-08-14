@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description: "portfolio to get a job",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,24 +26,26 @@ export default function RootLayout({
         <div className="navContainer">
           <Navbar/>
         </div>
-        <div className="area">
-          <ul className="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <main className="w-full py-12">
-            {children}
-          </main>
-          <Footer />
-        </div>  
+        <div className="wrapper">
+          <div className="area">
+            <ul className="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <main className="w-full py-12">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
