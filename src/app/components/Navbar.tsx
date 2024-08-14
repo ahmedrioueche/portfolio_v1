@@ -55,7 +55,7 @@ const MyNavBar: React.FC = () => {
       {windowWidth > 768 ?      
        <Spotlight className="absolute top-[20%] right-[-5%] w-[1200px] h-[1300px]" fill="white" />
         : 
-       <Spotlight className="absolute top-[20%] right-[-180%] w-[1100px] h-[1000px]" fill="white" />
+       <Spotlight className="absolute top-[20%] right-[-170%] w-[1100px] h-[1000px]" fill="white" />
       }
       <div className="container mx-auto flex items-center justify-between px-4">
         <div
