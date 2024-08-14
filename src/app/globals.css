@@ -4,11 +4,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background: rgba(17, 24, 39, 0.9);
+  background: rgba(17, 24, 39, 1  );
   overflow-x: hidden;
 }

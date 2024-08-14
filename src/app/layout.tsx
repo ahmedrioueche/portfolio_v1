@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-white`}>
+      <body className={`${inter.className} text-white max-w-full overflow-x-hidden`}>
         <Navbar />
         <main className="w-full py-12">
           {children}
