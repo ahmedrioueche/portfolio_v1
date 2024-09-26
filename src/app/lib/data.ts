@@ -31,8 +31,8 @@ export const projects = [
     ],
     detailedDescription: [],
     detailsLink: "/projects/1",
-    demoLink: "https://demo.projectone.com",
-    githubLink: "https://github.com/yourusername/projectone",
+    demoLink: "http://pointer-app.vercel.app/",
+    githubLink: "https://github.com/ahmeddrioueche/pointer",
   },
   {
     id: "2",
