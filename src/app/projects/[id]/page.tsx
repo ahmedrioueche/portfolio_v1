@@ -20,7 +20,7 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   const imageDescPairs = project.imageDescPairs;
   
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-4 py-14">
       <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
 
       <div className="space-y-8">

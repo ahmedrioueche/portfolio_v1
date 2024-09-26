@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { animateScroll } from "react-scroll";
 import { Spotlight } from "./ui/spotlight";
 import Image from 'next/image'; 
+import { useRouter } from 'next/navigation';
 
 const MyNavBar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const router = useRouter();
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -38,6 +40,11 @@ const MyNavBar: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleLogoClick = () => {
+    router.push("/");
+    animateScroll.scrollToTop();
+  }
+
   return (
     <nav
       className={`w-full fixed top-0 left-0 z-50 bg-gray-900 shadow-md py-4 transition-all duration-300`}
@@ -50,7 +57,7 @@ const MyNavBar: React.FC = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         <div
           className="text-white font-bold text-2xl cursor-pointer"
-          onClick={() => animateScroll.scrollToTop()}
+          onClick={() => handleLogoClick()}
         >
           Portfolio
         </div>

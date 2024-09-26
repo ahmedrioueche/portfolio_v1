@@ -20,12 +20,12 @@ export default function RootLayout({
 }>) {
   
   return (
-    <html lang="en" className="overflow-x-hidden">
-      <body className={`${inter.className} text-white max-w-full`}>
+    <html lang="en" className="overflow-x-hidden font-stix scrollbar-hide">
+      <body className={`${inter.className} text-white max-w-full scrollbar-hide`}>
         <div className="navContainer">
           <Navbar/>
         </div>
-        <div className="area">
+        <div className="area scrollbar-hide font-stix">
           <ul className="circles">
             <li></li>
             <li></li>

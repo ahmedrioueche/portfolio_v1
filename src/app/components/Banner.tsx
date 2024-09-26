@@ -88,17 +88,23 @@ const Banner: React.FC = () => {
                                     </p>
                                     <button
                                         onClick={() => handleNavClick("contact")}
-                                        className="relative overflow-hidden flex items-center justify-center bg-red-500 text-white py-2 px-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-x-110 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-                                    >
-                                        <a href="/#contact" className="mr-2 font-medium transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                        className="relative flex items-center justify-center bg-red-500 text-white py-2 px-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-x-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 overflow-hidden"
+                                        >
+                                        <span className="relative flex items-center">
+                                            <a
+                                            href="/#contact"
+                                            className="mr-2 font-medium transition-all duration-300 ease-in-out"
+                                            >
                                             Let&apos;s connect
-                                        </a>
-                                        <ArrowRightCircle
+                                            </a>
+                                            <ArrowRightCircle
                                             size={25}
-                                            className="text-white transition-transform duration-300 ease-in-out"
-                                        />
-                                        <span className="absolute inset-0 bg-red-600 transition-transform duration-300 ease-in-out scale-x-0 group-hover:scale-x-100 origin-left" />
-                                    </button>
+                                            className="text-white transition-all duration-300 ease-in-out transform"
+                                            />
+                                        </span>
+                                        <span className="absolute inset-y-0 right-0 bg-red-600 transition-all duration-300 ease-in-out w-0 hover:w-full" />
+                                        </button>
+
                                 </div>
                             )}
                         </TrackVisibility>

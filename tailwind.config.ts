@@ -30,9 +30,15 @@ const config: Config = {
           },
         },
       },
+      fontFamily: {
+        satisfy: ['Satisfy', 'serif'],
+        stix: ['STIX Two Text', 'serif'],
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide'), 
+  ],
 };
 
 export default config;

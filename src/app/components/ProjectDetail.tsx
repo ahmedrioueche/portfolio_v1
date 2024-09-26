@@ -1,7 +1,6 @@
-
 'use client'; 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'; 
 
 interface ProjectDetailProps {
@@ -22,9 +21,23 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ image, text, imagePositio
     setIsModalOpen(false);
   };
 
-  const handleBackToProjects = () => {
-    router.push('/'); 
+  // Close the modal if clicking outside of it
+  const handleClickOutsideModal = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('modal-overlay')) {
+      handleCloseModal();
+    }
   };
+
+  // Add the click event listener to close modal when clicking outside
+  useEffect(() => {
+    if (isModalOpen) {
+      window.addEventListener('click', handleClickOutsideModal);
+    }
+    return () => {
+      window.removeEventListener('click', handleClickOutsideModal);
+    };
+  }, [isModalOpen]);
 
   return (
     <>
@@ -45,22 +58,21 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ image, text, imagePositio
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="relative max-w-full max-h-full">
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 modal-overlay">
+          <div className="relative max-w-[85%] max-h-[85%]">
             <img
               src={image}
               alt="Project"
-              className="w-full h-auto max-h-screen object-contain"
+              className="w-full h-auto max-h-[80vh] object-contain"
             />
             <button
               onClick={handleCloseModal}
-              className="absolute top-4 right-4 text-white text-2xl bg-gray-800 rounded-full p-2 hover:bg-gray-600"
+              className="absolute top-2 right-2 text-white text-xl bg-gray-800 rounded-full p-2 opacity-0 hover:opacity-100 transition-opacity duration-300"
               aria-label="Close modal"
             >
               &times;
             </button>
           </div>
-        
         </div>
       )}
     </>
