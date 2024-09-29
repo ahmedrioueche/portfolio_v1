@@ -26,7 +26,7 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
     <div className="max-w-4xl mx-auto px-4 py-14">
       {/* Div that acts like a link to the project demo */}
       <div className='flex flex-row hover:scale-105 mb-1 cursor-pointer'> 
-          <h1 className="text-4xl font-bold mr-3">{project.title}</h1>
+          <h1 className="text-2xl md:text-4xl font-bold mr-3">{project.title}</h1>
           <a 
             href={project.demoLink}
             target="_blank"
