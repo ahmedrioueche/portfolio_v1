@@ -21,17 +21,14 @@
   font-weight: 100 900;
 }
 
-
 html, body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   background: rgba(17, 24, 39, 1);
   overflow-y: scroll;
-  overflow-x: hidden; /* Ensure no horizontal scroll */
+  overflow-x: hidden;
 }
-
-
 
 /* Hide scrollbar for WebKit-based browsers */
 html::-webkit-scrollbar, body::-webkit-scrollbar {
