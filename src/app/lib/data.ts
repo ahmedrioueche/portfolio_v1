@@ -57,15 +57,21 @@ export const projects = [
   },
   {
     id: "3",
-    title: "Project Three",
-    description: "A brief description of Project Three.",
+    title: "KeyMaster",
+    techStack: "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Bcript, Gemini, Vercel",
+    description: "A Lite weight customizable web app for keyboard practise with a leaderboard, uses Gemini to fetch training paragraphs.",
     imageDescPairs: [
-      { image: "/project1.1.png", description: "The homepage of Project Three, highlighting its unique layout and user-friendly design." },
-      { image: "/project1.2.png", description: "An admin dashboard of Project Three, offering a comprehensive view of ongoing activities and user interactions." },
-      { image: "/project1.3.png", description: "A detailed settings page in Project Three, allowing users to configure their account preferences and notifications." },
+      { image: "/km/km_home.png", description: "Users can choose the topic and the language they want and press the start button that triggers Gemini to provide the paragraph of specified length in settings. As the user starts typing, the timer, speed calculator, and character counter display useful information. " },
+      { image: "/km/km_login.png", description: "Users are prompted to login to their accounts to enjoy the full app experience (leaderboard data, customized settings)." },
+      { image: "/km/km_signup.png", description: "If they don't have an account, they can create one using this simple form. Users are stored in Supabase utilizing a Prisma schema for robustness and strightforward database migration." },
+      { image: "/km/km_settings.png", description: "Users can customize their preferences, that are stored in the supanse database with a one to one relationship with the user table." },
+      { image: "/km/km_result.png", description: "To make the app more enjoyable, a Confetti effect along with a cheering sound are played when the user makes a new personal speed record" },
+      { image: "/km/km_leaderboard.png", description: "The leader board keeps track of heighest scores of all time to encourage competitiveness and motivation for the user to keep improving their typing skills. This data is updated in real time to ensure the best user experience." },
+
     ],
+    conclusion: "A fun and productive game to play with friends and improve typing effiency. Future improvements include implementing Google Ads to make the app profitable, and having live typing competitions",
     detailsLink: "/projects/3",
-    demoLink: "https://demo.projectthree.com",
-    githubLink: "https://github.com/yourusername/projectthree",
+    demoLink: "http://keymaster-type.vercel.app",
+    githubLink: "https://github.com/ahmedrioueche/keymaster",
   },
 ];

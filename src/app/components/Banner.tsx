@@ -83,8 +83,8 @@ const Banner: React.FC = () => {
                                     </h1>
                                     <p className="text-gray-300 mb-6">
                                         I graduated with a Computer Engineering degree in 2024 from the institute of Electric and Electronic Engineering in Algeria. 
-                                        I have over 5 years of experience in programming and 2 years in web development,
-                                        coming from the world of electronics, i have aquired the fundamentals that make capable to work on complex and exciting projects.                                 
+                                        I have over 5 years of experience in programming and 2 years in web development.
+                                        Coming from the world of electronics, i have aquired the fundamentals that make capable to work on complex and exciting projects.                                 
                                     </p>
                                     <button
                                         onClick={() => handleNavClick("contact")}
