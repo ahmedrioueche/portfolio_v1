@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
                             <input
                                 type="text"
                                 value={formDetails.firstName}
-                                placeholder="First Name"
+                                    placeholder="First Name"
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => onFormUpdate('firstName', e.target.value)}
                                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-0"
                             />
