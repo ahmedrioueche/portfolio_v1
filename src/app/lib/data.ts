@@ -2,6 +2,7 @@ export const projects = [
     {
       id: "1",
       title: "Pointer",
+      rank: 2,
       description: "An engaging web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
       techStack:"Nextjs, TypeScript, TailwindCSS, Nextauth, PostgreSQL, Prisma, Superbase, Nodemailer, Gemini, Stripe, Bcript, Vercel.",
       imageDescPairs: [
@@ -38,11 +39,12 @@ export const projects = [
     {
       id: "2",
       title: "Modbus Gateway Manager",
+      rank: 3,
       techStack:"Electronjs, Javascript, Nodejs, CSS, Sqlite, Bcript, Serialport.",
       description: "A Desktop application based on Electron for the configuration and diagnosis of a Modbus gateway, part of my master's degree graduation project supervised by Cevie Doofas Innovative Solutions company.",
       imageDescPairs: [
         { image: "/gm/gm_login.png", description: 'This application is a part of a bigger project titled "Design and Implementation of a Modbus TCP/RTU Industrial Gateway", finished in june 2024 as a part of my graduation project supervised by Cevie Doofas Innovative Solutions. This gateway is created to facilitate communication between industrial machines that use Modbus protocol variations (TCP, RTU).'},
-        { image: "/gm/gateway_1.jpg", description: "I designed and built a fully functional PCB using KiCad and developed the firmware in C and C++ with STM32Cube. Additionally, I created a web server using the Mongoose library, serving the same functionality as this Electron app. This project significantly sharpened my technical skills and guided me through the complete process of building a complex, multi-component project from start to finish." },
+        { image: "/gm/gateway_1.jpg", description: "I designed and built a fully functional PCB using KiCad and developed the firmware in C and C++ with STM32Cube. This project significantly sharpened my technical skills and guided me through the complete process of building a complex, multi-component project from start to finish." },
         { image: "/gm/gm_general.png", description: "The main feature of this app is configuring the Modbus gateway. by specifying different parameters that are used in the gateway's firmware." },
         { image: "/gm/gm_mode.png", description: "Users should configure the Modbus mode (RTU or TCP) that the gateway should run on, for instance, if it is hooked to a machine operating as Modbus RTU client (master), the gateway should be configured as an RTU server (slave), and vice versa." },
         { image: "/gm/gm_serial.png", description: "Users are able to configue the different serial parameters, such as the baudrate, parity, stop bits, data size, and the slave identifier (server id) of the gateway (If its connected to an RTU master (client))." },
@@ -52,12 +54,13 @@ export const projects = [
       ],
       conclusion: "Built using the Model-View-Controller (MVC) design pattern, this ElectronJS application streamlines the configuration and diagnosis of a Modbus TCP/RTU gateway via USB, serving as an essential bridge between the Modbus variations in industrial communication systems. Through this project, I gained valuable hands-on experience and deepened my understanding of embedded systems, communication protocols, and software-hardware integration, significantly enhancing my technical expertise.",
       detailsLink: "/projects/2",
-      demoLink: "https://demo.projecttwo.com",
-      githubLink: "https://github.com/ahmedrioueche/projecttwo",
+      demoLink: "null",
+      githubLink: "https://github.com/ahmedrioueche/modbus_gateway_manager",
     },
     {
         id: "3",
         title: "KeyMaster",
+        rank: 1,
         techStack: "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Pusher, Bcript, Gemini, Vercel",
         description: "KeyMaster is a lightweight, responsive web app designed for typing practice with a built-in leaderboard, real-time competition, and personalized settings. The app leverages Gemini to fetch training paragraphs tailored to the user’s preferences, providing an engaging and effective typing experience.",
         imageDescPairs: [

@@ -28,7 +28,9 @@ export default function ProjectsCarousel() {
         </h2>
       </div>
       <Slider {...settings} className="max-w-3xl mx-auto">
-        {projects.map((project) => (
+      {projects
+        .sort((a, b) => a.rank - b.rank) 
+        .map((project) => (
           <div key={project.id} className="p-4">
             <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative">
               <Link href={project.detailsLink} passHref>
@@ -45,22 +47,26 @@ export default function ProjectsCarousel() {
                 </div>
               </Link>
               <div className="absolute bottom-4 right-4 flex space-x-4">
-                <a
-                  href={project.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-300"
-                >
-                  <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" />
-                </a>
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-300"
-                >
-                  <FontAwesomeIcon icon={faGithub} size="lg" />
-                </a>
+                {project.demoLink !== 'null' && (
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-300"
+                  >
+                    <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" />
+                 </a>
+                )}
+                {project.githubLink !== 'null' && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-300"
+                  >
+                    <FontAwesomeIcon icon={faGithub} size="lg" />
+                  </a>
+                )}
               </div>
             </div>
           </div>
