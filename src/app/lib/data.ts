@@ -147,7 +147,7 @@ export const projects = [
         },
         { 
           image: "/beam/signup.png", 
-          description: "User can create a custom account that is inserted in Neon PostgreSQL database using a Prisma schema."
+          description: "A user can create a custom account that is inserted in Neon PostgreSQL database using a Prisma schema."
         },
         { 
           image: "/beam/login.png", 
