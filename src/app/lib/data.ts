@@ -154,7 +154,7 @@ export const projects = [
           description: "Users can login via a custom account or using Google 0Auth, the authentication is handled via NextAuth that provides a session that is used in all pages to verify user's authentication" 
         }, 
       ],
-      conclusion: "This project is still in progress...",
+      conclusion: "This project is still in progress, and further updates will be provided as development continues.",
       detailsLink: "/projects/4",
       demoLink: "null",
       githubLink: "https://github.com/ahmedrioueche/beam",        

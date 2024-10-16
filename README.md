@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Beam (Ongoing)
 
-## Getting Started
+## Overview
+Beam is a fully responsive live streaming platform that leverages modern technologies to provide a seamless experience for both streamers and viewers. 
 
-First, run the development server:
+### Key Features
+- Live streaming functionality powered by **LiveKit**
+- Real-time chat integration using **Pusher**
+- Data persistence managed through **PostgreSQL**
+- User-friendly interface designed with **Tailwind CSS**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
+- **Frontend**: Next.js, TypeScript, React.js, Redux, NextAuth, Tailwind CSS
+- **Backend**: Prisma, PostgreSQL, Neon
+- **Real-time Communication**: Pusher, LiveKit
+- **Others**: Bcript, Gemini, REST APIs
+- **Deployment**: Vercel
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Screenshots
+| Screen | Description |
+|--------|-------------|
+| ![Home](./beam/home.png) | Users can navigate the current streams, search for streamers, and see followed and recommended ones. |
+| ![Dashboard](./beam/dashboard.png) | Users can access the creator's dashboard for managing live streams. |
+| ![Stream Keys](./beam/keys.png) | Streamers can generate live stream keys utilizing LiveKit Ingress. |
+| ![Community Management](./beam/community.png) | Streamers can manage their community, block or unblock users. |
+| ![Profile Management](./beam/profile.png) | Users can manage their profiles and visit other users' profiles. All views support dark and light themes based on user preference. |
+| ![Account Settings](./beam/settings.png) | Users can manage their account settings. |
+| ![Language Settings](./beam/settings_2.png) | Users can change the language and more. |
+| ![Mobile Sidebar](./beam/mobileSidebar.png) | A custom mobile sidebar for a responsive design. |
+| ![Signup](./beam/signup.png) | Users can create a custom account that is inserted into the Neon PostgreSQL database using a Prisma schema. |
+| ![Login](./beam/login.png) | Users can log in via a custom account or using Google OAuth. Authentication is handled via NextAuth, providing a session used across all pages to verify user authentication. |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Conclusion
+This project is still in progress, and further updates will be provided as development continues.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Links
+- **Demo**: Coming soon...
