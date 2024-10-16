@@ -77,7 +77,7 @@ export const projects = [
             description: "Users can select a topic and language of choice, press the start button, and trigger Gemini to provide a paragraph of the specified length. As they type, the timer, speed calculator, and character counter offer real-time feedback and performance metrics." 
           },
           { 
-            image: "/km/km_login.png", 
+            image: "/km/km_loginModal.png", 
             description: "Users are prompted to log in for a full app experience, including access to the leaderboard and personalized settings." 
           },
           { 
