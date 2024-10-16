@@ -51,6 +51,11 @@ html, body {
   margin-top: -80px; 
 }
 
+.project-offset {
+  padding-top: 80px; 
+  margin-top: 80px; 
+}
+
 /* Start Animations */
 @-webkit-keyframes animatetop {
   from {
