@@ -131,7 +131,7 @@ export const projects = [
         },
         { 
           image: "/beam/profile.png", 
-          description: "Users can manage their profiles, and visite other users profiles, also all views are built to support dark and light theme according to users preference." 
+          description: "Users can manage their profiles, and visite other users profiles. Moreover, all views are built to support dark and light theme according to users preference." 
         },
         { 
           image: "/beam/settings.png", 
