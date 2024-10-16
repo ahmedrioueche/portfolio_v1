@@ -111,7 +111,7 @@ export const projects = [
       title: "Beam (on going)",
       rank: 1,
       techStack: "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Pusher, LiveKit, Bcript, Gemini, REST APIs, Vercel",
-      description: "Beam is a fully responsive live streaming platform, that leverages Livekit as the driver of the streaming functionality, Pusher as the engine for the realtime chat, and PostgreSQL for the data persistance.",
+      description: "Beam is a fully responsive live streaming platform, that leverages Livekit as the driver of the streaming functionality, Pusher as the engine for the realtime chat, and PostgreSQL for data persistance.",
       imageDescPairs: [
         { 
           image: "/beam/home.png", 
