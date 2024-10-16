@@ -1,10 +1,18 @@
+export const main = {
+  title: "Welcome To My Portfolio",
+  subtitle: "I am Ahmed Drioueche",
+  desc: `I graduated with a Computer Engineering degree in 2024 from the institute of Electric and Electronic Engineering in Algeria. 
+  I have over 5 years of experience in programming and over 2 years in web development.
+  Coming from the world of electronics, i have aquired the fundamentals that make capable to work on complex and exciting projects.`
+}
+
 export const projects = [
     {
       id: "1",
       title: "Pointer",
-      rank: 2,
+      rank: 3,
       description: "An engaging web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
-      techStack:"Nextjs, TypeScript, TailwindCSS, Nextauth, PostgreSQL, Prisma, Superbase, Nodemailer, Gemini, Stripe, Bcript, Vercel.",
+      techStack:"Nextjs, TypeScript, TailwindCSS, Nextauth, PostgreSQL, Prisma, Superbase, Nodemailer, Gemini, Stripe, Bcript, REST APIs, Vercel.",
       imageDescPairs: [
         { image: "/pointer/pointer_home.png", description: "An engaging web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth." },
         { image: "/pointer/pointer_main.png", description: "The app includes several features such as creating routines for children, assigning tasks, creating rewards, challenges, and quizzes, and setting budgets for each kid." },
@@ -39,7 +47,7 @@ export const projects = [
     {
       id: "2",
       title: "Modbus Gateway Manager",
-      rank: 3,
+      rank: 4,
       techStack:"Electronjs, Javascript, Nodejs, CSS, Sqlite, Bcript, Serialport.",
       description: "A Desktop application based on Electron for the configuration and diagnosis of a Modbus gateway, part of my master's degree graduation project supervised by Cevie Doofas Innovative Solutions company.",
       imageDescPairs: [
@@ -60,9 +68,9 @@ export const projects = [
     {
         id: "3",
         title: "KeyMaster",
-        rank: 1,
-        techStack: "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Pusher, Bcript, Gemini, Vercel",
-        description: "KeyMaster is a lightweight, responsive web app designed for typing practice with a built-in leaderboard, real-time competition, and personalized settings. The app leverages Gemini to fetch training paragraphs tailored to the user’s preferences, providing an engaging and effective typing experience.",
+        rank: 2,
+        techStack: "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Pusher, Bcript, Gemini, REST APIs, Vercel",
+        description: "KeyMaster is a lightweight, responsive web app designed for typing practice with a built-in leaderboard, real-time competition, and personalized settings. The app leverages Gemini to fetch training paragraphs tailored to the user’s preferences, and real time competetion via Pusher.",
         imageDescPairs: [
           { 
             image: "/km/km_home.png", 
@@ -98,4 +106,57 @@ export const projects = [
         demoLink: "http://keymaster-type.vercel.app",
         githubLink: "https://github.com/ahmedrioueche/keymaster",        
     },
+    {
+      id: "4",
+      title: "Beam (on going)",
+      rank: 1,
+      techStack: "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Pusher, LiveKit, Bcript, Gemini, REST APIs, Vercel",
+      description: "Beam is a fully responsive live streaming platform, that leverages Livekit as the driver of the streaming functionality, Pusher as the engine for the realtime chat, and PostgreSQL for the data persistance.",
+      imageDescPairs: [
+        { 
+          image: "/beam/home.png", 
+          description: "Users can navigate the current streams, or search, with having usual followed streamers and recommended ones. " 
+        },
+        { 
+          image: "/beam/dashboard.png", 
+          description: "Users can access the creator's dashboard for managing live streams." 
+        },
+        { 
+          image: "/beam/keys.png", 
+          description: "Streamers can generate live stream keys utilizing LiveKit Ingress." 
+        },
+        { 
+          image: "/beam/community.png", 
+          description: "Streamers can manage their community, block or unblock users." 
+        },
+        { 
+          image: "/beam/profile.png", 
+          description: "Users can manage their profiles, and visite other users profiles, also all views are built to support dark and light theme according to users preference." 
+        },
+        { 
+          image: "/beam/settings.png", 
+          description: "Users can manage their account's setting..." 
+        },
+        { 
+          image: "/beam/settings_2.png", 
+          description: "Such as changing the language, and more." 
+        },
+        { 
+          image: "/beam/mobileSidebar.png", 
+          description: "A custom mobile sidebar for a nice responsive design." 
+        },
+        { 
+          image: "/beam/signup.png", 
+          description: "User can create a custom account that is inserted in Neon PostgreSQL database using a Prisma schema."
+        },
+        { 
+          image: "/beam/login.png", 
+          description: "Users can login via a custom account or using Google 0Auth, the authentication is handled via NextAuth that provides a session that is used in all pages to verify user's authentication" 
+        }, 
+      ],
+      conclusion: "This project is still in progress...",
+      detailsLink: "/projects/4",
+      demoLink: "null",
+      githubLink: "https://github.com/ahmedrioueche/beam",        
+  },
   ];

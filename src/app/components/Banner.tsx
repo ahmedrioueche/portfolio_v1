@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import TrackVisibility from 'react-on-screen';
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "../globals.css";
+import { main } from '../lib/data';
 
 const ModelCanvas = lazy(() => import('./Model')); 
 
@@ -75,16 +76,17 @@ const Banner: React.FC = () => {
                             {({ isVisible }) => (
                                 <div className={`${isVisible ? 'animate__animated animate__fadeIn' : ''}`}>
                                     <span className="text-gray-400 text-lg mb-4 block">
-                                        Welcome To My Portfolio
+                                        {main.title}    
                                     </span>
-                                    <h1 className="text-4xl font-bold text-white mb-4">
-                                        I&apos;m Ahmed Drioueche <br />
+                                    <div className='flex flex-col mb-2'>
+                                        <div className="text-4xl font-bold text-white mb-2">
+                                            {main.subtitle}     
+                                        </div>
                                         <span className="text-red-500 text-2xl">{`A ${displayString}`}</span>
-                                    </h1>
+                                    </div>
+                                                        
                                     <p className="text-gray-300 mb-6">
-                                        I graduated with a Computer Engineering degree in 2024 from the institute of Electric and Electronic Engineering in Algeria. 
-                                        I have over 5 years of experience in programming and 2 years in web development.
-                                        Coming from the world of electronics, i have aquired the fundamentals that make capable to work on complex and exciting projects.                                 
+                                        {main.desc}                                 
                                     </p>
                                     <button
                                         onClick={() => handleNavClick("contact")}
