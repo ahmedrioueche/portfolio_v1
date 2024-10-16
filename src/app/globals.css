@@ -46,6 +46,11 @@ html, body {
   -ms-overflow-style: none; /* IE and Edge */
 }
 
+.section-offset {
+  padding-top: 80px; 
+  margin-top: -80px; 
+}
+
 /* Start Animations */
 @-webkit-keyframes animatetop {
   from {

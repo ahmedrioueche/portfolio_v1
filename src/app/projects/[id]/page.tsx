@@ -23,7 +23,7 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   const imageDescPairs = project.imageDescPairs;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-14">
+    <div className="max-w-4xl mx-auto px-4 py-14 section-offset">
       {/* Div that acts like a link to the project demo */}
       <div className='flex flex-row hover:scale-105 mb-1 cursor-pointer'> 
           <h1 className="text-2xl md:text-4xl font-bold mr-3">{project.title}</h1>
