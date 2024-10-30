@@ -10,7 +10,7 @@ export const projects = [
     {
       id: "1",
       title: "Pointer",
-      rank: 3,
+      rank: 4,
       description: "An engaging web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
       techStack:"Nextjs, TypeScript, TailwindCSS, Nextauth, PostgreSQL, Prisma, Superbase, Nodemailer, Gemini, Stripe, Bcript, REST APIs, Vercel.",
       imageDescPairs: [
@@ -47,7 +47,7 @@ export const projects = [
     {
       id: "2",
       title: "Modbus Gateway Manager",
-      rank: 4,
+      rank: 5,
       techStack:"Electronjs, Javascript, Nodejs, CSS, Sqlite, Bcript, Serialport.",
       description: "A Desktop application based on Electron for the configuration and diagnosis of a Modbus gateway, part of my master's degree graduation project supervised by Cevie Doofas Innovative Solutions company.",
       imageDescPairs: [
@@ -68,7 +68,7 @@ export const projects = [
     {
         id: "3",
         title: "KeyMaster",
-        rank: 2,
+        rank: 3,
         techStack: "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Pusher, Bcript, Gemini, REST APIs, Vercel",
         description: "KeyMaster is a lightweight, responsive web app designed for typing practice with a built-in leaderboard, real-time competition, and personalized settings. The app leverages Gemini to fetch training paragraphs tailored to the user’s preferences, and real time competetion via Pusher.",
         imageDescPairs: [
@@ -108,9 +108,9 @@ export const projects = [
     },
     {
       id: "4",
-      title: "Beam (on going)",
-      rank: 1,
-      techStack: "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Pusher, LiveKit, Bcript, REST APIs, Vercel",
+      title: "Beam",
+      rank: 2,
+      techStack: "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Bcript, REST APIs, Vercel",
       description: "Beam is a fully responsive live streaming platform, that leverages Livekit as the driver of the streaming functionality, Pusher as the engine for the realtime chat, and PostgreSQL for data persistance.",
       imageDescPairs: [
         { 
@@ -120,10 +120,6 @@ export const projects = [
         { 
           image: "/beam/dashboard.png", 
           description: "Users can access the creator's dashboard for managing live streams." 
-        },
-        { 
-          image: "/beam/keys.png", 
-          description: "Streamers can generate live stream keys utilizing LiveKit Ingress." 
         },
         { 
           image: "/beam/community.png", 
@@ -154,9 +150,26 @@ export const projects = [
           description: "Users can login via a custom account or using Google 0Auth, the authentication is handled via NextAuth that provides a session that is used in all pages to verify user's authentication" 
         }, 
       ],
-      conclusion: "This project is still in progress, and further updates will be provided as development continues.",
       detailsLink: "/projects/4",
       demoLink: "null",
       githubLink: "https://github.com/ahmedrioueche/beam",        
   },
+  {
+    id: "5",
+    title: "GymPro",
+    rank: 1,
+    techStack: "TypeScript, Reactjs, Redux, Tailwindcss, Nodejs, JWT, Express, Opencv.js, Prisma, PostgreSQL, Neon, Bcript, Graphql, Vercel",
+    description: "GymPro is a gym managment application that utilizes facial recognition for member authentication.",
+    imageDescPairs: [
+      { 
+        image: "/gp/home.png", 
+        description: "The Home page provides a quick acess to the app." 
+      },
+    
+    ],
+    conclusion: "This project is still in progress, and further updates will be provided as development continues.",
+    detailsLink: "/projects/5",
+    demoLink: "https://gympro-web.vercel.app",
+    githubLink: "https://github.com/ahmedrioueche/gymPro",        
+},
   ];
