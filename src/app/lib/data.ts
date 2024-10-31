@@ -170,6 +170,6 @@ export const projects = [
     conclusion: "This project is still in progress, and further updates will be provided as development continues.",
     detailsLink: "/projects/5",
     demoLink: "https://gympro-web.vercel.app",
-    githubLink: "https://github.com/ahmedrioueche/gymPro",        
+    githubLink: "https://github.com/ahmedrioueche/gympro-web",        
 },
   ];
