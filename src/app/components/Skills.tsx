@@ -18,8 +18,9 @@ import {
   SiSupabase,
   SiNodedotjs,
   SiC,
+  SiGraphql,
 } from "react-icons/si";
-import { FaGem, FaEnvelope } from "react-icons/fa"; // For Gemini and Nodemailer
+import { FaGem, FaEnvelope, FaJava } from "react-icons/fa"; // For Gemini and Nodemailer
 import { FiCloudLightning } from "react-icons/fi"; // For Pusher
 
 interface Skill {
@@ -37,15 +38,18 @@ const skills: Skill[] = [
   { name: "ReactJS", icon: SiReact },
   { name: "Next.js", icon: SiNextdotjs },
   { name: "Electron", icon: SiElectron },
+  { name: "Python", icon: SiPython },
+  { name: "C", icon: SiC },
+  { name: "Java", icon: FaJava },
   { name: "MySQL", icon: SiMysql },
   { name: "MongoDB", icon: SiMongodb },
   { name: "Prisma", icon: SiPrisma },
-  { name: "Python", icon: SiPython },
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "Supabase", icon: SiSupabase },
-  { name: "C", icon: SiC },
   { name: "Nodemailer", icon: FaEnvelope },
   { name: "Pusher", icon: FiCloudLightning },
+  { name: "GraphQL", icon: SiGraphql },
+  { name: "Gemini", icon: FaGem },
 ];
 
 export default function Skills() {
