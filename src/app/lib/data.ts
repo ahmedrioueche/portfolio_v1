@@ -3,7 +3,7 @@ export const main = {
   subtitle: "I am Ahmed Drioueche",
   desc: `I graduated with a Computer Engineering degree in 2024 from the institute of Electric and Electronic Engineering in Algeria. 
   I have over 5 years of experience in programming and over 2 years in web development.
-  Coming from the world of electronics, i have aquired the fundamentals that make capable to work on complex and exciting projects.`
+  Coming from the world of electronics, i have aquired the fundamentals that make me capable of working on complex and exciting projects.`
 }
 
 export const projects = [
@@ -111,7 +111,7 @@ export const projects = [
       title: "Beam",
       rank: 2,
       techStack: "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Bcript, REST APIs, Vercel",
-      description: "Beam is a fully responsive live streaming platform, that leverages Livekit as the driver of the streaming functionality, Pusher as the engine for the realtime chat, and PostgreSQL for data persistance.",
+      description: "Beam is a fully responsive live streaming platform, that leverages PostgreSQL for data persistance and NextAuth for authentication.",
       imageDescPairs: [
         { 
           image: "/beam/home.png", 
@@ -171,5 +171,5 @@ export const projects = [
     detailsLink: "/projects/5",
     demoLink: "https://gympro-web.vercel.app",
     githubLink: "https://github.com/ahmedrioueche/gympro-web",        
-},
-  ];
+  },
+];

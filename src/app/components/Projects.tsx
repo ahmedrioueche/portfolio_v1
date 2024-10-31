@@ -41,8 +41,13 @@ export default function ProjectsCarousel() {
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-gray-400">{project.description}</p>
+                    <h3 className="text-xl font-semibold">{project.title}</h3>
+                    <div className="w-[85%]">
+                     <p className="text-base text-gray-500 mb-2">{project.techStack}</p>
+                    </div>
+                    <div className="w-[95%]">
+                     <p className="text-gray-400">{project.description}</p>
+                    </div>
                   </div>
                 </div>
               </Link>
