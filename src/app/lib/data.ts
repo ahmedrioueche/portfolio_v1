@@ -366,3 +366,28 @@ export const projects = [
     githubLink: "https://github.com/ahmedrioueche/gympro-web",
   },
 ];
+
+export const experience = [
+  {
+    companyName: "Qareeb",
+    companyLogo: "/q.png",
+    jobTitle: "Frontend Developer (React, TypeScript)",
+    startDate: "October 2024",
+    endDate: "Present",
+    introduction: `Qareeb is an innovative tech startup based in Algeria, focused on providing solutions to global business challenges through AI technologies like computer vision, machine learning, and large language models (LLMs). One of its flagship products is Wizabot.`,
+    description: `Wizabot is an advanced web chatbot powered by proprietary AI models. It allows business owners to upload their data, which the AI uses to train its models. This enables businesses' clients to engage with the chatbot and inquire about the business's products or services.`,
+    myWork: `At Qareeb, my role involves developing the frontend of Wizabot utilizing React, Typesript and tailwindcss among alot of other technologies. I work closely with the backend team to integrate APIs and ensure smooth, seamless operation of the application. My focus is on creating an intuitive and efficient user experience for our clients.`,
+    conclusion: `Working at Qareeb has been an exciting journey filled with learning opportunities. As a frontend developer and computer engineer, I am constantly surrounded by talented engineers in backend, AI, and networking, which has helped me grow both as a developer and a technology enthusiast.`,
+  },
+  {
+    companyName: "Doofas Innovative Solutions",
+    companyLogo: "/d.png",
+    jobTitle: "Embedded Systems and Software Developer",
+    startDate: "January 2024",
+    endDate: "June 2024",
+    introduction: `Doofas Innovative Solutions is a tech consulting company that specializes in creating tailored embedded systems solutions for industries like automation, IoT, and communication systems. They focus on providing cutting-edge technology to improve system efficiency and product reliability.`,
+    description: `At Doofas, I worked on a project related to industrial systems and automation, it was a design and development of a Modbus Gateway, which integrates with embedded systems and facilitates communication between industrial machines. The system uses Modbus RTU/TCP protocols for communication and provides tools for configuring and diagnosing industrial systems.`,
+    myWork: `I was responsible for both hardware and software development. I helped design the gateway’s PCB using KiCad, developed embedded firmware for the gateway with STM32, and contributed to the creation of the desktop application in ElectronJS for configuring and diagnosing the gateway. I worked closely with clients to understand their requirements and provide tailored solutions that improved their system reliability and performance.`,
+    conclusion: `My time at Doofas gave me valuable experience in embedded systems design, firmware development, and industrial communication protocols. I gained hands-on experience with designing complex systems and working with clients to develop innovative solutions. This role was crucial in sharpening my skills in both software development and hardware integration.`,
+  },
+];

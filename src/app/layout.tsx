@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Navbar from './components/Navbar'; 
-import Footer from './components/Footer'; 
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,31 +18,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en" className="overflow-x-hidden font-stix scrollbar-hide">
-      <body className={`${inter.className} text-white max-w-full scrollbar-hide`}>
+      <body
+        className={`${inter.className} text-white max-w-full scrollbar-hide`}
+      >
         <div className="navContainer">
-          <Navbar/>
+          <Navbar />
         </div>
         <div className="area scrollbar-hide font-stix">
-          <ul className="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <main className="w-full py-12">
-            {children}
-          </main>
+          <main className="w-full py-12">{children}</main>
           <Footer />
-        </div>  
+        </div>
       </body>
     </html>
   );
