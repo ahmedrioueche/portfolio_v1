@@ -74,7 +74,7 @@ export default function Experience() {
                     onClick={() => toggleExpanded(index)}
                     className="mt-4 text-sm text-blue-500 hover:text-blue-300"
                   >
-                    {expandedItems[index] ? "Read Less" : "Read More"}
+                    {expandedItems[index] ? "Show Less" : "Show More"}
                   </button>
                 </div>
               </div>
