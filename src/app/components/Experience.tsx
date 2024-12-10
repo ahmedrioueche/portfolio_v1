@@ -31,7 +31,7 @@ export default function Experience() {
           <span className="block h-[2px] bg-red-500 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 transition-all duration-500 ease-in-out group-hover:w-full"></span>
         </h2>
       </div>
-      <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+      <div className="flex flex-col items-center justify-center gap-6 max-w-7xl mx-auto">
         {experience
           .sort((a, b) => parseDate(b.startDate) - parseDate(a.startDate)) // Sort by startDate in descending order
           .map((exp, index) => (

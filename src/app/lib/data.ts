@@ -12,7 +12,7 @@ export const projects = [
     title: "Pointer",
     rank: 4,
     description:
-      "An engaging web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
+      "A web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
     techStack:
       "Nextjs, TypeScript, TailwindCSS, Nextauth, PostgreSQL, Prisma, Superbase, Nodemailer, Gemini, Stripe, Bcript, REST APIs, Vercel.",
     imageDescPairs: [
@@ -30,30 +30,6 @@ export const projects = [
         image: "/pointer/pointer_rewards.png",
         description:
           "The tools used to create this app are Next.js (React.js, TypeScript), TailwindCSS, Nextauth, PostgreSQL, Prisma, Superbase, Nodemailer, Gemini, Stripe, and it is hosted on Vercel.",
-      },
-      {
-        image: "/pointer/pointer_signup.png",
-        description:
-          "Users can either create an account or login via Google OAuth. Authentication is handled using Nextauth",
-      },
-      {
-        image: "/pointer/pointer_verify.png",
-        description:
-          "Email verification is implemented via Nodemailer to ensure email integrity.",
-      },
-      {
-        image: "/pointer/pointer_confirm.png",
-        description:
-          "Users are prompted to fill in some data to finish setting up their environment, like their children's details and preferences.",
-      },
-      {
-        image: "/pointer/pointer_plans_2.png",
-        description:
-          "Users can choose to engage in a free trial or subscribe with monthly or yearly payment plans.",
-      },
-      {
-        image: "/pointer/pointer_payment.png",
-        description: "Secure payment is implemented using Stripe.",
       },
       {
         image: "/pointer/pointer_child_profile.png",
@@ -391,3 +367,34 @@ export const experience = [
     conclusion: `My time at Doofas gave me valuable experience in embedded systems design, firmware development, and industrial communication protocols. I gained hands-on experience with designing complex systems and working with clients to develop innovative solutions. This role was crucial in sharpening my skills in both software development and hardware integration.`,
   },
 ];
+
+const temp = {
+  pointer: {
+    imageDescPairs: [
+      {
+        image: "/pointer/pointer_signup.png",
+        description:
+          "Users can either create an account or login via Google OAuth. Authentication is handled using Nextauth",
+      },
+      {
+        image: "/pointer/pointer_verify.png",
+        description:
+          "Email verification is implemented via Nodemailer to ensure email integrity.",
+      },
+      {
+        image: "/pointer/pointer_confirm.png",
+        description:
+          "Users are prompted to fill in some data to finish setting up their environment, like their children's details and preferences.",
+      },
+      {
+        image: "/pointer/pointer_plans_2.png",
+        description:
+          "Users can choose to engage in a free trial or subscribe with monthly or yearly payment plans.",
+      },
+      {
+        image: "/pointer/pointer_payment.png",
+        description: "Secure payment is implemented using Stripe.",
+      },
+    ],
+  },
+};

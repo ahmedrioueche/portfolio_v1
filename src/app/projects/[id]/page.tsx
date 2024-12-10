@@ -1,10 +1,10 @@
 "use client";
-import { projects } from '../../lib/data';
-import { notFound } from 'next/navigation';
-import ProjectDetail from '../../components/ProjectDetail';
-import Link from 'next/link';
-import ProjectConclusion from '@/app/components/ProjectConclusion';
-import { FaRocket } from 'react-icons/fa';
+import { projects } from "../../lib/data";
+import { notFound } from "next/navigation";
+import ProjectDetail from "../../components/ProjectDetail";
+import Link from "next/link";
+import ProjectConclusion from "@/app/components/ProjectConclusion";
+import { FaArrowLeft, FaRocket } from "react-icons/fa";
 
 interface ProjectDetailPageProps {
   params: {
@@ -17,7 +17,7 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   const project = projects.find((proj) => proj.id === id);
 
   if (!project) {
-    return notFound(); 
+    return notFound();
   }
 
   const imageDescPairs = project.imageDescPairs;
@@ -25,21 +25,31 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-14 project-offset">
       {/* Div that acts like a link to the project demo */}
-      <div className='flex flex-row hover:scale-105 mb-1 cursor-pointer'> 
-          <h1 className="text-2xl md:text-4xl font-bold mr-3">{project.title}</h1>
-          <a 
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center" 
-          >
-            <FaRocket className='mt-1' />
-          </a>
+      <div className="flex flex-row hover:text-red-500 transition duration-300 mb-1 cursor-pointer">
+        <a
+          href={project.demoLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center"
+        >
+          <h1 className="text-2xl md:text-4xl font-bold mr-3">
+            {project.title}
+          </h1>
+          <FaRocket className="mt-1" />
+        </a>
       </div>
 
-      <h4 className="text-lg font-thin text-gray-500 mb-6">{project.techStack}</h4>
+      <h4 className="text-lg font-thin text-gray-500 mb-4">
+        {project.techStack}
+      </h4>
 
       <div className="space-y-8">
+        <div className="">
+          {project.description && (
+            <ProjectConclusion text={project.description} />
+          )}
+        </div>
+
         {imageDescPairs.map((item, index) => (
           <ProjectDetail
             key={index}
@@ -56,7 +66,10 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
           href="/#projects"
           className="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition duration-300"
         >
-          Back to Projects
+          <div className="flex flex-row space-x-2">
+            <FaArrowLeft className="mt-1 mr-2" />
+            Back to Projects
+          </div>
         </Link>
       </div>
     </div>
