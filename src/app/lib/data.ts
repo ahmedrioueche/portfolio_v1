@@ -10,7 +10,7 @@ export const projects = [
   {
     id: "1",
     title: "Pointer",
-    rank: 4,
+    rank: 5,
     description:
       "A web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
     techStack:
@@ -113,11 +113,12 @@ export const projects = [
     detailsLink: "/projects/1",
     demoLink: "https://pointer-app.vercel.app",
     githubLink: "https://github.com/ahmedrioueche/pointer",
+    isVisible: true,
   },
   {
     id: "2",
     title: "Modbus Gateway Manager",
-    rank: 5,
+    rank: 6,
     techStack:
       "Electronjs, Javascript, Nodejs, CSS, Sqlite, Bcript, Serialport.",
     description:
@@ -169,6 +170,7 @@ export const projects = [
     detailsLink: "/projects/2",
     demoLink: "null",
     githubLink: "https://github.com/ahmedrioueche/modbus_gateway_manager",
+    isVisible: false,
   },
   {
     id: "3",
@@ -220,11 +222,12 @@ export const projects = [
     detailsLink: "/projects/3",
     demoLink: "http://keymaster-type.vercel.app",
     githubLink: "https://github.com/ahmedrioueche/keymaster",
+    isVisible: true,
   },
   {
     id: "4",
     title: "Beam",
-    rank: 2,
+    rank: 4,
     techStack:
       "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Bcript, REST APIs, Vercel",
     description:
@@ -276,11 +279,12 @@ export const projects = [
     detailsLink: "/projects/4",
     demoLink: "null",
     githubLink: "https://github.com/ahmedrioueche/beam",
+    isVisible: true,
   },
   {
     id: "5",
     title: "GymPro",
-    rank: 1,
+    rank: 2,
     techStack:
       "TypeScript, Reactjs, Redux, Tailwindcss, Nodejs, JWT, Express, TensorFlow.js, Prisma, PostgreSQL, Supabase, Bcript, Graphql, Gemini, Vercel",
     description:
@@ -340,6 +344,47 @@ export const projects = [
     detailsLink: "/projects/5",
     demoLink: "null",
     githubLink: "https://github.com/ahmedrioueche/gympro-web",
+    isVisible: true,
+  },
+  {
+    id: "6",
+    title: "AI-Read",
+    rank: 1,
+    techStack: "TypeScript, Next.js, Tailwind CSS, Gemini, Vercel",
+    description: `AI-Read is a smart reading app that helps users learn languages through reading. It offers AI-powered translation, explanations, and summaries, making texts easier to understand. The app also includes a text-to-speech feature to improve pronunciation and boost language comprehension.`,
+    imageDescPairs: [
+      {
+        image: "/ai-read/translation.png",
+        description: `The translation of words/sentence is a key feature in this app. Thanx to Gemini API, 
+         users can get instant translation of text just by clicking/highlighting it, making the app very useful.`,
+      },
+      {
+        image: "/ai-read/explanation.png",
+        description:
+          "The explanation feature allows the user to get more insights about the ideas in the text. ",
+      },
+      {
+        image: "/ai-read/summary.png",
+        description:
+          "The summary feature helps users quickly grasp the key points of any text, saving time and making it easier to retain information.",
+      },
+      {
+        image: "/ai-read/reading.png",
+        description: `Text to speech feature triggers as soon as the user selects text. Nuilt using the browser's text to speech API,
+         it detects the text's language first to offer good quality reading. It could be stopped from the menu.`,
+      },
+      {
+        image: "/ai-read/settings.png",
+        description:
+          "The settings page allows users to customize their experience, such as selecting the translation language and adjusting reading speed.",
+      },
+    ],
+    conclusion:
+      "As someone who loves reading and is passionate about learning new languages, this app has been a game-changer. It's the perfect tool for making the reading process more enjoyable and convenient, helping me learn and improve my language skills effortlessly.",
+    detailsLink: "/projects/6",
+    demoLink: "https://ai-read-sigma.vercel.app",
+    githubLink: "https://github.com/ahmedrioueche/ai-read",
+    isVisible: true,
   },
 ];
 
@@ -354,6 +399,7 @@ export const experience = [
     description: `Wizabot is an advanced web chatbot powered by proprietary AI models. It allows business owners to upload their data, which the AI uses to train its models. This enables businesses' clients to engage with the chatbot and inquire about the business's products or services.`,
     myWork: `At Qareeb, my role involves developing the frontend of Wizabot utilizing React, Typesript and tailwindcss among alot of other technologies. I work closely with the backend team to integrate APIs and ensure smooth, seamless operation of the application. My focus is on creating an intuitive and efficient user experience for our clients.`,
     conclusion: `Working at Qareeb has been an exciting journey filled with learning opportunities. As a frontend developer and computer engineer, I am constantly surrounded by talented engineers in backend, AI, and networking, which has helped me grow both as a developer and a technology enthusiast.`,
+    isVisible: false,
   },
   {
     companyName: "Doofas Innovative Solutions",
@@ -365,6 +411,7 @@ export const experience = [
     description: `At Doofas, I worked on a project related to industrial systems and automation, it was a design and development of a Modbus Gateway, which integrates with embedded systems and facilitates communication between industrial machines. The system uses Modbus RTU/TCP protocols for communication and provides tools for configuring and diagnosing industrial systems.`,
     myWork: `I was responsible for both hardware and software development. I helped design the gateway’s PCB using KiCad, developed embedded firmware for the gateway with STM32, and contributed to the creation of the desktop application in ElectronJS for configuring and diagnosing the gateway. I worked closely with clients to understand their requirements and provide tailored solutions that improved their system reliability and performance.`,
     conclusion: `My time at Doofas gave me valuable experience in embedded systems design, firmware development, and industrial communication protocols. I gained hands-on experience with designing complex systems and working with clients to develop innovative solutions. This role was crucial in sharpening my skills in both software development and hardware integration.`,
+    isVisible: true,
   },
 ];
 

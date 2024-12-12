@@ -34,6 +34,7 @@ export default function Experience() {
       <div className="flex flex-col items-center justify-center gap-6 max-w-7xl mx-auto">
         {experience
           .sort((a, b) => parseDate(b.startDate) - parseDate(a.startDate)) // Sort by startDate in descending order
+          .filter((exp) => exp.isVisible === true)
           .map((exp, index) => (
             <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-4">
               <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative">
