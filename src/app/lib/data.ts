@@ -175,7 +175,7 @@ export const projects = [
   {
     id: "3",
     title: "KeyMaster",
-    rank: 3,
+    rank: 2,
     techStack:
       "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Pusher, Bcript, Gemini, REST APIs, Vercel",
     description:
@@ -284,7 +284,7 @@ export const projects = [
   {
     id: "5",
     title: "GymPro",
-    rank: 2,
+    rank: 3,
     techStack:
       "TypeScript, Reactjs, Redux, Tailwindcss, Nodejs, JWT, Express, TensorFlow.js, Prisma, PostgreSQL, Supabase, Bcript, Graphql, Gemini, Vercel",
     description:
