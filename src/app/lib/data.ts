@@ -397,9 +397,9 @@ export const experience = [
     endDate: "Present",
     introduction: `Qareeb is an innovative tech startup based in Algeria, focused on providing solutions to global business challenges through AI technologies like computer vision, machine learning, and large language models (LLMs). One of its flagship products is Wizabot.`,
     description: `Wizabot is an advanced web chatbot powered by proprietary AI models. It allows business owners to upload their data, which the AI uses to train its models. This enables businesses' clients to engage with the chatbot and inquire about the business's products or services.`,
-    myWork: `At Qareeb, my role involves developing the frontend of Wizabot utilizing React, Typesript and tailwindcss among alot of other technologies. I work closely with the backend team to integrate APIs and ensure smooth, seamless operation of the application. My focus is on creating an intuitive and efficient user experience for our clients.`,
+    myWork: `At Qareeb, my role involves around developing resposive, functional and performant web interfaces for Wizabot. I work closely with the backend team to integrate APIs and ensure smooth, seamless operation of the application. My focus is on creating an intuitive and efficient user experience for our clients.`,
     conclusion: `Working at Qareeb has been an exciting journey filled with learning opportunities. As a frontend developer and computer engineer, I am constantly surrounded by talented engineers in backend, AI, and networking, which has helped me grow both as a developer and a technology enthusiast.`,
-    isVisible: false,
+    isVisible: true,
   },
   {
     companyName: "Doofas Innovative Solutions",
