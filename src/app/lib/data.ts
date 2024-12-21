@@ -1,9 +1,9 @@
 export const main = {
   title: "Welcome To My Portfolio",
   subtitle: "I am Ahmed Drioueche",
-  desc: `I graduated with a Computer Engineering degree in 2024 from the institute of Electric and Electronic Engineering in Algeria. 
-  I have over 5 years of experience in programming and over 2 years in web development.
-  Coming from the world of electronics, i have aquired the fundamentals that make me capable of working on complex and exciting projects.`,
+  desc: `I graduated with a Computer Engineering degree in 2024 from the Institute of Electric and Electronic Engineering in Algeria. 
+  I have over 5 years of experience in programming and over 2 years in web development. 
+  Coming from the world of electronics, I have acquired the fundamentals that make me capable of working on complex and exciting projects.`,
 };
 
 export const projects = [
@@ -14,7 +14,7 @@ export const projects = [
     description:
       "A web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
     techStack:
-      "Nextjs, TypeScript, TailwindCSS, Nextauth, PostgreSQL, Prisma, Superbase, Nodemailer, Gemini, Stripe, Bcript, REST APIs, Vercel.",
+      "Nextjs, TypeScript, TailwindCSS, Nextauth, PostgreSQL, Prisma, Supabase, Nodemailer, Gemini, Stripe, Bcrypt, REST APIs, Vercel.",
     imageDescPairs: [
       {
         image: "/pointer/pointer_home.png",
@@ -29,7 +29,7 @@ export const projects = [
       {
         image: "/pointer/pointer_rewards.png",
         description:
-          "The tools used to create this app are Next.js (React.js, TypeScript), TailwindCSS, Nextauth, PostgreSQL, Prisma, Superbase, Nodemailer, Gemini, Stripe, and it is hosted on Vercel.",
+          "The tools used to create this app are Next.js (React.js, TypeScript), TailwindCSS, Nextauth, PostgreSQL, Prisma, Supabase, Nodemailer, Gemini, Stripe, and it is hosted on Vercel.",
       },
       {
         image: "/pointer/pointer_child_profile.png",
@@ -54,7 +54,7 @@ export const projects = [
       {
         image: "/pointer/pointer_kids_modal.png",
         description:
-          "Parents can assign tasks to specific children, or create a global task for all their kids.",
+          "Parents can assign tasks to specific children or create a global task for all their kids.",
       },
       {
         image: "/pointer/pointer_challenge_form.png",
@@ -69,12 +69,12 @@ export const projects = [
       {
         image: "/pointer/pointer_quizzes.png",
         description:
-          "Parents can set up engaging quizzes to test their children’s knowledge and progress, the quizzes are generated via Google's Gemini AI, by prompting it with parent's input and child's age.",
+          "Parents can set up engaging quizzes to test their children’s knowledge and progress. The quizzes are generated via Google's Gemini AI, by prompting it with the parent's input and child's age.",
       },
       {
         image: "/pointer/pointer_quizzes_child.png",
         description:
-          "Children can engage in the quizzes to earn points, they can filter quizzes by topic, review already answered ones, and can track their progress via the point system",
+          "Children can engage in the quizzes to earn points. They can filter quizzes by topic, review already answered ones, and track their progress via the point system.",
       },
       {
         image: "/pointer/pointer_budget.png",
@@ -104,11 +104,11 @@ export const projects = [
       {
         image: "/pointer/pointer_please_pay.png",
         description:
-          "When the free trial ends, parents are faced with a blocking modal that prompts them to pay for a subscription in order to continue using the app.",
+          "When the free trial ends, parents are faced with a blocking modal that prompts them to pay for a subscription to continue using the app.",
       },
     ],
     conclusion:
-      "While this project is still a work in progress, it holds immense potential for future enhancements. One exciting feature under consideration is a 'Teacher Mode,' which would empower educators to assign homework and track students' grades and progress. This addition would enable parents to monitor their children's academic journey more closely, fostering a collaborative environment between teachers and families. Furthermore, i envision integrating gamification elements to make learning more engaging, along with personalized learning plans tailored to each child's unique needs and preferences. As i continue to develop this application, i aim to create a comprehensive tool that supports not only children’s behavioral growth but also their academic achievements.",
+      "While this project is still a work in progress, it holds immense potential for future enhancements. One exciting feature under consideration is a 'Teacher Mode,' which would empower educators to assign homework and track students' grades and progress. This addition would enable parents to monitor their children's academic journey more closely. Furthermore, I envision integrating gamification elements to make learning more engaging, along with personalized learning plans tailored to each child's unique needs and preferences. As I continue to develop this application, I aim to create a comprehensive tool that supports not only children’s behavioral growth but also their academic achievements.",
     detailedDescription: [],
     detailsLink: "/projects/1",
     demoLink: "https://pointer-app.vercel.app",
@@ -177,9 +177,9 @@ export const projects = [
     title: "KeyMaster",
     rank: 2,
     techStack:
-      "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Pusher, Bcript, Gemini, REST APIs, Vercel",
+      "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Pusher, Bcrypt, Gemini, REST APIs, Vercel",
     description:
-      "KeyMaster is a lightweight, responsive web app designed for typing practice with a built-in leaderboard, real-time competition, and personalized settings. The app leverages Gemini to fetch training paragraphs tailored to the user’s preferences, and real time competetion via Pusher.",
+      "KeyMaster is a lightweight, responsive web app designed for typing practice with a built-in leaderboard, real-time competition, and personalized settings. The app leverages Gemini to fetch training paragraphs tailored to the user’s preferences and real-time competition via Pusher.",
     imageDescPairs: [
       {
         image: "/km/km_home.png",
@@ -199,7 +199,7 @@ export const projects = [
       {
         image: "/km/km_compete.png",
         description:
-          "Users can compete in real-time typing challenges with friends or other players, powered by Pusher for seamless real-time communication. Real time communication poses various challenges such as synchronization, race conditions and dead locks, which had to be overcame.",
+          "Users can compete in real-time typing challenges with friends or other players, powered by Pusher for seamless real-time communication. Real-time communication poses challenges such as synchronization, race conditions, and deadlocks, which had to be overcome.",
       },
       {
         image: "/km/km_search.png",
@@ -209,7 +209,7 @@ export const projects = [
       {
         image: "/km/km_join.png",
         description:
-          "Users can create rooms to invite friends, or join friend's rooms, this funcionality is managed in the Postgres database.",
+          "Users can create rooms to invite friends or join friends' rooms. This functionality is managed in the Postgres database.",
       },
       {
         image: "/km/km_settings.png",
@@ -229,14 +229,14 @@ export const projects = [
     title: "Beam",
     rank: 4,
     techStack:
-      "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Bcript, REST APIs, Vercel",
+      "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Bcrypt, REST APIs, Vercel",
     description:
-      "Beam is a fully responsive live streaming platform, that leverages PostgreSQL for data persistance and NextAuth for authentication.",
+      "Beam is a fully responsive live streaming platform that leverages PostgreSQL for data persistence and NextAuth for authentication.",
     imageDescPairs: [
       {
         image: "/beam/home.png",
         description:
-          "Users can navigate the current streams, or search, with having usual followed streamers and recommended ones. ",
+          "Users can navigate current streams or search while viewing followed streamers and recommended ones.",
       },
       {
         image: "/beam/dashboard.png",
@@ -246,34 +246,35 @@ export const projects = [
       {
         image: "/beam/community.png",
         description:
-          "Streamers can manage their community, block or unblock users.",
+          "Streamers can manage their community and block or unblock users.",
       },
       {
         image: "/beam/profile.png",
         description:
-          "Users can manage their profiles, and visite other users profiles. Moreover, all views are built to support dark and light theme according to users preference.",
+          "Users can manage their profiles and visit other users' profiles. Moreover, all views are built to support dark and light themes according to user preference.",
       },
       {
         image: "/beam/settings.png",
-        description: "Users can manage their account's setting...",
+        description: "Users can manage their account settings.",
       },
       {
         image: "/beam/settings_2.png",
-        description: "Such as changing the language, and more.",
+        description: "Users can change the language and other settings.",
       },
       {
         image: "/beam/mobileSidebar.png",
-        description: "A custom mobile sidebar for a nice responsive design.",
+        description:
+          "A custom mobile sidebar ensures a nice responsive design.",
       },
       {
         image: "/beam/signup.png",
         description:
-          "A user can create a custom account that is inserted in Neon PostgreSQL database using a Prisma schema.",
+          "A user can create a custom account that is inserted into the Neon PostgreSQL database using a Prisma schema.",
       },
       {
         image: "/beam/login.png",
         description:
-          "Users can login via a custom account or using Google 0Auth, the authentication is handled via NextAuth that provides a session that is used in all pages to verify user's authentication",
+          "Users can log in via a custom account or using Google OAuth. Authentication is handled by NextAuth, which provides a session for all pages to verify user authentication.",
       },
     ],
     detailsLink: "/projects/4",
@@ -286,43 +287,43 @@ export const projects = [
     title: "GymPro",
     rank: 3,
     techStack:
-      "TypeScript, Reactjs, Redux, Tailwindcss, Nodejs, JWT, Express, TensorFlow.js, Prisma, PostgreSQL, Supabase, Bcript, Graphql, Gemini, Vercel",
+      "TypeScript, Reactjs, Redux, Tailwindcss, Nodejs, JWT, Express, TensorFlow.js, Prisma, PostgreSQL, Supabase, Bcrypt, GraphQL, Gemini, Vercel",
     description:
-      "GymPro is a gym managment application that utilizes facial recognition for member authentication.",
+      "GymPro is a gym management application that utilizes facial recognition for member authentication.",
     imageDescPairs: [
       {
         image: "/gp/home.png",
         description:
-          "he Home page provides an overview of key metrics and member activities, giving users quick access to important business information",
+          "The Home page provides an overview of key metrics and member activities, giving users quick access to important business information.",
       },
       {
         image: "/gp/addMember.png",
         description:
-          "We can add a member by taking a picture of them or uploading an image of them, which is stored in Supabase storage, then filling their data, which is stored in Supabase.",
+          "Users can add a member by taking a picture of them or uploading an image, which is stored in Supabase storage. Then, users fill in their data, which is stored in Supabase.",
       },
       {
         image: "/gp/members.png",
-        description: "User can filter members based on a set criteria.",
+        description: "Users can filter members based on a set of criteria.",
       },
       {
         image: "/gp/dashboard.png",
         description:
-          "A dashboard is useful for analyzing the behavior of the buisness.",
+          "The dashboard is useful for analyzing business performance.",
       },
       {
         image: "/gp/chatbot.png",
         description:
-          "Built using Gemini AI, this chatbot provides answers to users questions and concers, it works by being prompted a thourough description of the app, along with user's input.",
+          "Built using Gemini AI, this chatbot provides answers to users' questions and concerns. It works by being prompted with a thorough description of the app, along with user input.",
       },
       {
         image: "/gp/mobileSideBar.png",
         description:
-          "A custom side bar is used to ensure responsivity along small screens.",
+          "A custom sidebar is used to ensure responsiveness on small screens.",
       },
       {
         image: "/gp/settings.png",
         description:
-          "Users can cutomize their experience using the settings menu.",
+          "Users can customize their experience using the settings menu.",
       },
       {
         image: "/gp/profile.png",
@@ -332,7 +333,6 @@ export const projects = [
         image: "/gp/feedback.png",
         description: "A page where users can submit feedback and ratings.",
       },
-
       {
         image: "/gp/login.png",
         description:
@@ -340,11 +340,11 @@ export const projects = [
       },
       {
         image: "/gp/signup.png",
-        description: "Users can signup using a custom account.",
+        description: "Users can sign up using a custom account.",
       },
     ],
     conclusion:
-      "This project is still in progress, and furthes will be provided as development continues.",
+      "This project is still in progress, and further updates will be provided as development continues.",
     detailsLink: "/projects/5",
     demoLink: "https://gympro-web.vercel.app",
     githubLink: "https://github.com/ahmedrioueche/gympro-web",
@@ -359,13 +359,12 @@ export const projects = [
     imageDescPairs: [
       {
         image: "/ai-read/translation.png",
-        description: `The translation of words/sentence is a key feature in this app. Thanx to Gemini API, 
-         users can get instant translation of text just by clicking/highlighting it, making the app very useful.`,
+        description: `The translation of words or sentences is a key feature in this app. Thanks to the Gemini API, users can get instant translations of text just by clicking or highlighting it, making the app very useful.`,
       },
       {
         image: "/ai-read/explanation.png",
         description:
-          "The explanation feature allows the user to get more insights about the ideas in the text. ",
+          "The explanation feature allows users to gain more insights into the ideas in the text.",
       },
       {
         image: "/ai-read/summary.png",
@@ -374,13 +373,12 @@ export const projects = [
       },
       {
         image: "/ai-read/reading.png",
-        description: `Text to speech feature triggers as soon as the user selects text. Nuilt using the browser's text to speech API,
-         it detects the text's language first to offer good quality reading. It could be stopped from the menu.`,
+        description: `The text-to-speech feature triggers as soon as the user selects text. Built using the browser's text-to-speech API, it detects the text's language first to provide high-quality reading. It can be stopped using the menu.`,
       },
       {
         image: "/ai-read/settings.png",
         description:
-          "The settings page allows users to customize their experience, such as selecting the translation language and adjusting reading speed.",
+          "The settings page allows users to customize their experience, such as selecting the translation language and adjusting the reading speed.",
       },
     ],
     conclusion:
@@ -401,7 +399,7 @@ export const experience = [
     endDate: "Present",
     introduction: `Qareeb is an innovative tech startup based in Algeria, focused on providing solutions to global business challenges through AI technologies like computer vision, machine learning, and large language models (LLMs). One of its flagship products is Wizabot.`,
     description: `Wizabot is an advanced web chatbot powered by proprietary AI models. It allows business owners to upload their data, which the AI uses to train its models. This enables businesses' clients to engage with the chatbot and inquire about the business's products or services.`,
-    myWork: `At Qareeb, my role involves around developing resposive, functional and performant web interfaces for Wizabot. I work closely with the backend team to integrate APIs and ensure smooth, seamless operation of the application. My focus is on creating an intuitive and efficient user experience for our clients.`,
+    myWork: `At Qareeb, my role involves developing responsive, functional, and performant web interfaces for Wizabot. I work closely with the backend team to integrate APIs and ensure the smooth, seamless operation of the application. My focus is on creating an intuitive and efficient user experience for our clients.`,
     conclusion: `Working at Qareeb has been an exciting journey filled with learning opportunities. As a frontend developer and computer engineer, I am constantly surrounded by talented engineers in backend, AI, and networking, which has helped me grow both as a developer and a technology enthusiast.`,
     isVisible: true,
   },
@@ -412,9 +410,9 @@ export const experience = [
     startDate: "January 2024",
     endDate: "June 2024",
     introduction: `Doofas Innovative Solutions is a tech consulting company that specializes in creating tailored embedded systems solutions for industries like automation, IoT, and communication systems. They focus on providing cutting-edge technology to improve system efficiency and product reliability.`,
-    description: `At Doofas, I worked on a project related to industrial systems and automation, it was a design and development of a Modbus Gateway, which integrates with embedded systems and facilitates communication between industrial machines. The system uses Modbus RTU/TCP protocols for communication and provides tools for configuring and diagnosing industrial systems.`,
+    description: `At Doofas, I worked on a project related to industrial systems and automation, involving the design and development of a Modbus Gateway, which integrates with embedded systems and facilitates communication between industrial machines. The system uses Modbus RTU/TCP protocols for communication and provides tools for configuring and diagnosing industrial systems.`,
     myWork: `I was responsible for both hardware and software development. I helped design the gateway’s PCB using KiCad, developed embedded firmware for the gateway with STM32, and contributed to the creation of the desktop application in ElectronJS for configuring and diagnosing the gateway. I worked closely with clients to understand their requirements and provide tailored solutions that improved their system reliability and performance.`,
-    conclusion: `My time at Doofas gave me valuable experience in embedded systems design, firmware development, and industrial communication protocols. I gained hands-on experience with designing complex systems and working with clients to develop innovative solutions. This role was crucial in sharpening my skills in both software development and hardware integration.`,
+    conclusion: `My time at Doofas provided valuable experience in embedded systems design, firmware development, and industrial communication protocols. I gained hands-on experience designing complex systems and working with clients to develop innovative solutions. This role was crucial in sharpening my skills in both software development and hardware integration.`,
     isVisible: true,
   },
 ];
