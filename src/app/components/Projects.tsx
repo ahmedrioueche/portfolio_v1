@@ -9,14 +9,24 @@ import Link from "next/link";
 import { projects } from "../lib/data";
 
 export default function ProjectsCarousel() {
-  const settings = {
+  const outerSettings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
+  };
+
+  const innerSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   return (
@@ -27,7 +37,7 @@ export default function ProjectsCarousel() {
           <span className="block h-[2px] bg-red-500 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 transition-all duration-500 ease-in-out group-hover:w-full"></span>
         </h2>
       </div>
-      <Slider {...settings} className="max-w-3xl mx-auto">
+      <Slider {...outerSettings} className="max-w-3xl mx-auto">
         {projects
           .sort((a, b) => a.rank - b.rank)
           .filter((project) => project.isVisible === true)
@@ -36,11 +46,16 @@ export default function ProjectsCarousel() {
               <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative">
                 <Link href={project.detailsLink} passHref>
                   <div className="block cursor-pointer">
-                    <img
-                      src={project.imageDescPairs[0].image}
-                      alt={project.title}
-                      className="w-full h-64 object-cover"
-                    />
+                    {/* Inner Slider for Images */}
+                    <Slider {...innerSettings}>
+                      {project.imageDescPairs.map((pair, index) => (
+                        <img
+                          key={index}
+                          src={pair.image}
+                          className="w-full h-64 object-cover"
+                        />
+                      ))}
+                    </Slider>
                     <div className="p-6">
                       <h3 className="text-xl font-semibold">{project.title}</h3>
                       <div className="w-[85%]">

@@ -65,7 +65,7 @@ const MyNavBar: React.FC = () => {
           className="text-white font-bold text-xl cursor-pointer hover:text-red-500 transition duration-300"
           onClick={() => handleLogoClick()}
         >
-          Portfolio
+          {"<Portfolio/>"}
         </div>
         {/* Large Screens: Regular Navbar */}
         <div className="hidden md:flex space-x-6">

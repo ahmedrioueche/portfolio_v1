@@ -292,7 +292,8 @@ export const projects = [
     imageDescPairs: [
       {
         image: "/gp/home.png",
-        description: "The Home page provides a quick acess to the app.",
+        description:
+          "he Home page provides an overview of key metrics and member activities, giving users quick access to important business information",
       },
       {
         image: "/gp/addMember.png",
@@ -324,6 +325,10 @@ export const projects = [
           "Users can cutomize their experience using the settings menu.",
       },
       {
+        image: "/gp/profile.png",
+        description: "Users can customize their profile information.",
+      },
+      {
         image: "/gp/feedback.png",
         description: "A page where users can submit feedback and ratings.",
       },
@@ -331,18 +336,17 @@ export const projects = [
       {
         image: "/gp/login.png",
         description:
-          "The login process utilizes Supabase Auth for authentication users.",
+          "The login process utilizes Supabase Auth for authenticating users.",
       },
       {
         image: "/gp/signup.png",
-        description:
-          "Users can signup using a custom account or through a google account which is enabked using Supabase Auth.",
+        description: "Users can signup using a custom account.",
       },
     ],
     conclusion:
       "This project is still in progress, and furthes will be provided as development continues.",
     detailsLink: "/projects/5",
-    demoLink: "null",
+    demoLink: "https://gympro-web.vercel.app",
     githubLink: "https://github.com/ahmedrioueche/gympro-web",
     isVisible: true,
   },
