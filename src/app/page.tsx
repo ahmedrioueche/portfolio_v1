@@ -10,11 +10,21 @@ import Experience from "./components/Experience";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <Banner />
-      <Experience />
-      <ProjectsCarousel />
-      <Skills />
-      <Contact />
+      <div id="home">
+        <Banner />
+      </div>
+      <div id="experience">
+        <Experience />
+      </div>
+      <div id="projects">
+        <ProjectsCarousel />
+      </div>
+      <div id="skills">
+        <Skills />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
     </div>
   );
 }

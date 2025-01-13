@@ -19,7 +19,7 @@ export const projects = [
       {
         image: "/pointer/pointer_home.png",
         description:
-          "An engaging web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
+          "The landing page presents an overview for the app, covering the main features, pricing and more.",
       },
       {
         image: "/pointer/pointer_main.png",
@@ -29,7 +29,7 @@ export const projects = [
       {
         image: "/pointer/pointer_rewards.png",
         description:
-          "The tools used to create this app are Next.js (React.js, TypeScript), TailwindCSS, Nextauth, PostgreSQL, Prisma, Supabase, Nodemailer, Gemini, Stripe, and it is hosted on Vercel.",
+          "Parents can create rewards associated with points, and children can claim the rewards after reaching the set amount of points through completing tasks, answering quizzes and participating in quizzes.",
       },
       {
         image: "/pointer/pointer_child_profile.png",

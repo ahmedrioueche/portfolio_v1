@@ -28,7 +28,7 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
       <div
         className={`flex flex-row ${
           project.demoLink && project.demoLink !== "null"
-            ? "hover:text-red-500 transition duration-300"
+            ? "hover:text-primary transition duration-300"
             : ""
         } mb-1`}
       >
@@ -78,7 +78,7 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
       <div className="flex justify-center mt-8">
         <Link
           href="/#projects"
-          className="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition duration-300"
+          className="bg-primary text-white px-4 py-2 rounded-lg shadow hover:bg-primary/90 transition duration-300"
         >
           <div className="flex flex-row space-x-2">
             <FaArrowLeft className="mt-1 mr-2" />

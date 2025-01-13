@@ -58,7 +58,7 @@ export default function Skills() {
       <div className="flex flex-col items-center mb-8">
         <h2 className="text-3xl font-bold relative inline-block group">
           My Skills
-          <span className="block h-[2px] bg-red-500 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 transition-all duration-500 ease-in-out group-hover:w-full"></span>
+          <span className="block h-[2px] bg-primary absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 transition-all duration-500 ease-in-out group-hover:w-full"></span>
         </h2>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
@@ -68,7 +68,8 @@ export default function Skills() {
             className="relative group w-24 h-24 flex flex-col items-center justify-center"
           >
             {React.createElement(skill.icon, {
-              className: "text-5xl transition-transform duration-300 transform group-hover:scale-125",
+              className:
+                "text-5xl transition-transform duration-300 transform group-hover:scale-125",
             })}
             <div className="absolute bottom-0 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
               <span className="bg-black text-white text-sm rounded-lg py-1 px-3 mt-2">

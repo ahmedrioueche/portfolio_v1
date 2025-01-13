@@ -1,19 +1,20 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}',
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        black: '#000000',
+        black: "#000000",
         red: {
-          500: '#E63946', // Primary red
-          400: '#FF6B6B', // Secondary red (hover effect)
+          500: "#E63946",
+          400: "#8E44AD",
         },
+        primary: "#A055C8",
       },
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
@@ -31,14 +32,12 @@ const config: Config = {
         },
       },
       fontFamily: {
-        satisfy: ['Satisfy', 'serif'],
-        stix: ['STIX Two Text', 'serif'],
+        satisfy: ["Satisfy", "serif"],
+        stix: ["STIX Two Text", "serif"],
       },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar-hide'), 
-  ],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 
 export default config;
