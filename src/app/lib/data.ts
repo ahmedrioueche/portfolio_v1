@@ -406,7 +406,7 @@ export const experience = [
     companyName: "Qareeb",
     companyLogo: "/q.png",
     jobTitle: "Frontend Developer (React, TypeScript)",
-    startDate: "October 2024",
+    startDate: "November 2024",
     endDate: "Present",
     introduction: `Qareeb is an innovative tech startup based in Algeria, focused on providing solutions to global business challenges through AI technologies like computer vision, machine learning, and large language models (LLMs). One of its flagship products is Wizabot.`,
     description: `Wizabot is an advanced web chatbot powered by proprietary AI models. It allows business owners to upload their data, which the AI uses to train its models. This enables businesses' clients to engage with the chatbot and inquire about the business's products or services.`,
