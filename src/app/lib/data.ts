@@ -10,7 +10,7 @@ export const projects = [
   {
     id: "1",
     title: "Pointer",
-    rank: 5,
+    rank: 4,
     description:
       "A web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
     techStack:
@@ -118,7 +118,7 @@ export const projects = [
   {
     id: "2",
     title: "Modbus Gateway Manager",
-    rank: 6,
+    rank: 5,
     techStack:
       "Electronjs, Javascript, Nodejs, CSS, Sqlite, Bcript, Serialport.",
     description:
@@ -127,7 +127,7 @@ export const projects = [
       {
         image: "/gm/gm_login.png",
         description:
-          'This application is a part of a bigger project titled "Design and Implementation of a Modbus TCP/RTU Industrial Gateway", finished in june 2024 as a part of my graduation project supervised by Cevie Doofas Innovative Solutions. This gateway is created to facilitate communication between industrial machines that use Modbus protocol variations (TCP, RTU).',
+          "This application is a part of a bigger project titled 'Design and Implementation of a Modbus TCP/RTU Industrial Gateway', finished in june 2024 as a part of my graduation project from the institue of electrical and electronic engineering in Algeria with a master's in computer engineering supervised by Cevie Doofas Innovative Solutions. This gateway is created to facilitate communication between industrial machines that use Modbus protocol variations (TCP, RTU).",
       },
       {
         image: "/gm/gateway_1.jpg",
@@ -170,7 +170,7 @@ export const projects = [
     detailsLink: "/projects/2",
     demoLink: "null",
     githubLink: "https://github.com/ahmedrioueche/modbus_gateway_manager",
-    isVisible: false,
+    isVisible: true,
   },
   {
     id: "3",
@@ -227,7 +227,7 @@ export const projects = [
   {
     id: "4",
     title: "Beam",
-    rank: 4,
+    rank: 6,
     techStack:
       "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Bcrypt, REST APIs, Vercel",
     description:
@@ -354,31 +354,42 @@ export const projects = [
     id: "6",
     title: "AI-Read",
     rank: 1,
-    techStack: "TypeScript, Next.js, Tailwind CSS, Gemini, Vercel",
+    techStack:
+      "TypeScript, Next.js, Tailwind CSS, Gemini, Prisma, Supabase, RESTAPIs, Vercel",
     description: `AI-Read is a smart reading app that helps users learn languages through reading. It offers AI-powered translation, explanations, and summaries, making texts easier to understand. The app also includes a text-to-speech feature to improve pronunciation and boost language comprehension.`,
     imageDescPairs: [
       {
-        image: "/ai-read/translation.png",
+        image: "/ai-read/trans.png",
         description: `The translation of words or sentences is a key feature in this app. Thanks to the Gemini API, users can get instant translations of text just by clicking or highlighting it, making the app very useful.`,
       },
       {
-        image: "/ai-read/explanation.png",
-        description:
-          "The explanation feature allows users to gain more insights into the ideas in the text.",
-      },
-      {
-        image: "/ai-read/summary.png",
-        description:
-          "The summary feature helps users quickly grasp the key points of any text, saving time and making it easier to retain information.",
-      },
-      {
-        image: "/ai-read/reading.png",
-        description: `The text-to-speech feature triggers as soon as the user selects text. Built using the browser's text-to-speech API, it detects the text's language first to provide high-quality reading. It can be stopped using the menu.`,
+        image: "/ai-read/autoRead.png",
+        description: `The text-to-speech feature triggers as soon as the user the button is clicked. Built using the browser's text-to-speech API in basic mode, and ElevenLabs API in premium mode, it is accompanied by auto scrolling and heighlighting to provice a smooth reading experience.`,
       },
       {
         image: "/ai-read/settings.png",
         description:
-          "The settings page allows users to customize their experience, such as selecting the translation language and adjusting the reading speed.",
+          "The settings page allows users to customize their experience, such as selecting the TTS type and voice, theme and more",
+      },
+      {
+        image: "/ai-read/features.png",
+        description:
+          "Thee features modal allows users to explore the app's features and available plans.",
+      },
+      {
+        image: "/ai-read/free-trial.png",
+        description:
+          "The free trial triggers as soon the user launches the app the first time. The app detects the visitors and logs them into the DB, if the visitor creates an account, the free trial info is transformed to the user's account to make the free trial based on the user's device and not account.",
+      },
+      {
+        image: "/ai-read/payment.png",
+        description:
+          "Users can upgrade their account by paying via paypal. more payemnt methods will be added in the furure",
+      },
+      {
+        image: "/ai-read/signup.png",
+        description:
+          "Supabase authentication is used to allow users login or signup.",
       },
     ],
     conclusion:
