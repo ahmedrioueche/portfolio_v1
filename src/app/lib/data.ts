@@ -355,7 +355,7 @@ export const projects = [
     title: "AI-Read",
     rank: 1,
     techStack:
-      "TypeScript, Next.js, Tailwind CSS, Gemini, Prisma, Supabase, RESTAPIs, Vercel",
+      "TypeScript, Next.js, Tailwind CSS, Gemini, Prisma, Supabase, ElevenLabs, RESTAPIs, Vercel",
     description: `AI-Read is a smart reading app that helps users learn languages through reading. It offers AI-powered translation, explanations, and summaries, making texts easier to understand. The app also includes a text-to-speech feature to improve pronunciation and boost language comprehension.`,
     imageDescPairs: [
       {
