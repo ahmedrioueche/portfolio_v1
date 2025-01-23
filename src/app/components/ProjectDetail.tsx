@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 interface ProjectDetailProps {
   image: string;
@@ -53,9 +54,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
             imagePosition === "left" ? "md:pr-8" : "md:pl-8"
           } flex justify-center`}
         >
-          <img
+          <Image
             src={image}
             alt="Project"
+            height={120}
+            width={100}
             className="w-full h-auto max-w-[800px] rounded-lg shadow-lg object-cover"
             onClick={handleImageClick}
           />
@@ -72,9 +75,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 modal-overlay">
           <div className="relative max-w-[90%] max-h-[90%]">
-            <img
+            <Image
               src={image}
               alt="Project"
+              height={1200}
+              width={1000}
               className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
             />
           </div>
