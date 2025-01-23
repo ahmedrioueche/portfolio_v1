@@ -57,8 +57,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
           <Image
             src={image}
             alt="Project"
-            height={120}
-            width={100}
+            height={800}
+            width={800}
             className="w-full h-auto max-w-[800px] rounded-lg shadow-lg object-cover"
             onClick={handleImageClick}
           />
