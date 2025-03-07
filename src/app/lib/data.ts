@@ -1,16 +1,22 @@
+import { calculateExperience } from "./utils";
+
 export const main = {
   title: "Welcome To My Portfolio",
   subtitle: "I am Ahmed Drioueche",
   desc: `I graduated with a Computer Engineering degree in 2024 from the Institute of Electric and Electronic Engineering in Algeria. 
-  I have over 5 years of experience in programming and over 2 years in web development. 
-  Coming from the world of electronics, I have acquired the fundamentals that make me capable of working on complex and exciting projects.`,
+  I have ${calculateExperience(
+    2019
+  )} of experience in software development and ${calculateExperience(
+    2022
+  )} in web development. 
+  Throughout my journey, i have acquired the technical and soft skills neccessary that make me capable of working on complex and exciting projects.`,
 };
 
 export const projects = [
   {
     id: "1",
     title: "Pointer",
-    rank: 4,
+    rank: 5,
     description:
       "A web application designed to promote positive behavior in children through a fun and interactive reward system, encouraging discipline and personal growth.",
     techStack:
@@ -118,7 +124,7 @@ export const projects = [
   {
     id: "2",
     title: "Modbus Gateway Manager",
-    rank: 5,
+    rank: 6,
     techStack:
       "Electronjs, Javascript, Nodejs, CSS, Sqlite, Bcript, Serialport.",
     description:
@@ -175,7 +181,7 @@ export const projects = [
   {
     id: "3",
     title: "KeyMaster",
-    rank: 2,
+    rank: 3,
     techStack:
       "Nextjs, TypeScript, Reactjs, Tailwindcss, Prisma, PostgreSQL, Supabase, Pusher, Bcrypt, Gemini, REST APIs, Vercel",
     description:
@@ -227,7 +233,7 @@ export const projects = [
   {
     id: "4",
     title: "Beam",
-    rank: 6,
+    rank: 7,
     techStack:
       "Nextjs, TypeScript, Reactjs, Redux, NextAuth, Tailwindcss, Prisma, PostgreSQL, Neon, Bcrypt, REST APIs, Vercel",
     description:
@@ -285,7 +291,7 @@ export const projects = [
   {
     id: "5",
     title: "GymPro",
-    rank: 3,
+    rank: 4,
     techStack:
       "TypeScript, Reactjs, Redux, Tailwindcss, Nodejs, JWT, Express, TensorFlow.js, Prisma, PostgreSQL, Supabase, Bcrypt, GraphQL, Gemini, Vercel",
     description:
@@ -353,7 +359,7 @@ export const projects = [
   {
     id: "6",
     title: "AI-Read",
-    rank: 1,
+    rank: 2,
     techStack:
       "TypeScript, Next.js, Tailwind CSS, Gemini, Prisma, Supabase, ElevenLabs, RESTAPIs, Vercel",
     description: `AI-Read is a smart reading app that helps users learn languages through reading. It offers AI-powered translation, explanations, and summaries, making texts easier to understand. The app also includes a text-to-speech feature to improve pronunciation and boost language comprehension.`,
@@ -399,8 +405,83 @@ export const projects = [
     githubLink: "https://github.com/ahmedrioueche/ai-read",
     isVisible: true,
   },
-];
+  {
+    id: "7",
+    title: "CodeArena",
+    rank: 1,
+    techStack: "Reactjs, TypeScript, Redux, React-Query, Tailwindcss, Gemini",
+    description: `An AI-powered platform where programmers sharpen their skills via fun coding battles.`,
+    imageDescPairs: [
+      {
+        image: "/ca/solo-game-config.png",
+        description:
+          "Player can choose their prefered language, topics, skill level and time duration of the problem.",
+      },
+      {
+        image: "/ca/solo.png",
+        description: `The player is greeted with a neat playground consisting mainly of a code editor using Monaco Editor,
+           and the problem container.`,
+      },
+      {
+        image: "/ca/solo-problem.png",
+        description: `When the game is started, The coding problem is fetched via Gemini with carefully designed prompt ensuring the correct 
+          retrieval of the response as a JSON, consisting of examples and test cases, with the ability to get hints.`,
+      },
+      {
+        image: "/ca/solo-test-cases.png",
+        description: `Players can create their own test cases or generate them via AI. They can also validate the test cases if created manually, 
+          and run the tests against their code to help them get to the correct solution.`,
+      },
+      {
+        image: "/ca/solo-get-solution.png",
+        description:
+          "If the player can't think of a solution, they can get it directly. They can also get help by asking for the next line of code to move forward if stuck.",
+      },
+      {
+        image: "/ca/solo-board.png",
+        description:
+          "A board is for the player to draw flowcharts and brainstorm.",
+      },
+      {
+        image: "/ca/solo-notepad.png",
+        description:
+          "A notepad is helpful if the player wants to save notes or brainstorm ideas.",
+      },
+      {
+        image: "/ca/solo-problem-chat.png",
+        description: `The chat is useful for asking about concepts and topics, or getting help. The chat is powered by Gemini 
+          by prompting it with the player's question along with the chat's history to make the conversation flow,`,
+      },
+      {
+        image: "/ca/solo-settings.png",
+        description:
+          "Players can change the game settings to generate different problems to keep the learning process fun and engaging.",
+      },
 
+      {
+        image: "/ca/solo-submit-1.png",
+        description: `When the player submits their solution, Gemini is prompted to evaluate the solution's correctness and accuraccy, 
+          provide feedback, correct mistakes. A point system is used to evaluate the player's performance.`,
+      },
+      {
+        image: "/ca/solo-submit-2.png",
+        description:
+          "Gemini is also prompted to provide the correct solution, bottleneck analysis and suggestions for improvement.",
+      },
+      {
+        image: "/ca/solo-solution-chat.png",
+        description:
+          "The player can chat with Gemini to discuss the problem and solution, resolve ambiguities, and maximize learning benefits.",
+      },
+    ],
+    conclusion:
+      "This project is still under development, and further updates will be provided as the project advances.",
+    detailsLink: "/projects/7",
+    demoLink: "null",
+    githubLink: "null",
+    isVisible: true,
+  },
+];
 export const experience = [
   {
     companyName: "Qareeb",
@@ -408,12 +489,17 @@ export const experience = [
     jobTitle: "Frontend Developer (React, TypeScript)",
     startDate: "November 2024",
     endDate: "Present",
-    introduction: `Qareeb is an innovative tech startup based in Algeria, focused on providing solutions to global business challenges through AI technologies like computer vision, machine learning, and large language models (LLMs). One of its flagship products is Wizabot.`,
-    description: `Wizabot is an advanced web chatbot powered by proprietary AI models. It allows business owners to upload their data, which the AI uses to train its models. This enables businesses' clients to engage with the chatbot and inquire about the business's products or services.`,
-    myWork: `At Qareeb, my role involves developing responsive, functional, and performant web interfaces for Wizabot. I work closely with the backend team to integrate APIs and ensure the smooth, seamless operation of the application. My focus is on creating an intuitive and efficient user experience for our clients.`,
-    conclusion: `Working at Qareeb has been an exciting journey filled with learning opportunities. As a frontend developer and computer engineer, I am constantly surrounded by talented engineers in backend, AI, and networking, which has helped me grow both as a developer and a technology enthusiast.`,
+    introduction: `Qareeb is an innovative tech startup based in Algeria, focused on providing AI-driven solutions to global business challenges through technologies like computer vision, machine learning, and large language models (LLMs). One of its flagship products is Wizabot.`,
+
+    description: `Wizabot is an advanced AI-powered web application that provides marketing assistance to businesses through intelligent AI agents. It helps business owners optimize engagement by automating customer interactions and providing insightful analytics.`,
+
+    myWork: `At Qareeb, I played a key role in developing the Wizabot MVP, shaping it into a scalable and user-friendly SAAS platform. My work involves designing and optimizing responsive, high-performance web interfaces using React and TypeScript. I closely collaborate with UI/UX designers and backend engineers to ensure seamless integration of features and an intuitive user experience. Additionally, I developed a translation automation tool leveraging AI to streamline multi-language support for web applications.`,
+
+    conclusion: `Being part of Qareeb has been a dynamic and enriching experience. Collaborating with talented engineers in AI, backend development, and networking has helped me refine my skills as a frontend developer and deepen my understanding of AI-driven applications.`,
+
     isVisible: true,
   },
+
   {
     companyName: "Doofas Innovative Solutions",
     companyLogo: "/d.png",

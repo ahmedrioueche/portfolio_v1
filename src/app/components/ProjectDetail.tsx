@@ -25,7 +25,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
     setIsModalOpen(false);
   };
 
-  // Close the modal if clicking outside of it
   const handleClickOutsideModal = (event: MouseEvent) => {
     const target = event.target as HTMLElement;
     if (target.classList.contains("modal-overlay")) {
@@ -35,10 +34,12 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
 
   useEffect(() => {
     if (isModalOpen) {
-      window.addEventListener("click", handleClickOutsideModal);
+      document.addEventListener("click", handleClickOutsideModal);
+    } else {
+      document.removeEventListener("click", handleClickOutsideModal);
     }
     return () => {
-      window.removeEventListener("click", handleClickOutsideModal);
+      document.removeEventListener("click", handleClickOutsideModal);
     };
   }, [isModalOpen]);
 
@@ -73,23 +74,29 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 modal-overlay">
-          <div className="relative max-w-[90%] max-h-[90%]">
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50 modal-overlay"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="relative max-w-[90vw] max-h-[90vh] p-4 rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Image
               src={image}
               alt="Project"
               height={1200}
               width={1000}
-              className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
             />
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-80 transition"
+              aria-label="Close modal"
+            >
+              <FaTimes size={24} />
+            </button>
           </div>
-          <button
-            onClick={handleCloseModal}
-            className="absolute top-1 right-1 text-white text-2xl rounded-full p-2 hover:bg-gray-800 transition"
-            aria-label="Close modal"
-          >
-            <FaTimes size={20} />
-          </button>
         </div>
       )}
     </>
