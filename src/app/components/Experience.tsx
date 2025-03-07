@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { experience } from "../lib/data";
+import { experience } from "../utils/data";
 
 const parseDate = (dateString: string) => {
   const [month, year] = dateString.split(" ");

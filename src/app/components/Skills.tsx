@@ -19,9 +19,11 @@ import {
   SiNodedotjs,
   SiC,
   SiGraphql,
+  SiRedux,
+  SiReactquery,
 } from "react-icons/si";
-import { FaGem, FaEnvelope, FaJava } from "react-icons/fa"; // For Gemini and Nodemailer
-import { FiCloudLightning } from "react-icons/fi"; // For Pusher
+import { FaGem, FaEnvelope, FaJava } from "react-icons/fa";
+import { FiCloudLightning } from "react-icons/fi";
 
 interface Skill {
   name: string;
@@ -50,6 +52,8 @@ const skills: Skill[] = [
   { name: "Pusher", icon: FiCloudLightning },
   { name: "GraphQL", icon: SiGraphql },
   { name: "Gemini", icon: FaGem },
+  { name: "Redux", icon: SiRedux },
+  { name: "React Query", icon: SiReactquery },
 ];
 
 export default function Skills() {

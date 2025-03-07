@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 import "../globals.css";
-import { sendContactForm } from "../lib/api"; // Adjust the import path as necessary
+import { sendContactForm } from "../utils/api"; // Adjust the import path as necessary
 
 interface FormDetails {
   firstName: string;

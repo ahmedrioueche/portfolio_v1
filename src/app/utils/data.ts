@@ -1,4 +1,4 @@
-import { calculateExperience } from "./utils";
+import { calculateExperience } from "./helper";
 
 export const main = {
   title: "Welcome To My Portfolio",
@@ -23,98 +23,111 @@ export const projects = [
       "Nextjs, TypeScript, TailwindCSS, Nextauth, PostgreSQL, Prisma, Supabase, Nodemailer, Gemini, Stripe, Bcrypt, REST APIs, Vercel.",
     imageDescPairs: [
       {
-        image: "/pointer/pointer_home.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374127/pointer_home_vbwqra.png",
         description:
           "The landing page presents an overview for the app, covering the main features, pricing and more.",
       },
       {
-        image: "/pointer/pointer_main.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374128/pointer_main_cuwisx.png",
         description:
           "The app includes several features such as creating routines for children, assigning tasks, creating rewards, challenges, and quizzes, and setting budgets for each kid.",
       },
       {
-        image: "/pointer/pointer_rewards.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374122/pointer_rewards_di149y.png",
         description:
           "Parents can create rewards associated with points, and children can claim the rewards after reaching the set amount of points through completing tasks, answering quizzes and participating in quizzes.",
       },
       {
-        image: "/pointer/pointer_child_profile.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374101/pointer_child_profile_cpnup4.png",
         description:
           "As you open the child’s profile, you’re greeted with a dashboard that organizes their routines, tasks, rewards, and progress. Each child is given a generated username and password to access their account.",
       },
       {
-        image: "/pointer/pointer_rewards_child.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374110/pointer_rewards_child_rfslzn.png",
         description:
           "A dedicated space for celebrating success, where the child’s rewards and achievements are proudly displayed, motivating them to keep pushing forward.",
       },
       {
-        image: "/pointer/pointer_routines_weekly.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374114/pointer_routines_weekly_pb5a8l.png",
         description:
           "A glance at the weekly routine reveals an intuitive layout where parents can assign tasks and monitor progress seamlessly.",
       },
       {
-        image: "/pointer/pointer_routine_daily.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374114/pointer_routine_daily_o0wbhk.png",
         description:
           "The daily breakdown provides a comprehensive view of what’s been done and what still needs attention, empowering kids to stay on top of their responsibilities.",
       },
       {
-        image: "/pointer/pointer_kids_modal.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374117/pointer_kids_modal_qvvtgo.png",
         description:
           "Parents can assign tasks to specific children or create a global task for all their kids.",
       },
+
       {
-        image: "/pointer/pointer_challenge_form.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374124/pointer_challenge_card_dqgdil.png",
         description:
-          "Creating challenges is easy and fun—parents can craft custom tasks with specific rewards, adding a layer of excitement to their child’s day-to-day activities.",
+          "Creating challenges is easy and fun—parents can craft custom tasks with specific rewards, adding a layer of excitement to their child’s day-to-day activities. Each challenge card displays the challenge’s details—what’s at stake, how it’s earned, and the reward awaiting completion.",
       },
       {
-        image: "/pointer/pointer_challenge_card.png",
-        description:
-          "Each challenge card displays the challenge’s details—what’s at stake, how it’s earned, and the reward awaiting completion.",
-      },
-      {
-        image: "/pointer/pointer_quizzes.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374120/pointer_quizzes_eig2cc.png",
         description:
           "Parents can set up engaging quizzes to test their children’s knowledge and progress. The quizzes are generated via Google's Gemini AI, by prompting it with the parent's input and child's age.",
       },
       {
-        image: "/pointer/pointer_quizzes_child.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374096/pointer_quizzes_child_xiqljh.png",
         description:
           "Children can engage in the quizzes to earn points. They can filter quizzes by topic, review already answered ones, and track their progress via the point system.",
       },
       {
-        image: "/pointer/pointer_budget.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374112/pointer_budget_em8nqa.png",
         description:
           "Parents can manage their kids' rewards by using the budget tool, ensuring they allocate rewards wisely while maintaining fun incentives for the kids.",
       },
       {
-        image: "/pointer/pointer_notif.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374106/pointer_notif_k4mtxh.png",
         description:
           "Parents stay informed with instant notifications about their child’s progress, upcoming tasks, and completed activities, fostering communication and connection.",
       },
       {
-        image: "/pointer/pointer_settings.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374126/pointer_settings_lnpolt.png",
         description:
           "The settings page, built with flexibility in mind, allows users to tailor the app to their unique needs—everything from notifications to account preferences can be fine-tuned here.",
       },
       {
-        image: "/pointer/pointer_freeTrial.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374130/pointer_freeTrial_snle3c.png",
         description:
           "New users are invited to try the app’s full potential through a risk-free trial, easing them into the experience without any commitment.",
       },
       {
-        image: "/pointer/pointer_plans.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374132/pointer_plans_babk2a.png",
         description:
           "A detailed breakdown of the available plans showcases the benefits of each, allowing parents to choose the best fit for their needs.",
       },
       {
-        image: "/pointer/pointer_please_pay.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374109/pointer_please_pay_cpvi8o.png",
         description:
           "When the free trial ends, parents are faced with a blocking modal that prompts them to pay for a subscription to continue using the app.",
       },
     ],
     conclusion:
-      "While this project is still a work in progress, it holds immense potential for future enhancements. One exciting feature under consideration is a 'Teacher Mode,' which would empower educators to assign homework and track students' grades and progress. This addition would enable parents to monitor their children's academic journey more closely. Furthermore, I envision integrating gamification elements to make learning more engaging, along with personalized learning plans tailored to each child's unique needs and preferences. As I continue to develop this application, I aim to create a comprehensive tool that supports not only children’s behavioral growth but also their academic achievements.",
+      "While this project holds immense potential for future enhancements. One exciting feature under consideration is a 'Teacher Mode,' which would empower educators to assign homework and track students' grades and progress. This addition would enable parents to monitor their children's academic journey more closely. Furthermore, I envision integrating gamification elements to make learning more engaging, along with personalized learning plans tailored to each child's unique needs and preferences. As I continue to develop this application, I aim to create a comprehensive tool that supports not only children’s behavioral growth but also their academic achievements.",
     detailedDescription: [],
     detailsLink: "/projects/1",
     demoLink: "https://pointer-app.vercel.app",
@@ -131,42 +144,50 @@ export const projects = [
       "A Desktop application based on Electron for the configuration and diagnosis of a Modbus gateway, part of my master's degree graduation project supervised by Cevie Doofas Innovative Solutions company.",
     imageDescPairs: [
       {
-        image: "/gm/gm_login.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374478/gm_login_yzbdfl.png",
         description:
           "This application is a part of a bigger project titled 'Design and Implementation of a Modbus TCP/RTU Industrial Gateway', finished in june 2024 as a part of my graduation project from the institue of electrical and electronic engineering in Algeria with a master's in computer engineering supervised by Cevie Doofas Innovative Solutions. This gateway is created to facilitate communication between industrial machines that use Modbus protocol variations (TCP, RTU).",
       },
       {
-        image: "/gm/gateway_1.jpg",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374485/gateway_1_pj2ylj.jpg",
         description:
           "I designed and built a fully functional PCB using KiCad and developed the firmware in C and C++ with STM32Cube. This project significantly sharpened my technical skills and guided me through the complete process of building a complex, multi-component project from start to finish.",
       },
       {
-        image: "/gm/gm_general.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374475/gm_general_plw7kn.png",
         description:
           "The main feature of this app is configuring the Modbus gateway. by specifying different parameters that are used in the gateway's firmware.",
       },
       {
-        image: "/gm/gm_mode.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374478/gm_mode_uj7zqv.png",
         description:
           "Users should configure the Modbus mode (RTU or TCP) that the gateway should run on, for instance, if it is hooked to a machine operating as Modbus RTU client (master), the gateway should be configured as an RTU server (slave), and vice versa.",
       },
       {
-        image: "/gm/gm_serial.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374481/gm_serial_gkjtfl.png",
         description:
           "Users are able to configue the different serial parameters, such as the baudrate, parity, stop bits, data size, and the slave identifier (server id) of the gateway (If its connected to an RTU master (client)).",
       },
       {
-        image: "/gm/gm_network.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374479/gm_network_fnleu1.png",
         description:
           "Users are able to configure the IP of the gateway along with the mask and gateway IP, and specify the remote IP of the TCP server machine. The configuration data is sent via USB utilizing the Serialport library.",
       },
       {
-        image: "/gm/gm_diag_1.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374484/gm_diag_1_ofxf7q.png",
         description:
           "The other main feature of this app is diagnosing the packets going through the gateway. By having copies of the packets sent to the app via USB, users can diagnos and analyze the behavior of the gateway and troubleshoot the overall system.",
       },
       {
-        image: "/gm/gm_settings.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374482/gm_settings_ervzpw.png",
         description:
           "The app offer settings to change the username, reset password, or choose another language (English, french, or spanish). user's data is stored in a local Sqlite database.",
       },
@@ -188,37 +209,44 @@ export const projects = [
       "KeyMaster is a lightweight, responsive web app designed for typing practice with a built-in leaderboard, real-time competition, and personalized settings. The app leverages Gemini to fetch training paragraphs tailored to the user’s preferences and real-time competition via Pusher.",
     imageDescPairs: [
       {
-        image: "/km/km_home.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369866/km_home_revhuy.png",
         description:
           "Users can select a topic and language of choice, press the start button, and trigger Gemini to provide a paragraph of the specified length. As they type, the timer, speed calculator, and character counter offer real-time feedback and performance metrics.",
       },
       {
-        image: "/km/km_loginModal.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369869/km_loginModal_ndbj35.png",
         description:
           "Users are prompted to log in for a full app experience, including access to the leaderboard and personalized settings.",
       },
       {
-        image: "/km/km_signup.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369870/km_signup_mlye5d.png",
         description:
           "New users can sign up using a simple form. The user data is stored in Supabase, utilizing Prisma for schema management and seamless database migrations.",
       },
       {
-        image: "/km/km_compete.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369866/km_compete_mkwtd8.png",
         description:
           "Users can compete in real-time typing challenges with friends or other players, powered by Pusher for seamless real-time communication. Real-time communication poses challenges such as synchronization, race conditions, and deadlocks, which had to be overcome.",
       },
       {
-        image: "/km/km_search.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369870/km_search_ft5gmy.png",
         description:
           "The search functionality allows users to look up specific games or competitors using a custom search algorithm that ensures fast and accurate results.",
       },
       {
-        image: "/km/km_join.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369866/km_join_tpqqwh.png",
         description:
           "Users can create rooms to invite friends or join friends' rooms. This functionality is managed in the Postgres database.",
       },
       {
-        image: "/km/km_settings.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369870/km_settings_cekzj9.png",
         description:
           "Users can customize their preferences (such as language and typing mode), which are stored in Supabase with a one-to-one relationship to their user profiles for persistent settings across sessions.",
       },
@@ -240,45 +268,54 @@ export const projects = [
       "Beam is a fully responsive live streaming platform that leverages PostgreSQL for data persistence and NextAuth for authentication.",
     imageDescPairs: [
       {
-        image: "/beam/home.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374615/home_txq94w.png",
         description:
           "Users can navigate current streams or search while viewing followed streamers and recommended ones.",
       },
       {
-        image: "/beam/dashboard.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374613/dashboard_kg1f8i.png",
         description:
           "Users can access the creator's dashboard for managing live streams.",
       },
       {
-        image: "/beam/community.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374609/community_bchoqf.png",
         description:
           "Streamers can manage their community and block or unblock users.",
       },
       {
-        image: "/beam/profile.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374621/profile_apfzef.png",
         description:
           "Users can manage their profiles and visit other users' profiles. Moreover, all views are built to support dark and light themes according to user preference.",
       },
       {
-        image: "/beam/settings.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374622/settings_ko0rxt.png",
         description: "Users can manage their account settings.",
       },
       {
-        image: "/beam/settings_2.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374624/settings_2_tqpxqe.png",
         description: "Users can change the language and other settings.",
       },
       {
-        image: "/beam/mobileSidebar.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374619/mobileSidebar_gfg0cm.png",
         description:
           "A custom mobile sidebar ensures a nice responsive design.",
       },
       {
-        image: "/beam/signup.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374608/signup_dsyekc.png",
         description:
           "A user can create a custom account that is inserted into the Neon PostgreSQL database using a Prisma schema.",
       },
       {
-        image: "/beam/login.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374618/login_a7ccxf.png",
         description:
           "Users can log in via a custom account or using Google OAuth. Authentication is handled by NextAuth, which provides a session for all pages to verify user authentication.",
       },
@@ -298,54 +335,65 @@ export const projects = [
       "GymPro is a gym management application that utilizes facial recognition for member authentication.",
     imageDescPairs: [
       {
-        image: "/gp/home.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374303/home_rml6jv.png",
         description:
           "The Home page provides an overview of key metrics and member activities, giving users quick access to important business information.",
       },
       {
-        image: "/gp/addMember.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374298/addMember_tveiyl.png",
         description:
           "Users can add a member by taking a picture of them or uploading an image, which is stored in Supabase storage. Then, users fill in their data, which is stored in Supabase.",
       },
       {
-        image: "/gp/members.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374307/members_ikxrnl.png",
         description: "Users can filter members based on a set of criteria.",
       },
       {
-        image: "/gp/dashboard.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374301/dashboard_o1o3f4.png",
         description:
           "The dashboard is useful for analyzing business performance.",
       },
       {
-        image: "/gp/chatbot.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374298/chatbot_wkwbkm.png",
         description:
           "Built using Gemini AI, this chatbot provides answers to users' questions and concerns. It works by being prompted with a thorough description of the app, along with user input.",
       },
       {
-        image: "/gp/mobileSideBar.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374308/mobileSideBar_p4wfhh.png",
         description:
           "A custom sidebar is used to ensure responsiveness on small screens.",
       },
       {
-        image: "/gp/settings.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374310/settings_cbvfsz.png",
         description:
           "Users can customize their experience using the settings menu.",
       },
       {
-        image: "/gp/profile.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374309/profile_xm2evi.png",
         description: "Users can customize their profile information.",
       },
       {
-        image: "/gp/feedback.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374302/feedback_ngk9bs.png",
         description: "A page where users can submit feedback and ratings.",
       },
       {
-        image: "/gp/login.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374305/login_mjilrt.png",
         description:
           "The login process utilizes Supabase Auth for authenticating users.",
       },
       {
-        image: "/gp/signup.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741374297/signup_nq0x9d.png",
         description: "Users can sign up using a custom account.",
       },
     ],
@@ -365,35 +413,42 @@ export const projects = [
     description: `AI-Read is a smart reading app that helps users learn languages through reading. It offers AI-powered translation, explanations, and summaries, making texts easier to understand. The app also includes a text-to-speech feature to improve pronunciation and boost language comprehension.`,
     imageDescPairs: [
       {
-        image: "/ai-read/trans.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369794/trans_z4s3bm.png",
         description: `The translation of words or sentences is a key feature in this app. Thanks to the Gemini API, users can get instant translations of text just by clicking or highlighting it, making the app very useful.`,
       },
       {
-        image: "/ai-read/autoRead.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369788/autoRead_d3s9tx.png",
         description: `The text-to-speech feature triggers as soon as the user the button is clicked. Built using the browser's text-to-speech API in basic mode, and ElevenLabs API in premium mode, it is accompanied by auto scrolling and heighlighting to provice a smooth reading experience.`,
       },
       {
-        image: "/ai-read/settings.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369793/settings_dobylt.png",
         description:
           "The settings page allows users to customize their experience, such as selecting the TTS type and voice, theme and more",
       },
       {
-        image: "/ai-read/features.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369788/features_m64qij.png",
         description:
           "Thee features modal allows users to explore the app's features and available plans.",
       },
       {
-        image: "/ai-read/free-trial.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369789/free-trial_hyvdmw.png",
         description:
           "The free trial triggers as soon the user launches the app the first time. The app detects the visitors and logs them into the DB, if the visitor creates an account, the free trial info is transformed to the user's account to make the free trial based on the user's device and not account.",
       },
       {
-        image: "/ai-read/payment.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369789/payment_gsykyd.png",
         description:
           "Users can upgrade their account by paying via paypal. more payemnt methods will be added in the furure",
       },
       {
-        image: "/ai-read/signup.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369793/signup_p4tf5i.png",
         description:
           "Supabase authentication is used to allow users login or signup.",
       },
@@ -413,63 +468,75 @@ export const projects = [
     description: `An AI-powered platform where programmers sharpen their skills via fun coding battles.`,
     imageDescPairs: [
       {
-        image: "/ca/solo-game-config.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-game-config_mcak1h.png",
         description:
           "Player can choose their prefered language, topics, skill level and time duration of the problem.",
       },
       {
-        image: "/ca/solo.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo_xquuwk.png",
         description: `The player is greeted with a neat playground consisting mainly of a code editor using Monaco Editor,
            and the problem container.`,
       },
       {
-        image: "/ca/solo-problem.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-problem_y7znwj.png",
         description: `When the game is started, The coding problem is fetched via Gemini with carefully designed prompt ensuring the correct 
           retrieval of the response as a JSON, consisting of examples and test cases, with the ability to get hints.`,
       },
       {
-        image: "/ca/solo-test-cases.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-test-cases_lrxiji.png",
         description: `Players can create their own test cases or generate them via AI. They can also validate the test cases if created manually, 
           and run the tests against their code to help them get to the correct solution.`,
       },
       {
-        image: "/ca/solo-get-solution.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-get-solution_eqyoxe.png",
         description:
           "If the player can't think of a solution, they can get it directly. They can also get help by asking for the next line of code to move forward if stuck.",
       },
       {
-        image: "/ca/solo-board.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-board_vv08qa.png",
         description:
           "A board is for the player to draw flowcharts and brainstorm.",
       },
       {
-        image: "/ca/solo-notepad.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-notepad_jdkxnt.png",
         description:
           "A notepad is helpful if the player wants to save notes or brainstorm ideas.",
       },
       {
-        image: "/ca/solo-problem-chat.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-problem-chat_epbe4y.png",
         description: `The chat is useful for asking about concepts and topics, or getting help. The chat is powered by Gemini 
           by prompting it with the player's question along with the chat's history to make the conversation flow,`,
       },
       {
-        image: "/ca/solo-settings.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-settings_xpdepw.png",
         description:
           "Players can change the game settings to generate different problems to keep the learning process fun and engaging.",
       },
 
       {
-        image: "/ca/solo-submit-1.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-submit-1_vju3vn.png",
         description: `When the player submits their solution, Gemini is prompted to evaluate the solution's correctness and accuraccy, 
           provide feedback, correct mistakes. A point system is used to evaluate the player's performance.`,
       },
       {
-        image: "/ca/solo-submit-2.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-submit-2_r99nll.png",
         description:
           "Gemini is also prompted to provide the correct solution, bottleneck analysis and suggestions for improvement.",
       },
       {
-        image: "/ca/solo-solution-chat.png",
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369633/solo-solution-chat_uqjeve.png",
         description:
           "The player can chat with Gemini to discuss the problem and solution, resolve ambiguities, and maximize learning benefits.",
       },
@@ -482,6 +549,7 @@ export const projects = [
     isVisible: true,
   },
 ];
+
 export const experience = [
   {
     companyName: "Qareeb",

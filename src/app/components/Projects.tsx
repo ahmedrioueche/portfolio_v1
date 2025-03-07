@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { projects } from "../lib/data";
+import { projects } from "../utils/data";
+import Image from "next/image";
 
 export default function ProjectsCarousel() {
   const outerSettings = {
@@ -49,7 +50,10 @@ export default function ProjectsCarousel() {
                     {/* Inner Slider for Images */}
                     <Slider {...innerSettings}>
                       {project.imageDescPairs.map((pair, index) => (
-                        <img
+                        <Image
+                          width={800}
+                          height={600}
+                          alt="Project Image"
                           key={index}
                           src={pair.image}
                           className="w-full h-64 object-cover"

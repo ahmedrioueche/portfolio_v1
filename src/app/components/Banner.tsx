@@ -3,7 +3,7 @@ import React, { useEffect, useState, useCallback, Suspense, lazy } from "react";
 import TrackVisibility from "react-on-screen";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "../globals.css";
-import { main } from "../lib/data";
+import { main } from "../utils/data";
 
 const ModelCanvas = lazy(() => import("./Model"));
 
