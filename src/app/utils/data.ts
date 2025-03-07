@@ -9,7 +9,7 @@ export const main = {
   )} of experience in software development and ${calculateExperience(
     2022
   )} in web development. 
-  Throughout my journey, i have acquired the technical and soft skills neccessary that make me capable of working on complex and exciting projects.`,
+  Throughout my journey, i have acquired the technical and soft skills neccessary to make me capable of working on complex and exciting projects.`,
 };
 
 export const projects = [
