@@ -26,7 +26,7 @@ export default function RootLayout({
         <div className="navContainer">
           <Navbar />
         </div>
-        <div className="area scrollbar-hide font-stix px-4">
+        <div className="area scrollbar-hide font-stix md:px-4 px-2">
           <main className="w-full py-12">{children}</main>
           <Footer />
         </div>
