@@ -469,6 +469,17 @@ export const projects = [
     imageDescPairs: [
       {
         image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1743017101/landing-hero_efdzcy.png",
+        description: "Landing page hero section.",
+      },
+      {
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1743017469/landing-chat_ral52u.png",
+        description:
+          "Landing page FAQ section with a creative twist, a chat with a an AI chatbot, enabled via Gemini.",
+      },
+      {
+        image:
           "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-game-config_mcak1h.png",
         description:
           "Player can choose their prefered language, topics, skill level and time duration of the problem.",
@@ -544,8 +555,8 @@ export const projects = [
     conclusion:
       "This project is still under development, and further updates will be provided as the project advances.",
     detailsLink: "/projects/7",
-    demoLink: "null",
-    githubLink: "null",
+    demoLink: "https://codearena-landing.vercel.app/",
+    githubLink: "https://github.com/ahmedrioueche/codearena",
     isVisible: true,
   },
 ];

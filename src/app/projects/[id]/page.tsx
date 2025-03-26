@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import ProjectDetail from "../../components/ProjectDetail";
 import Link from "next/link";
 import ProjectConclusion from "@/app/components/ProjectConclusion";
-import { FaArrowLeft, FaRocket } from "react-icons/fa";
+import { FaArrowLeft, FaGithub, FaRocket } from "react-icons/fa";
 
 interface ProjectDetailPageProps {
   params: {
@@ -24,35 +24,33 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-14 project-offset">
-      {/* Div that acts like a link to the project demo */}
-      <div
-        className={`flex flex-row ${
-          project.demoLink && project.demoLink !== "null"
-            ? "hover:text-primary transition duration-300"
-            : ""
-        } mb-1`}
-      >
-        {project.demoLink && project.demoLink !== "null" ? (
-          <a
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center cursor-pointer"
-          >
-            <h1 className="text-2xl md:text-4xl font-bold mr-3">
-              {project.title}
-            </h1>
-            <FaRocket className="mt-1" />
-          </a>
-        ) : (
-          <div className="flex items-center">
-            <h1 className="text-2xl md:text-4xl font-bold mr-3">
-              {project.title}
-            </h1>
-          </div>
-        )}
+      <div className="flex flex-row items-center mb-1">
+        <h1 className="text-2xl md:text-4xl font-bold mr-4">{project.title}</h1>
+        <div className="flex items-center space-x-3">
+          {project.demoLink && project.demoLink !== "null" && (
+            <a
+              href={project.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl hover:text-primary transition duration-300"
+              title="View Demo"
+            >
+              <FaRocket />
+            </a>
+          )}
+          {project.githubLink && project.githubLink !== "null" && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl hover:text-primary transition duration-300"
+              title="View on GitHub"
+            >
+              <FaGithub />
+            </a>
+          )}
+        </div>
       </div>
-
       <h4 className="text-lg font-thin text-gray-500 mb-4">
         {project.techStack}
       </h4>
