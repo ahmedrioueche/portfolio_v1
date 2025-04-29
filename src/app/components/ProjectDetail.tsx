@@ -17,14 +17,30 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
 
   const handleImageClick = () => {
-    setIsModalOpen(true);
+    if (!isMobile) {
+      setIsModalOpen(true);
+    }
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setIsImageLoaded(false); // Reset image load state when modal closes
+    setIsImageLoaded(false);
   };
 
   const handleClickOutsideModal = (event: MouseEvent) => {
@@ -84,7 +100,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
             className="relative max-w-[90vw] max-h-[90vh] p-4 rounded-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            {!isImageLoaded && ( // Show spinner while image is loading
+            {!isImageLoaded && (
               <div className="flex items-center justify-center w-full h-full">
                 <FaSpinner className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white" />
               </div>
@@ -97,10 +113,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
               className={`max-w-[90vw] max-h-[90vh] object-contain rounded-lg ${
                 !isImageLoaded ? "hidden" : "block"
               }`}
-              priority // Prioritize loading this image
-              onLoadingComplete={() => setIsImageLoaded(true)} // Set image load state to true
+              priority
+              onLoadingComplete={() => setIsImageLoaded(true)}
             />
-            {isImageLoaded && ( // Render close button only after image is loaded
+            {isImageLoaded && (
               <button
                 onClick={handleCloseModal}
                 className="absolute top-4 right-4 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-80 transition"
