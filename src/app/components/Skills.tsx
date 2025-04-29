@@ -60,7 +60,7 @@ export default function Skills() {
   return (
     <section id="skills" className="w-full py-12 px-0">
       <div className="container">
-        <div className="flex flex-col items-center mb-8">
+        <div className="flex flex-col items-center mb-12">
           <h2 className="text-3xl font-bold relative inline-block group">
             My Skills
             <span className="block h-[2px] bg-primary absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 transition-all duration-500 ease-in-out group-hover:w-full"></span>
