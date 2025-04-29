@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { experience } from "../utils/data";
+import { experience } from "../../utils/data";
 import { ArrowUpRight, Rocket } from "react-bootstrap-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -34,13 +34,13 @@ export default function Experience() {
           <span className="block h-[2px] bg-primary absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 transition-all duration-500 ease-in-out group-hover:w-full"></span>
         </h2>
       </div>
-      <div className="flex flex-col mx-auto px-4 gap-4">
+      <div className="flex flex-col mx-auto md:px-4 gap-4">
         {experience
           .sort((a, b) => parseDate(b.startDate) - parseDate(a.startDate)) // Sort by startDate in descending order
           .filter((exp) => exp.isVisible === true)
           .map((exp, index) => (
             <div key={index} className="mb-6 w-full">
-              <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden p-1">
                 <div className="flex flex-col md:flex-row">
                   {/* Company info section */}
                   <div className="md:w-1/3 p-6 border-b md:border-b-0 md:border-r border-gray-700">
@@ -56,11 +56,11 @@ export default function Experience() {
                         <h3 className="text-xl font-semibold">
                           {exp.companyName}
                         </h3>
-                        <p className="text-sm text-gray-400">
-                          {exp.startDate} - {exp.endDate}
-                        </p>
                         <p className="text-sm text-gray-300 font-medium">
                           {exp.jobTitle}
+                        </p>
+                        <p className="text-sm text-gray-300">
+                          {exp.startDate} - {exp.endDate}
                         </p>
                       </div>
                     </div>

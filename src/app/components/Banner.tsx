@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import TrackVisibility from "react-on-screen";
 import { ArrowDownCircle } from "react-bootstrap-icons";
 import "../globals.css";
-import { personalData } from "../utils/data";
+import { personalData } from "../../utils/data";
 
 const titles = [
   "Computer Engineer",

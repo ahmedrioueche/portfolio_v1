@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 import "../globals.css";
-import { sendContactForm } from "../utils/api";
+import { sendContactForm } from "../../utils/api";
 import { toast } from "react-hot-toast";
 
 interface FormDetails {

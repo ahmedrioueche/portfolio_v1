@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { projects } from "../utils/data";
+import { projects } from "../../utils/data";
 import Image from "next/image";
 
 export default function ProjectsCarousel() {
@@ -65,7 +65,7 @@ export default function ProjectsCarousel() {
 
   return (
     <section id="projects" className="w-full text-white">
-      <div className="flex flex-col items-center container mx-auto px-4">
+      <div className="flex flex-col items-center container mx-auto md:px-4">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-3xl font-bold relative inline-block group">
             My Best Projects
