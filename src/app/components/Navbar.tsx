@@ -197,7 +197,7 @@ const MyNavBar: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <div className="relative">
+          {/*       <div className="relative">
             <button
               onClick={toggleLanguageDropdown}
               className="text-white hover:text-primary transition-colors duration-300 p-1 rounded-full"
@@ -227,7 +227,7 @@ const MyNavBar: React.FC = () => {
                 ))}
               </div>
             )}
-          </div>
+          </div>*/}
 
           <button
             onClick={toggleMenu}
