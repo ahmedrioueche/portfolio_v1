@@ -8,7 +8,7 @@ export const personalData = {
   specializing in Reactjs and Nodejs.
   With ${calculateExperience(
     2019
-  )} years in software development and ${calculateExperience(2022)} 
+  )} in software development and ${calculateExperience(2022)} 
   in web technologies.`,
 
   highlights: [
