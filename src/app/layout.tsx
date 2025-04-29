@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,10 +24,11 @@ export default function RootLayout({
       <body
         className={`${inter.className} text-white max-w-full scrollbar-hide`}
       >
+        <Toaster position={"top-right"} />
         <div className="navContainer">
           <Navbar />
         </div>
-        <div className="area scrollbar-hide font-stix md:px-4 px-2">
+        <div className="area scrollbar-hide font-stix md:px-32 px-6">
           <main className="w-full py-12">{children}</main>
           <Footer />
         </div>

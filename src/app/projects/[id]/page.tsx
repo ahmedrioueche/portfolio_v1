@@ -23,7 +23,7 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   const imageDescPairs = project.imageDescPairs;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-14 project-offset">
+    <div className=" mx-auto px-4 py-14 project-offset">
       <div className="flex flex-row items-center mb-1">
         <h1 className="text-2xl md:text-4xl font-bold mr-4">{project.title}</h1>
         <div className="flex items-center space-x-3">

@@ -56,7 +56,7 @@ const MyNavBar: React.FC = () => {
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-50 bg-gray-900 shadow-md py-4 transition-all duration-300 font-stix`}
+      className={`w-full fixed top-0 left-0 z-50 bg-gray-900 shadow-md py-4 md:px-32 px-4 transition-all duration-300 font-stix`}
     >
       {windowWidth > 768 ? (
         <Spotlight

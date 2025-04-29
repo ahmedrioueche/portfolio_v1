@@ -1,52 +1,40 @@
-// components/Banner.tsx
-import React, { useEffect, useState, useCallback, Suspense, lazy } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import TrackVisibility from "react-on-screen";
-import { ArrowRightCircle } from "react-bootstrap-icons";
+import { ArrowDownCircle } from "react-bootstrap-icons";
 import "../globals.css";
-import { main } from "../utils/data";
+import { personalData } from "../utils/data";
 
-const ModelCanvas = lazy(() => import("./Model"));
-
-const titles = ["Computer Engineer", "Software Developer", "Web Developer"];
+const titles = [
+  "Computer Engineer",
+  "Full-Stack Developer",
+  "Frontend Developer",
+];
 
 const Banner: React.FC = () => {
   const [text, setText] = useState(titles[0]);
-  const [displayString, setDisplayString] = useState("Computer Engineer");
+  const [displayString, setDisplayString] = useState(titles[0]);
   const [index, setIndex] = useState(0);
-  const deleteSpeed = 80;
-  const writeSpeed = 150;
-  const [activeLink, setActiveLink] = useState<string>("home");
-  const [isModelLoaded, setIsModelLoaded] = useState(false);
-  const [windowWidth, setWindowWidth] = useState<number>(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [downloadStatus, setDownloadStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
+  // Animation speeds
+  const deleteSpeed = 50;
+  const writeSpeed = 100;
 
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Function to change the title
-  const changeTitle = () => {
-    setIndex((prev) => (prev + 1) % titles.length);
-    setText(titles[(index + 1) % titles.length]);
-  };
-
-  // Function to handle the typing effect
   const handleTypingEffect = useCallback(() => {
     if (isDeleting) {
       setDisplayString((prev) => prev.slice(0, -1));
       if (displayString.length <= 0) {
         setIsDeleting(false);
-        changeTitle();
+        setIndex((prev) => (prev + 1) % titles.length);
+        setText(titles[(index + 1) % titles.length]);
       }
     } else {
       setDisplayString((prev) => text.slice(0, prev.length + 1));
       if (displayString === text) {
-        setIsDeleting(true);
+        setTimeout(() => setIsDeleting(true), 1000);
       }
     }
   }, [isDeleting, text, displayString, index]);
@@ -59,20 +47,22 @@ const Banner: React.FC = () => {
     return () => clearInterval(intervalId);
   }, [handleTypingEffect, isDeleting]);
 
+  // Reset download status after showing success/error message
   useEffect(() => {
-    // Load the 3D model after the component has mounted
-    const timer = setTimeout(() => setIsModelLoaded(true), 100); // Adjust timeout as needed
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Function to handle navigation click
-  const handleNavClick = (section: string) => {};
+    if (downloadStatus !== "idle") {
+      const timer = setTimeout(() => {
+        setDownloadStatus("idle");
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [downloadStatus]);
 
   return (
-    <section className="py-16" id="home">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 xl:w-7/12 flex flex-col justify-center mb-8 md:mb-0">
+    <section className="relative py-10 md:py-28" id="home">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/10 -z-10" />
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center mx-auto">
+          <div className="w-full md:w-1/2 flex flex-col justify-center md:order-1">
             <TrackVisibility>
               {({ isVisible }) => (
                 <div
@@ -80,46 +70,91 @@ const Banner: React.FC = () => {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }`}
                 >
-                  <span className="text-gray-400 text-lg mb-4 block">
-                    {main.title}
+                  <span className="text-primary text-lg font-mono mb-3 block">
+                    {personalData.greeting}
                   </span>
-                  <div className="flex flex-col mb-2">
-                    <div className="text-4xl font-bold text-white mb-2">
-                      {main.subtitle}
-                    </div>
-                    <span className="text-primary text-2xl">{`A ${displayString}`}</span>
-                  </div>
+                  <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 leading-tight">
+                    {personalData.name}
+                  </h1>
 
-                  <p className="text-gray-300 mb-6">{main.desc}</p>
-                  <button
-                    onClick={() => handleNavClick("contact")}
-                    className="relative flex items-center justify-center bg-primary text-white py-2 px-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-x-105 focus:outline-none focus:ring-2 focus:ring-primary hover:bg-primary/90 focus:ring-opacity-50 overflow-hidden"
-                  >
-                    <span className="relative flex items-center">
-                      <a
-                        href="/#contact"
-                        className="mr-2 font-medium transition-all duration-300 ease-in-out"
-                      >
-                        Let&apos;s connect
-                      </a>
-                      <ArrowRightCircle
-                        size={25}
-                        className="text-white transition-all duration-300 ease-in-out transform"
-                      />
+                  <div className="flex items-center mb-6">
+                    <div className="h-1 w-16 bg-primary mr-4" />
+                    <span className="text-xl md:text-2xl text-primary font-medium">
+                      {displayString}
+                      <span className="ml-1 animate-pulse">|</span>
                     </span>
-                    <span className="absolute inset-y-0 right-0 bg-red-600 transition-all duration-300 ease-in-out w-0 hover:w-full" />
-                  </button>
+                  </div>
+                  <div className="flex items-center text-gray-400 mb-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 mr-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    <span>{personalData.location}</span>
+                  </div>
+                  {/* Mobile Image - Appears right after name on small screens */}
+                  <div className="flex justify-center md:hidden mb-6">
+                    <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+                      <img
+                        src="/ahmed.jpg"
+                        alt="Ahmed Drioueche"
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-lg mb-8 max-w-lg">
+                    {personalData.description}
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="/files/Ahmed_Drioueche_CV.pdf"
+                      download="Ahmed_Drioueche_CV.pdf"
+                      className="flex items-center justify-center bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-lg transition-all duration-300 group"
+                    >
+                      Download My Resume
+                      <ArrowDownCircle
+                        size={20}
+                        className="ml-2 group-hover:translate-x-1 transition-transform"
+                      />
+                    </a>
+
+                    <a
+                      href="#projects"
+                      className="flex items-center justify-center border border-primary text-primary hover:bg-primary/10 py-3 px-6 rounded-lg transition-all duration-300"
+                    >
+                      View My Work
+                    </a>
+                  </div>
                 </div>
               )}
             </TrackVisibility>
           </div>
-          {isModelLoaded && windowWidth > 768 && (
-            <div className="md:w-1/2 xl:w-5/12 flex justify-center">
-              <Suspense>
-                <ModelCanvas />
-              </Suspense>
+
+          {/* Desktop Image - Only visible on desktop */}
+          <div className="hidden md:flex md:w-[45%] justify-center md:order-2">
+            <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+              <img
+                src="/ahmed.jpg"
+                alt="Ahmed Drioueche"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
-          )}
+          </div>
         </div>
       </div>
     </section>

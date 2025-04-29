@@ -1,15 +1,22 @@
 import { calculateExperience } from "./helper";
 
-export const main = {
-  title: "Welcome To My Portfolio",
-  subtitle: "I am Ahmed Drioueche",
-  desc: `I graduated with a Computer Engineering degree in 2024 from the Institute of Electric and Electronic Engineering in Algeria. 
-  I have ${calculateExperience(
+export const personalData = {
+  greeting: "Hello, I'm",
+  name: "Ahmed Drioueche",
+  location: "Algiers, Algeria",
+  description: `A Computer Engineer with expertise in full-stack development 
+  specializing in Reactjs and Nodejs.
+  With ${calculateExperience(
     2019
-  )} of experience in software development and ${calculateExperience(
-    2022
-  )} in web development. 
-  Throughout my journey, i have acquired the technical and soft skills neccessary to make me capable of working on complex and exciting projects.`,
+  )} years in software development and ${calculateExperience(2022)} 
+  in web technologies.`,
+
+  highlights: [
+    "Full-stack development",
+    "Cloud architecture",
+    "Performance optimization",
+    "Clean code practices",
+  ],
 };
 
 export const projects = [
@@ -560,7 +567,6 @@ export const projects = [
     isVisible: true,
   },
 ];
-
 export const experience = [
   {
     companyName: "Qareeb",
@@ -568,58 +574,38 @@ export const experience = [
     jobTitle: "Frontend Developer (React, TypeScript)",
     startDate: "November 2024",
     endDate: "Present",
-    introduction: `Qareeb is an innovative tech startup based in Algeria, focused on providing AI-driven solutions to global business challenges through technologies like computer vision, machine learning, and large language models (LLMs). One of its flagship products is Wizabot.`,
-
-    description: `Wizabot is an advanced AI-powered web application that provides marketing assistance to businesses through intelligent AI agents. It helps business owners optimize engagement by automating customer interactions and providing insightful analytics.`,
-
-    myWork: `At Qareeb, I played a key role in developing the Wizabot MVP, shaping it into a scalable and user-friendly SAAS platform. My work involves designing and optimizing responsive, high-performance web interfaces using React and TypeScript. I closely collaborate with UI/UX designers and backend engineers to ensure seamless integration of features and an intuitive user experience. Additionally, I developed a translation automation tool leveraging AI to streamline multi-language support for web applications.`,
-
-    conclusion: `Being part of Qareeb has been a dynamic and enriching experience. Collaborating with talented engineers in AI, backend development, and networking has helped me refine my skills as a frontend developer and deepen my understanding of AI-driven applications.`,
-
+    introduction: `Qareeb is an innovative tech startup focused on AI-driven solutions including computer vision, machine learning, and LLMs.`,
+    summary: [
+      "Led frontend development of Wizabot, an AI-powered marketing assistant, from concept to MVP to SAAS",
+      "Built the frontend with React and TypeScript, working closely with UI/UX designers",
+      "Integrated REST APIs in collaboration with backend developers",
+      "Developed an AI-powered translation tool for multi-language support",
+      "Played key role in transforming Wizabot into market-ready product",
+    ],
+    description: `Wizabot is an advanced AI-powered web application that provides marketing assistance to businesses through intelligent AI agents.`,
+    myWork: `As the frontend developer, I architected and implemented the React/TypeScript frontend for Wizabot, ensuring optimal performance and user experience. I collaborated cross-functionally to integrate AI capabilities and REST APIs, and developed innovative solutions like our translation automation tool.`,
+    conclusion: `This role significantly advanced my React expertise, particularly in building performant, component-based architectures with TypeScript. I deepened my understanding of state management, hooks optimization, and API integration patterns while developing scalable SAAS platforms at the intersection of frontend development and AI technologies.`,
     isVisible: true,
+    link: "https://dashboard.wizabot.com",
   },
-
   {
     companyName: "Doofas Innovative Solutions",
     companyLogo: "/d.png",
-    jobTitle: "Embedded Systems and Software Developer",
+    jobTitle: "Computer Engineering Intern",
     startDate: "January 2024",
     endDate: "June 2024",
-    introduction: `Doofas Innovative Solutions is a tech consulting company that specializes in creating tailored embedded systems solutions for industries like automation, IoT, and communication systems. They focus on providing cutting-edge technology to improve system efficiency and product reliability.`,
-    description: `At Doofas, I worked on a project related to industrial systems and automation, involving the design and development of a Modbus Gateway, which integrates with embedded systems and facilitates communication between industrial machines. The system uses Modbus RTU/TCP protocols for communication and provides tools for configuring and diagnosing industrial systems.`,
-    myWork: `I was responsible for both hardware and software development. I helped design the gateway’s PCB using KiCad, developed embedded firmware for the gateway with STM32, and contributed to the creation of the desktop application in ElectronJS for configuring and diagnosing the gateway. I worked closely with clients to understand their requirements and provide tailored solutions that improved their system reliability and performance.`,
-    conclusion: `My time at Doofas provided valuable experience in embedded systems design, firmware development, and industrial communication protocols. I gained hands-on experience designing complex systems and working with clients to develop innovative solutions. This role was crucial in sharpening my skills in both software development and hardware integration.`,
+    introduction: `Tech consulting company specializing in embedded systems for automation, IoT, and industrial communication.`,
+    summary: [
+      "Built desktop application using Electron.js for configuring Modbus devices",
+      "Developed lightweight web server with REST APIs using Mongoose",
+      "Created frontend interfaces with HTML, CSS, and JavaScript",
+      "Wrote firmware in C/C++ using FreeRTOS and STM32CubeIDE",
+      "Documented full development process and implementation details",
+    ],
+    description: `Worked on industrial automation projects involving Modbus communication protocols and embedded systems.`,
+    myWork: `I developed both software and firmware components for industrial systems, including a configuration desktop app and embedded communication firmware. My work involved full-stack development from low-level hardware to user interfaces.`,
+    conclusion: `This internship provided hands-on experience with embedded systems and full-stack development, strengthening my technical documentation and problem-solving skills.`,
     isVisible: true,
+    link: null,
   },
 ];
-
-const temp = {
-  pointer: {
-    imageDescPairs: [
-      {
-        image: "/pointer/pointer_signup.png",
-        description:
-          "Users can either create an account or login via Google OAuth. Authentication is handled using Nextauth",
-      },
-      {
-        image: "/pointer/pointer_verify.png",
-        description:
-          "Email verification is implemented via Nodemailer to ensure email integrity.",
-      },
-      {
-        image: "/pointer/pointer_confirm.png",
-        description:
-          "Users are prompted to fill in some data to finish setting up their environment, like their children's details and preferences.",
-      },
-      {
-        image: "/pointer/pointer_plans_2.png",
-        description:
-          "Users can choose to engage in a free trial or subscribe with monthly or yearly payment plans.",
-      },
-      {
-        image: "/pointer/pointer_payment.png",
-        description: "Secure payment is implemented using Stripe.",
-      },
-    ],
-  },
-};

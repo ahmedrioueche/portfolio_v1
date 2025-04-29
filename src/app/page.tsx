@@ -9,7 +9,7 @@ import Experience from "./components/Experience";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col space-y-16">
       <div id="home">
         <Banner />
       </div>
