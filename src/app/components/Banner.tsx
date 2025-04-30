@@ -3,6 +3,7 @@ import TrackVisibility from "react-on-screen";
 import { ArrowDownCircle } from "react-bootstrap-icons";
 import "../globals.css";
 import { personalData } from "../../constants/data";
+import Image from "next/image";
 
 const titles = [
   "Computer Engineer",
@@ -110,9 +111,11 @@ const Banner: React.FC = () => {
                   {/* Mobile Image - Appears right after name on small screens */}
                   <div className="flex justify-center md:hidden mb-6">
                     <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
-                      <img
+                      <Image
                         src="/images/ahmed.jpg"
                         alt="Ahmed Drioueche"
+                        height={400}
+                        width={400}
                         className="w-full h-full object-cover object-center"
                       />
                     </div>
@@ -148,9 +151,11 @@ const Banner: React.FC = () => {
           {/* Desktop Image - Only visible on desktop */}
           <div className="hidden md:flex md:w-[45%] justify-center md:order-2">
             <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
-              <img
+              <Image
                 src="/images/ahmed.jpg"
                 alt="Ahmed Drioueche"
+                height={400}
+                width={400}
                 className="w-full h-full object-cover object-center"
               />
             </div>
