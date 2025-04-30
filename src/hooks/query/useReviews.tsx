@@ -9,6 +9,15 @@ import {
 import { IReview, ReviewCreate, ReviewUpdate } from "@/types/reviews";
 import { ApiResponse } from "@/types/common";
 
+// Create a separate hook for getting a review by ID
+export const useReviewById = (id: string) => {
+  return useQuery<IReview, Error>({
+    queryKey: ["reviews", id],
+    queryFn: () => getReviewById(id),
+    enabled: !!id,
+  });
+};
+
 export const useReviews = () => {
   const queryClient = useQueryClient();
 
@@ -17,14 +26,6 @@ export const useReviews = () => {
     queryFn: getReviews,
     staleTime: 1000 * 60 * 5,
   });
-
-  const useReviewById = (id: string) => {
-    return useQuery<IReview, Error>({
-      queryKey: ["reviews", id],
-      queryFn: () => getReviewById(id),
-      enabled: !!id,
-    });
-  };
 
   const createReviewMutation = useMutation<IReview, Error, ReviewCreate>({
     mutationFn: createReview,
@@ -57,12 +58,9 @@ export const useReviews = () => {
 
   return {
     reviewsQuery,
-    useReviewById,
-
     createReviewMutation,
     updateReviewMutation,
     deleteReviewMutation,
-
     getReviewById: (id: string) => queryClient.getQueryData(["reviews", id]),
     getAllReviews: () => queryClient.getQueryData(["reviews"]),
   };
