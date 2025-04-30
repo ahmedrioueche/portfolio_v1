@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4 md:px-0 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <Image
-            src="/contact-img.svg"
+            src="/images/contact-img.svg"
             alt="contact image"
             width={700}
             height={900}

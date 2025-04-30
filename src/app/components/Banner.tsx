@@ -111,7 +111,7 @@ const Banner: React.FC = () => {
                   <div className="flex justify-center md:hidden mb-6">
                     <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
                       <img
-                        src="/ahmed.jpg"
+                        src="/images/ahmed.jpg"
                         alt="Ahmed Drioueche"
                         className="w-full h-full object-cover object-center"
                       />
@@ -149,7 +149,7 @@ const Banner: React.FC = () => {
           <div className="hidden md:flex md:w-[45%] justify-center md:order-2">
             <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
               <img
-                src="/ahmed.jpg"
+                src="/images/ahmed.jpg"
                 alt="Ahmed Drioueche"
                 className="w-full h-full object-cover object-center"
               />

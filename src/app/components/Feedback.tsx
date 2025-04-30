@@ -43,7 +43,7 @@ export const Feedback = () => {
         {/* Image - left side */}
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <Image
-            src="/feedback.svg"
+            src="/images/feedback.svg"
             alt="feedback image"
             width={700}
             height={900}

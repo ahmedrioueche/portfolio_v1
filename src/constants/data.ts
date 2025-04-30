@@ -570,7 +570,7 @@ export const projects = [
 export const experience = [
   {
     companyName: "Qareeb",
-    companyLogo: "/q.png",
+    companyLogo: "/images/qareeb.png",
     jobTitle: "Frontend Developer (React, TypeScript)",
     startDate: "November 2024",
     endDate: "Present",
@@ -590,7 +590,7 @@ export const experience = [
   },
   {
     companyName: "Doofas Innovative Solutions",
-    companyLogo: "/d.png",
+    companyLogo: "/images/doofas.png",
     jobTitle: "Computer Engineering Intern",
     startDate: "January 2024",
     endDate: "June 2024",
