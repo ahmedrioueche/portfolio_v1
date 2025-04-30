@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { experience } from "../../utils/data";
+import { experience } from "../../constants/data";
 import { ArrowUpRight, Rocket } from "react-bootstrap-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";

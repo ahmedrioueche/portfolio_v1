@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { projects } from "../../utils/data";
+import { projects } from "../../constants/data";
 import Image from "next/image";
 
 export default function ProjectsCarousel() {

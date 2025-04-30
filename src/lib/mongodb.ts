@@ -5,9 +5,7 @@ declare global {
   // eslint-disable-next-line no-var
   var _mongoClientPromise: Promise<MongoClient>;
 }
-const DB_URI = process.env.DB_URI;
 
-console.log({ DB_URI });
 const uri = process.env.DB_URI;
 if (!uri) {
   throw new Error(

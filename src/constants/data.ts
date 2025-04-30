@@ -1,4 +1,4 @@
-import { calculateExperience } from "./helper";
+import { calculateExperience } from "../utils/helper";
 
 export const personalData = {
   greeting: "Hello, I'm",

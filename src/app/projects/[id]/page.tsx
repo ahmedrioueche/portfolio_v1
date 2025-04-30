@@ -1,5 +1,5 @@
 "use client";
-import { projects } from "../../../utils/data";
+import { projects } from "../../../constants/data";
 import { notFound } from "next/navigation";
 import ProjectDetail from "../../components/ProjectDetail";
 import Link from "next/link";

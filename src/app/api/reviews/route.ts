@@ -81,27 +81,22 @@ export async function POST(req: Request) {
 
     // Map to database schema while keeping internal types consistent
     const newReview = {
-      stars: rating, // Map 'rating' to 'stars' for database
+      stars: rating,
       hire,
       comment: comment.trim(),
-      ownerName: author.trim() || "Anonymous", // Map 'author' to 'ownerName' for database
+      ownerName: author.trim() || "Anonymous",
       createdAt: new Date().toISOString(),
     };
 
-    console.log("Attempting to connect to MongoDB...");
     const client = await clientPromise;
-    console.log("Successfully connected to MongoDB");
 
     const dbName = process.env.DB_NAME;
     if (!dbName) {
       throw new Error("DB_NAME environment variable is not set");
     }
-    console.log(`Using database: ${dbName}`);
 
     const db = client.db(dbName);
-    console.log("Inserting new review...");
     const result = await db.collection("reviews").insertOne(newReview);
-    console.log("Review inserted with ID:", result.insertedId);
 
     const reviewId = result.insertedId.toString();
 
@@ -121,7 +116,6 @@ export async function POST(req: Request) {
       timestamp: Date.now(),
     };
 
-    console.log("Setting session cookie...");
     const response = NextResponse.json(responseData, { status: 201 });
 
     response.cookies.set("review_session", JSON.stringify(sessionData), {
@@ -131,7 +125,6 @@ export async function POST(req: Request) {
       path: "/",
     });
 
-    console.log("Successfully created review and set cookie");
     return response;
   } catch (error) {
     logError("POST /api/reviews failed", error);
