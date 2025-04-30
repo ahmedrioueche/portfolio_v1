@@ -2,59 +2,38 @@
 import { useEffect, useRef, useState } from "react";
 import { animateScroll } from "react-scroll";
 import { Spotlight } from "./ui/spotlight";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSectionInView } from "@/hooks/useSectionInView";
-import { Language } from "@/types/common";
 import { useSettings } from "@/context/SettingsContext";
-
-interface LanguagePair {
-  code: Language;
-  name: string;
-  icon: string;
-}
-
-const languages: LanguagePair[] = [
-  { code: "en", name: "English", icon: "EN" },
-  { code: "fr", name: "Français", icon: "FR" },
-  { code: "ar", name: "العربية", icon: "AR" },
-];
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faFacebook,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import { contacts } from "@/constants/contacts";
 
 const MyNavBar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const router = useRouter();
-  const sectionIds = ["home", "experience", "projects", "skills", "contact"];
-  const activeSection = useSectionInView(sectionIds);
-  const { language, setLanguage } = useSettings();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(language);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const sections = [
+    "home",
+    "experience",
+    "projects",
+    "skills",
+    "contact",
+    "feedback",
+  ];
+  const activeSection = useSectionInView(sections);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      // Close languages dropdown
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
   }, []);
 
   const handleNavClick = (section: string) => {
@@ -75,17 +54,6 @@ const MyNavBar: React.FC = () => {
   const handleLogoClick = () => {
     router.push("/");
     animateScroll.scrollToTop();
-  };
-
-  const toggleLanguageDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const changeLanguage = (lang: Language) => {
-    setCurrentLanguage(lang);
-    setIsDropdownOpen(false);
-    // Add your language change logic here (i18n, context, etc.)
-    setLanguage(lang);
   };
 
   return (
@@ -112,123 +80,77 @@ const MyNavBar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
-          {["home", "experience", "projects", "skills", "contact"].map(
-            (section) => (
-              <a
-                key={section}
-                href={`/#${section}`}
-                className="relative cursor-pointer text-sm sm:text-lg font-medium group"
-                onClick={() => handleNavClick(section)}
+          {sections.map((section) => (
+            <a
+              key={section}
+              href={`/#${section}`}
+              className="relative cursor-pointer text-sm sm:text-lg font-medium group"
+              onClick={() => handleNavClick(section)}
+            >
+              <span
+                className={`font-satisfy relative transition-colors duration-300 ${
+                  activeLink === section
+                    ? "text-primary"
+                    : "text-white group-hover:text-primary"
+                }`}
               >
-                <span
-                  className={`relative transition-colors duration-300 ${
-                    activeLink === section
-                      ? "text-primary"
-                      : "text-white group-hover:text-primary"
-                  }`}
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </span>
-                <span
-                  className={`block h-[2px] w-0 bg-primary absolute left-0 bottom-[-2px] transition-all duration-300 ${
-                    activeLink === section ? "w-full" : "group-hover:w-full"
-                  }`}
-                ></span>
-              </a>
-            )
-          )}
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </span>
+              <span
+                className={`block h-[2px] w-0 bg-primary absolute left-0 bottom-[-2px] transition-all duration-300 ${
+                  activeLink === section ? "w-full" : "group-hover:w-full"
+                }`}
+              ></span>
+            </a>
+          ))}
         </div>
 
         {/* Desktop Right Side (Social + Language + Hire Me) */}
         <div className="hidden md:flex items-center space-x-4">
-          {["nav-icon1", "nav-icon2", "nav-icon3"].map((icon, index) => (
-            <a
-              key={index}
-              href="#"
-              className="transition-transform duration-300 hover:scale-110"
-            >
-              <Image
-                src={`/${icon}.svg`}
-                alt={`icon${index + 1}`}
-                width={24}
-                height={24}
-              />
-            </a>
-          ))}
+          <a
+            href={contacts.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <FontAwesomeIcon icon={faGithub} size="lg" />
+          </a>
+          <a
+            href={contacts.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="lg" />
+          </a>
+          <a
+            href={contacts.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-primary transition-colors duration-300"
+          >
+            <FontAwesomeIcon icon={faFacebook} size="lg" />
+          </a>
+          <a
+            href={contacts.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-primary transition-colors duration-300"
+          >
+            <FontAwesomeIcon icon={faInstagram} size="lg" />
+          </a>
 
           <a
             href="/#contact"
-            className="border border-primary text-primary py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-primary hover:text-white transition-colors duration-300"
+            className="font-satisfy border border-primary text-primary py-2 px-4 rounded-full cursor-pointer bg-transparent hover:bg-primary hover:text-white transition-colors duration-300"
             onClick={() => handleNavClick("contact")}
           >
             Hire Me
           </a>
-          {/*   <div className="relative">
-            <button
-              onClick={toggleLanguageDropdown}
-              className="flex items-center text-white hover:text-primary transition-colors duration-300 py-1 rounded"
-            > 
-              <span className="mr-1 text-lg">
-                {languages.find((lang) => lang.code === currentLanguage)?.icon}
-              </span>
-            </button>
-
-            <div
-              className={`absolute right-0 mt-2 w-40 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-50 overflow-hidden transition-all duration-300 ${
-                isDropdownOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  className={`w-full px-4 py-2 text-sm text-left transition-colors duration-200 flex items-center ${
-                    currentLanguage === lang.code
-                      ? "bg-primary/20 text-primary"
-                      : "text-white hover:bg-gray-700"
-                  }`}
-                  onClick={() => changeLanguage(lang.code)}
-                >
-                  {lang.name}
-                </button>
-              ))}
-            </div>
-          </div> */}
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
-          {/*       <div className="relative">
-            <button
-              onClick={toggleLanguageDropdown}
-              className="text-white hover:text-primary transition-colors duration-300 p-1 rounded-full"
-            >
-              {languages.find((lang) => lang.code === currentLanguage)?.icon}
-            </button>
-            {isDropdownOpen && (
-              <div
-                ref={dropdownRef}
-                className="absolute right-0 mt-2 w-40 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-50"
-              >
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    className={`w-full px-4 py-2 text-sm text-left transition-colors duration-200 flex items-center ${
-                      currentLanguage === lang.code
-                        ? "bg-primary/20 text-primary"
-                        : "text-white hover:bg-gray-700"
-                    }`}
-                    onClick={() => {
-                      changeLanguage(lang.code);
-                      setIsDropdownOpen(false);
-                    }}
-                  >
-                    {lang.name}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>*/}
-
           <button
             onClick={toggleMenu}
             className="text-white focus:outline-none"
@@ -263,47 +185,63 @@ const MyNavBar: React.FC = () => {
             onClick={toggleMenu}
             className="text-white text-2xl focus:outline-none"
           >
-            &times; {/* This is the close icon (X) */}
+            &times;
           </button>
         </div>
         <div className="flex flex-col items-center justify-center h-full space-y-8">
-          {["home", "experience", "projects", "skills", "contact"].map(
-            (section) => (
-              <a
-                key={section}
-                href={`/#${section}`}
-                className={`text-xl font-medium transition-colors duration-300 ${
-                  activeLink === section
-                    ? "text-primary"
-                    : "text-white hover:text-primary"
-                }`}
-                onClick={() => handleNavClick(section)}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </a>
-            )
-          )}
+          {sections.map((section) => (
+            <a
+              key={section}
+              href={`/#${section}`}
+              className={`text-xl font-satisfy font-medium transition-colors duration-300 ${
+                activeLink === section
+                  ? "text-primary"
+                  : "text-white hover:text-primary"
+              }`}
+              onClick={() => handleNavClick(section)}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          ))}
 
           <div className="flex space-x-6 mt-8">
-            {["nav-icon1", "nav-icon2", "nav-icon3"].map((icon, index) => (
-              <a
-                key={index}
-                href="#"
-                className="transition-transform duration-300 hover:scale-110"
-              >
-                <Image
-                  src={`/${icon}.svg`}
-                  alt={`icon${index + 1}`}
-                  width={28}
-                  height={28}
-                />
-              </a>
-            ))}
+            <a
+              href={contacts.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+            </a>
+            <a
+              href={contacts.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <FontAwesomeIcon icon={faLinkedin} size="lg" />
+            </a>
+            <a
+              href={contacts.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-primary transition-colors duration-300"
+            >
+              <FontAwesomeIcon icon={faFacebook} size="lg" />
+            </a>
+            <a
+              href={contacts.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-primary transition-colors duration-300"
+            >
+              <FontAwesomeIcon icon={faInstagram} size="lg" />
+            </a>
           </div>
 
           <a
             href="/#contact"
-            className="mt-8 border-2 border-primary text-primary py-3 px-6 rounded-full text-lg font-medium hover:bg-primary hover:text-white transition-colors duration-300"
+            className="mt-8 font-satisfy border-2 border-primary text-primary py-3 px-6 rounded-full text-lg font-medium hover:bg-primary hover:text-white transition-colors duration-300"
             onClick={() => handleNavClick("contact")}
           >
             Hire Me

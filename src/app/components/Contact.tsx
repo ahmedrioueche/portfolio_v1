@@ -1,8 +1,9 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 import "../globals.css";
-import { sendContactForm } from "../../utils/api";
 import { toast } from "react-hot-toast";
+import { FaPaperPlane } from "react-icons/fa";
+import { sendContactForm } from "@/api/contact";
 
 interface FormDetails {
   firstName: string;
@@ -32,7 +33,7 @@ const Contact: React.FC = () => {
   const [formDetails, setFormDetails] =
     useState<FormDetails>(formInitialDetails);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [buttonText, setButtonText] = useState("Send");
+  const [buttonText, setButtonText] = useState("Submit");
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -106,14 +107,13 @@ const Contact: React.FC = () => {
       }
     } catch (error) {
       setButtonText("Send");
-
       toast.error("Failed to send message");
     }
   };
 
   return (
-    <section id="contact" className="py-16 section-offset">
-      <div className="container mx-auto flex flex-col md:flex-row items-center">
+    <section id="contact" className="py-8 md:py-16 section-offset">
+      <div className="container mx-auto px-4 md:px-0 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <Image
             src="/contact-img.svg"
@@ -123,10 +123,19 @@ const Contact: React.FC = () => {
             className="max-w-full h-auto"
           />
         </div>
-        <div className="md:w-1/2 flex flex-col justify-center md:px-6 md:pl-12">
-          <h2 className="text-4xl font-bold text-white mb-8">Get In Touch</h2>
-          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="md:w-1/2 flex flex-col justify-center w-full md:px-6 md:pl-12">
+          <div className="flex flex-col items-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold relative inline-block group">
+              Get In Touch
+              <span className="block h-[2px] bg-primary absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 transition-all duration-500 ease-in-out group-hover:w-full"></span>
+            </h2>
+          </div>
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-3 md:space-y-4 w-full"
+            noValidate
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               <div>
                 <input
                   type="text"
@@ -135,7 +144,7 @@ const Contact: React.FC = () => {
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     onFormUpdate("firstName", e.target.value)
                   }
-                  className={`w-full bg-gray-800 border rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-0 ${
+                  className={`w-full bg-gray-800 border-2 rounded-lg px-4 md:px-6 py-3 md:py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-0 ${
                     errors.firstName
                       ? "border-red-500"
                       : "border-gray-700 focus:border-primary"
@@ -155,7 +164,7 @@ const Contact: React.FC = () => {
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     onFormUpdate("lastName", e.target.value)
                   }
-                  className={`w-full bg-gray-800 border rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-0 ${
+                  className={`w-full bg-gray-800 border-2 rounded-lg px-4 md:px-6 py-3 md:py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-0 ${
                     errors.lastName
                       ? "border-red-500"
                       : "border-gray-700 focus:border-primary"
@@ -173,7 +182,7 @@ const Contact: React.FC = () => {
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     onFormUpdate("email", e.target.value)
                   }
-                  className={`w-full bg-gray-800 border rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-0 ${
+                  className={`w-full bg-gray-800 border-2 rounded-lg px-4 md:px-6 py-3 md:py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-0 ${
                     errors.email
                       ? "border-red-500"
                       : "border-gray-700 focus:border-primary"
@@ -191,7 +200,7 @@ const Contact: React.FC = () => {
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     onFormUpdate("phone", e.target.value)
                   }
-                  className={`w-full bg-gray-800 border rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-0 ${
+                  className={`w-full bg-gray-800 border-2 rounded-lg px-4 md:px-6 py-3 md:py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-0 ${
                     errors.phone
                       ? "border-red-500"
                       : "border-gray-700 focus:border-primary"
@@ -209,7 +218,7 @@ const Contact: React.FC = () => {
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                   onFormUpdate("message", e.target.value)
                 }
-                className={`w-full bg-gray-800 border rounded-lg px-6 py-4 text-white placeholder-gray-400 h-36 focus:outline-none focus:ring-0 ${
+                className={`w-full bg-gray-800 border-2 rounded-lg px-4 md:px-6 py-3 md:py-4 text-white placeholder-gray-400 h-28 md:h-36 focus:outline-none focus:ring-0 ${
                   errors.message
                     ? "border-red-500"
                     : "border-gray-700 focus:border-primary"
@@ -222,10 +231,13 @@ const Contact: React.FC = () => {
             <div className="space-y-4">
               <button
                 type="submit"
-                className="w-full text-white border border-primary bg-primary py-3 px-6 rounded-lg relative group transition-colors duration-300 hover:bg-primary/90 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full text-white border-2 border-primary bg-primary py-2 md:py-3 px-4 md:px-6 rounded-lg relative group transition-colors duration-300 hover:bg-primary/90 disabled:opacity-70 disabled:cursor-not-allowed"
                 disabled={buttonText === "Sending..."}
               >
-                <span>{buttonText}</span>
+                <div className="flex flex-row justify-center items-center space-x-1">
+                  <FaPaperPlane className="mr-2 md:mr-3" />
+                  <span>{buttonText}</span>
+                </div>
                 <span className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
               </button>
             </div>

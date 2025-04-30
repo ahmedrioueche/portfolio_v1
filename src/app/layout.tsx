@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import { SettingsProvider } from "@/context/SettingsContext";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 

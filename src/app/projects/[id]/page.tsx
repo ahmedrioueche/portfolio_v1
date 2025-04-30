@@ -25,7 +25,7 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
   return (
     <div className="mx-auto md:px-4 py-14 project-offset">
       <div className="flex flex-row items-center mb-1">
-        <h1 className="text-2xl md:text-4xl font-bold mr-4">{project.title}</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mr-4">{project.title}</h1>
         <div className="flex items-center space-x-3">
           {project.demoLink && project.demoLink !== "null" && (
             <a
@@ -51,9 +51,16 @@ const ProjectDetailPage = ({ params }: ProjectDetailPageProps) => {
           )}
         </div>
       </div>
-      <h4 className="text-lg font-thin text-gray-500 mb-4">
-        {project.techStack}
-      </h4>
+      <div className="flex flex-wrap gap-2 mb-4 mt-2">
+        {project.techStack.split(",").map((tech, i) => (
+          <span
+            key={i}
+            className="text-xs lg:text-sm bg-gray-700  px-3 py-1 rounded-full"
+          >
+            {tech.trim()}
+          </span>
+        ))}
+      </div>
 
       <div className="space-y-8">
         <div className="">

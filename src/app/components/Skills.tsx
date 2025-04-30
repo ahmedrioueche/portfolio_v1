@@ -59,14 +59,14 @@ const skills: Skill[] = [
 export default function Skills() {
   return (
     <section id="skills" className="w-full py-12 px-0">
-      <div className="container">
+      <div className="w-full max-w-none">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-3xl font-bold relative inline-block group">
+          <h2 className="text-2xl md:text-3xl font-bold relative inline-block group">
             My Skills
             <span className="block h-[2px] bg-primary absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 transition-all duration-500 ease-in-out group-hover:w-full"></span>
           </h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center w-full">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center w-full px-0">
           {skills.map((skill, index) => (
             <div
               key={index}
