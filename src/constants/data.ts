@@ -472,8 +472,9 @@ export const projects = [
     title: "CodeArena",
     rank: 1,
     techStack:
-      "Reactjs, TypeScript, Redux, React-Query, Nodejs, Express, Tailwindcss, Gemini",
-    description: `An AI-powered platform where programmers sharpen their skills via fun coding battles.`,
+      "Reactjs, TypeScript, Redux, React-Query, Tailwindcss, Nodejs, Express, MongoDB, Mongoose, Gemini, Railway, Vercel",
+    description:
+      "An AI-powered coding platform where developers elevate their skills through competitive programming battles and collaborative challenges. Featuring real-time AI mentorship, personalized problem generation, and comprehensive performance analytics.",
     imageDescPairs: [
       {
         image:
