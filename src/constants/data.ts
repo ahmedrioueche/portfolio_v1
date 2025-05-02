@@ -471,23 +471,13 @@ export const projects = [
     id: "7",
     title: "CodeArena",
     rank: 1,
-    techStack: "Reactjs, TypeScript, Redux, React-Query, Tailwindcss, Gemini",
+    techStack:
+      "Reactjs, TypeScript, Redux, React-Query, Nodejs, Express, Tailwindcss, Gemini",
     description: `An AI-powered platform where programmers sharpen their skills via fun coding battles.`,
     imageDescPairs: [
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1743017101/landing-hero_efdzcy.png",
-        description: "Landing page hero section.",
-      },
-      {
-        image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1743017469/landing-chat_ral52u.png",
-        description:
-          "Landing page FAQ section with a creative twist, a chat with a an AI chatbot, enabled via Gemini.",
-      },
-      {
-        image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-game-config_mcak1h.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746229238/solo_v6abeh.png",
         description:
           "Player can choose their prefered language, topics, skill level and time duration of the problem.",
       },
@@ -557,6 +547,12 @@ export const projects = [
           "https://res.cloudinary.com/drh61flr3/image/upload/v1741369633/solo-solution-chat_uqjeve.png",
         description:
           "The player can chat with Gemini to discuss the problem and solution, resolve ambiguities, and maximize learning benefits.",
+      },
+      {
+        image:
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1743017469/landing-chat_ral52u.png",
+        description:
+          "Landing page FAQ section with a creative twist, a chat with a an AI chatbot, enabled via Gemini.",
       },
     ],
     conclusion:
