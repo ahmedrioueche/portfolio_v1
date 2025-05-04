@@ -472,7 +472,7 @@ export const projects = [
     title: "CodeArena",
     rank: 1,
     techStack:
-      "Reactjs, TypeScript, Redux, React-Query, Tailwindcss, Nodejs, Express, MongoDB, Mongoose, Gemini, Railway, Vercel",
+      "Reactjs, TypeScript, Redux, React-Query, Tailwindcss, Nodejs, Express, MongoDB, Mongoose, JWT, Nodemailer, Gemini, Railway, Vercel",
     description:
       "An AI-powered coding platform where developers elevate their skills through competitive programming battles and collaborative challenges. Featuring real-time AI mentorship, personalized problem generation, and comprehensive performance analytics.",
     imageDescPairs: [
@@ -484,76 +484,76 @@ export const projects = [
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo_xquuwk.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323538/solo-page_mbwisr.png",
         description: `The player is greeted with a neat playground consisting mainly of a code editor using Monaco Editor,
            and the problem container.`,
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-problem_y7znwj.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323538/problem-modal_drhy3m.png",
         description: `When the game is started, The coding problem is fetched via Gemini with carefully designed prompt ensuring the correct 
           retrieval of the response as a JSON, consisting of examples and test cases, with the ability to get hints.`,
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-test-cases_lrxiji.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323538/problem-modal_drhy3m.png",
         description: `Players can create their own test cases or generate them via AI. They can also validate the test cases if created manually, 
           and run the tests against their code to help them get to the correct solution.`,
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-get-solution_eqyoxe.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323539/next-line_ckkdji.png",
         description:
           "If the player can't think of a solution, they can get it directly. They can also get help by asking for the next line of code to move forward if stuck.",
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-board_vv08qa.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323538/board_dyhgif.png",
         description:
           "A board is for the player to draw flowcharts and brainstorm.",
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-notepad_jdkxnt.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323539/notpad_n5yqsz.png",
         description:
           "A notepad is helpful if the player wants to save notes or brainstorm ideas.",
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-problem-chat_epbe4y.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323538/prob-chat_amcvu7.png",
         description: `The chat is useful for asking about concepts and topics, or getting help. The chat is powered by Gemini 
           by prompting it with the player's question along with the chat's history to make the conversation flow,`,
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369632/solo-settings_xpdepw.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323539/settings_bnexsm.png",
         description:
           "Players can change the game settings to generate different problems to keep the learning process fun and engaging.",
       },
 
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-submit-1_vju3vn.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323539/sol-1_yajwya.png",
         description: `When the player submits their solution, Gemini is prompted to evaluate the solution's correctness and accuraccy, 
           provide feedback, correct mistakes. A point system is used to evaluate the player's performance.`,
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/solo-submit-2_r99nll.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323539/sol-2_dxaj6u.png",
         description:
           "Gemini is also prompted to provide the correct solution, bottleneck analysis and suggestions for improvement.",
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369633/solo-solution-chat_uqjeve.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1746323539/sol-2_dxaj6u.png",
         description:
           "The player can chat with Gemini to discuss the problem and solution, resolve ambiguities, and maximize learning benefits.",
       },
       {
         image:
-          "https://res.cloudinary.com/drh61flr3/image/upload/v1743017469/landing-chat_ral52u.png",
+          "https://res.cloudinary.com/drh61flr3/image/upload/v1741369631/signup_ta5kaq.png",
         description:
-          "Landing page FAQ section with a creative twist, a chat with a an AI chatbot, enabled via Gemini.",
+          "Implemented a secure authentication system with: Signup, Email Verification (OTP via Nodemailer), JWT Authentication (access & refresh tokens), Signin, and Password Recovery. The system features token rotation for enhanced security, cookie-based token storage with HTTP-only flags, and integrates with MongoDB Atlas for persistent user data storage",
       },
     ],
     conclusion:

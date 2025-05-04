@@ -12,7 +12,7 @@ import {
   faFacebook,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { contacts } from "@/constants/contacts";
+import { contacts } from "@/constants/socials";
 
 const MyNavBar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("home");

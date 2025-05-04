@@ -6,7 +6,7 @@ import {
   faFacebook,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { contacts } from "@/constants/contacts";
+import { contacts } from "@/constants/socials";
 
 export default function Footer() {
   return (

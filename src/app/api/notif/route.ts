@@ -1,6 +1,6 @@
 import { generateEmailContent } from "@/utils/helper";
 import { mailOptions, transporter } from "../../../lib/nodemailer";
-import { CONTACT_MESSAGE_FIELDS } from "@/constants/mail";
+import { DEFAULT_MESSAGE_FIELDS } from "@/constants/mail";
 
 export async function POST(req: Request) {
   if (req.method !== "POST") {
@@ -12,16 +12,21 @@ export async function POST(req: Request) {
 
   try {
     const data = await req.json();
-    if (!data || !data.firstName || !data.email || !data.message) {
+    if (!data) {
       return new Response(JSON.stringify({ message: "Bad request" }), {
         status: 400,
         headers: { "Content-Type": "application/json" },
       });
     }
+    console.log("data in POST", data);
+
+    // Generate email content
+    const emailContent = generateEmailContent(data, DEFAULT_MESSAGE_FIELDS);
+
     await transporter.sendMail({
       ...mailOptions,
-      ...generateEmailContent(data, CONTACT_MESSAGE_FIELDS),
-      subject: "Contact Form Submission",
+      subject: data.subject || "Portfolio Notification",
+      ...emailContent,
     });
 
     return new Response(JSON.stringify({ success: true }), {
@@ -29,7 +34,7 @@ export async function POST(req: Request) {
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
-    console.error("Failed to send email:", err);
+    console.error("Failed to send notification email:", err);
     return new Response(JSON.stringify({ message: "Internal server error" }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
