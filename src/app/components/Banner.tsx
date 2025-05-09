@@ -4,6 +4,7 @@ import { ArrowDownCircle } from "react-bootstrap-icons";
 import "../globals.css";
 import { personalData } from "../../constants/data";
 import Image from "next/image";
+import { sendEmail } from "@/api/notif";
 
 const titles = [
   "Computer Engineer",
@@ -48,12 +49,20 @@ const Banner: React.FC = () => {
     return () => clearInterval(intervalId);
   }, [handleTypingEffect, isDeleting]);
 
+  const sendNotification = async () => {
+    await sendEmail({
+      subject: "Portfolio Notification",
+      content: `Someone downloaded your CV`,
+    });
+  };
   // Reset download status after showing success/error message
   useEffect(() => {
     if (downloadStatus !== "idle") {
       const timer = setTimeout(() => {
         setDownloadStatus("idle");
       }, 3000);
+      sendNotification();
+
       return () => clearTimeout(timer);
     }
   }, [downloadStatus]);
