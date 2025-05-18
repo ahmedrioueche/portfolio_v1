@@ -10,6 +10,7 @@ import { Reviews } from "./components/Reviews";
 import { Feedback } from "./components/Feedback";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { sendEmail } from "@/api/notif";
+import Education from "./components/Education";
 
 export default function Home() {
   const [queryClient] = useState(
@@ -99,6 +100,9 @@ export default function Home() {
         </div>
         <div id="projects">
           <ProjectsCarousel />
+        </div>
+        <div id="skills">
+          <Education />
         </div>
         <div id="skills">
           <Skills />

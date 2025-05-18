@@ -19,6 +19,29 @@ export const personalData = {
   ],
 };
 
+export const educationData = [
+  {
+    id: 1,
+    institution: "University of M'hamed Bougara, Boumerdes, Algeria",
+    degree: "Master’s in Computer Engineering",
+    period: "2022 - 2024",
+    description: `
+      Curriculum included: Computer Architecture, Operating Systems, Data Structures and Algorithms, Networks and Software Engineering.
+      Gained expertise in software design, system-level programming (C/C++, Python, Java), desktop/embedded development, and agile workflows with Git.
+    `,
+  },
+  {
+    id: 2,
+    institution: "University of M'hamed Bougara, Boumerdes, Algeria",
+    degree: "Bachelor’s in Electrical and Electronic Engineering",
+    period: "2019 - 2022",
+    description: `
+      Curriculum included: Circuit Analysis, Control Systems, Power Systems, Microcontrollers, and Signals & Systems.
+      Acquired knowledge in analog/digital circuit design, automation basics, embedded systems (C/Assembly), and simulation tools like MATLAB/Proteus with strong lab practice.
+    `,
+  },
+];
+
 export const projects = [
   {
     id: "1",
